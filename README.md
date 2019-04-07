@@ -1,7 +1,6 @@
 # GRP6_GRP3_Yelabay
 
-Descripción: Tienda Online denonimada Yelabay destinada a la venta de productos informáticos.
-¡¡ FALTA DETALLAR !!
+Descripción: Tienda Online denonimada Yelabay destinada a la venta de productos informáticos donde el usuario podrá comprar, visualizar productos y tener su propio menú como usuario registrado.
 
 Parte pública: 
 * Visualizar productos.
@@ -36,3 +35,8 @@ Listado EN Privada:
 * adminEN.
 * pedidosEN.
 * servicioTécnicoEN.
+
+Posibles mejoras:
+* Chat en directo con uno de nuestros técnicos
+* Importación de productos desde un CMS como Prestashop o Magento
+* ...
