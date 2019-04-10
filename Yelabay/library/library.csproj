@@ -41,29 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin.cs" />
-    <Compile Include="AdminCAD.cs" />
-    <Compile Include="CarritoCAD.cs" />
-    <Compile Include="CarritoEN.cs" />
-    <Compile Include="CategoriaCAD.cs" />
-    <Compile Include="CategoriaEN.cs" />
-    <Compile Include="DevolucionesCAD.cs" />
-    <Compile Include="DevolucionesEN.cs" />
-    <Compile Include="MarcaCAD.cs" />
-    <Compile Include="MarcaEN.cs" />
-    <Compile Include="OfertasCAD.cs" />
-    <Compile Include="OfertasEN.cs" />
-    <Compile Include="Pedidos.cs" />
-    <Compile Include="PedidosCAD.cs" />
-    <Compile Include="ProductoCAD.cs" />
-    <Compile Include="ProductoEN.cs" />
+    <Compile Include="EN\AdminEN.cs" />
+    <Compile Include="CAD\AdminCAD.cs" />
+    <Compile Include="CAD\CarritoCAD.cs" />
+    <Compile Include="EN\CarritoEN.cs" />
+    <Compile Include="CAD\CategoriaCAD.cs" />
+    <Compile Include="EN\CategoriaEN.cs" />
+    <Compile Include="CAD\DevolucionesCAD.cs" />
+    <Compile Include="EN\DevolucionesEN.cs" />
+    <Compile Include="CAD\MarcaCAD.cs" />
+    <Compile Include="EN\MarcaEN.cs" />
+    <Compile Include="CAD\OfertasCAD.cs" />
+    <Compile Include="EN\OfertasEN.cs" />
+    <Compile Include="EN\PedidosEN.cs" />
+    <Compile Include="CAD\PedidosCAD.cs" />
+    <Compile Include="CAD\ProductoCAD.cs" />
+    <Compile Include="EN\ProductoEN.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReclamacionesCAD.cs" />
-    <Compile Include="ReclamacionesEN.cs" />
-    <Compile Include="ServicioTecnicoEN.cs" />
-    <Compile Include="ServicioTecnicoCAD.cs" />
-    <Compile Include="UsuarioCAD.cs" />
-    <Compile Include="UsuarioEN.cs" />
+    <Compile Include="CAD\ReclamacionesCAD.cs" />
+    <Compile Include="EN\ReclamacionesEN.cs" />
+    <Compile Include="EN\ServicioTecnicoEN.cs" />
+    <Compile Include="CAD\ServicioTecnicoCAD.cs" />
+    <Compile Include="CAD\UsuarioCAD.cs" />
+    <Compile Include="EN\UsuarioEN.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
