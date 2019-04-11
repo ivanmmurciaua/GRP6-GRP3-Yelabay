@@ -8,5 +8,9 @@ namespace library
 {
     class OfertasCAD
     {
+        public OfertasCAD()
+        {
+
+        }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class MarcaEN
+    public class MarcaEN
     {
         private int idMarca;
 

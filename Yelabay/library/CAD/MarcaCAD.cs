@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class MarcaCAD
+    public class MarcaCAD
     {
+        public MarcaCAD()
+        {
+
+        }
     }
 }
