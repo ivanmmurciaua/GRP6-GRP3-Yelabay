@@ -12,5 +12,21 @@ namespace library
         {
 
         }
+
+        public bool createOferta(OfertasEN oferEn)
+        {
+            return true;
+        }
+
+        public bool updateOferta(OfertasEN oferEn)
+        {
+            return true;
+        }
+
+        public bool deleteOferta(OfertasEN oferEn)
+        {
+            return true;
+        }
+
     }
 }

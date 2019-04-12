@@ -12,19 +12,12 @@ namespace library
 
         private string nombre;
 
-        public MarcaEN() 
-        {
-
-            idMarca=0;
-            nombre="";
-        }
-
         public int getIdMarca() 
         {
             return idMarca;
         }
 
-        public void setIdMarca(int idMarca) 
+        private void setIdMarca(int idMarca) 
         {
             this.idMarca=idMarca;
         }
@@ -34,9 +27,46 @@ namespace library
             return nombre;
         }
 
-        public void setNombre(string nombre)
+        private void setNombre(string nombre)
         {
             this.nombre=nombre;
         }
+
+        public MarcaEN() 
+        {
+            idMarca=0;
+            nombre="";
+        }
+
+        public MarcaEN(int idMarca, string nombre) 
+        {
+            this.idMarca=idMarca;
+            this.nombre=nombre;
+        }
+
+        public bool createMarca()
+        {
+            MarcaCAD marCad=new MarcaCAD();
+
+            return marCad.createMarca(this);
+        }
+
+        public bool updateMarca()
+        {
+            MarcaCAD marCad=new MarcaCAD();
+
+            return marCad.updateMarca(this);
+        }
+
+        public bool deleteMarca()
+        {
+            MarcaCAD marCad=new MarcaCAD();
+
+            return marCad.deleteMarca(this);
+        }
+
+
+
+
     }
 }

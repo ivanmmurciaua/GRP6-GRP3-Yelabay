@@ -17,14 +17,6 @@ namespace library
 
         private float descuento;
 
-        public OfertaEN(int codigoOferta, string fechaInicio, string fechaFin, float descuento)
-        {
-            this.fechaInicio=fechaInicio;
-            this.fechaFin=fechaFin;
-            this.codigoOferta=codigoOferta;
-            this.descuento=descuento;
-        }
-
         public string getFechaInicio()
         {
             return fechaInicio;
@@ -65,7 +57,42 @@ namespace library
             this.descuento=descuento;
         }
 
+        public OfertasEN()
+        {
+            fechaInicio="";
+            fechaFin="";
+            codigoOferta=0;
+            descuento=0;
+        }
 
+        public OfertaEN(int codigoOferta, string fechaInicio, string fechaFin, float descuento)
+        {
+            this.fechaInicio=fechaInicio;
+            this.fechaFin=fechaFin;
+            this.codigoOferta=codigoOferta;
+            this.descuento=descuento;
+        }
+
+        public bool createOferta()
+        {
+            OfertasCAD oferCad=new OfertasCAD();
+
+            return oferCad.createOferta(this);
+        }
+
+        public bool updateOferta()
+        {
+            OfertasCAD oferCad=new OfertasCAD();
+
+            return oferCad.updateOferta(this);
+        }
+
+        public bool deleteOferta()
+        {
+            OfertasCAD oferCad=new OfertasCAD();
+
+            return oferCad.deleteOferta(this);
+        }
 
     }
 }

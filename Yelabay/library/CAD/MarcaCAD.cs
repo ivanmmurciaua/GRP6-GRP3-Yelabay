@@ -10,7 +10,23 @@ namespace library
     {
         public MarcaCAD()
         {
-
+            
         }
+
+        public bool createMarca(MarcaEN marcEn)
+        {
+            return true;
+        }
+
+        public bool updateMarca(MarcaEN marcEn)
+        {
+            return true;
+        }
+
+        public bool deleteMarca(MarcaEN marcEn)
+        {
+            return true;
+        }
+
     }
 }
