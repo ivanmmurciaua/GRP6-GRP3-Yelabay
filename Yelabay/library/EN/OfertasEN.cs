@@ -14,7 +14,7 @@ namespace library
         private int codigoOferta{get; set;}//codigo de la oferta
         private float descuento{get; set;}//descuento de la oferta
 
-        //getters y setters
+        //Getters
         public string getFechaInicio()
         {
             return fechaInicio;
@@ -36,7 +36,7 @@ namespace library
         }
 
 
-        //constructores
+        //Constructores
         public OfertasEN()
         {
             fechaInicio="";

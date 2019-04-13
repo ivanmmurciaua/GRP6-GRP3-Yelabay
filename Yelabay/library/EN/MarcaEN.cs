@@ -13,7 +13,7 @@ namespace library
         private int idMarca{get; set;}//Id de la marca
         private string nombre{get; set;}//Nombre de la marca
 
-        //Getters y setters
+        //Getters
         public int getIdMarca() 
         {
             return idMarca;
