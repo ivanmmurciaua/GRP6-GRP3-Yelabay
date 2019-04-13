@@ -9,10 +9,10 @@ namespace library
     public class OfertasEN
     {
         //Atributos privados
-        private string fechaInicio;//fecha de inicio de la oferta
-        private string fechaFin;//fecha de fin de la oferta
-        private int codigoOferta;//codigo de la oferta
-        private float descuento;//descuento de la oferta
+        private string fechaInicio {get; set;}//fecha de inicio de la oferta
+        private string fechaFin{get; set;}//fecha de fin de la oferta
+        private int codigoOferta{get; set;}//codigo de la oferta
+        private float descuento{get; set;}//descuento de la oferta
 
         //getters y setters
         public string getFechaInicio()
@@ -20,19 +20,9 @@ namespace library
             return fechaInicio;
         }
 
-        public void setFechaInicio(string fechaInicio)
-        {
-            this.fechaInicio=fechaInicio;
-        }
-
         public string getFechaFin()
         {
             return fechaFin;
-        }
-
-        public void setFechaFin(string fechaFin)
-        {
-            this.fechaFin=fechaFin;
         }
 
         public int getCodigoOferta()
@@ -40,20 +30,11 @@ namespace library
             return codigoOferta;
         }
 
-        public void setCodigoOferta(int codigoOferta)
-        {
-            this.codigoOferta=codigoOferta;
-        }
-
         public float getDescuento()
         {
             return descuento;
         }
 
-        public void setDescuento(float descuento)
-        {
-            this.descuento=descuento;
-        }
 
         //constructores
         public OfertasEN()

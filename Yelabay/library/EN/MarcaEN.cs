@@ -10,8 +10,8 @@ namespace library
     {
 
         //Atributos privados
-        private int idMarca;//Id de la marca
-        private string nombre;//Nombre de la marca
+        private int idMarca{get; set;}//Id de la marca
+        private string nombre{get; set;}//Nombre de la marca
 
         //Getters y setters
         public int getIdMarca() 
@@ -19,20 +19,11 @@ namespace library
             return idMarca;
         }
 
-        private void setIdMarca(int idMarca) 
-        {
-            this.idMarca=idMarca;
-        }
-
         public string getNombre()
         {
             return nombre;
         }
 
-        private void setNombre(string nombre)
-        {
-            this.nombre=nombre;
-        }
 
         //Constructores
         public MarcaEN() 
