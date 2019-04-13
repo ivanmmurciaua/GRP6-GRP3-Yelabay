@@ -8,15 +8,13 @@ namespace library
 {
     public class OfertasEN
     {
+        //Atributos privados
+        private string fechaInicio;//fecha de inicio de la oferta
+        private string fechaFin;//fecha de fin de la oferta
+        private int codigoOferta;//codigo de la oferta
+        private float descuento;//descuento de la oferta
 
-        private string fechaInicio;
-
-        private string fechaFin;
-
-        private int codigoOferta;
-
-        private float descuento;
-
+        //getters y setters
         public string getFechaInicio()
         {
             return fechaInicio;
@@ -57,6 +55,7 @@ namespace library
             this.descuento=descuento;
         }
 
+        //constructores
         public OfertasEN()
         {
             fechaInicio="";
@@ -73,6 +72,7 @@ namespace library
             this.descuento=descuento;
         }
 
+        //Funciones publicas
         public bool createOferta()
         {
             OfertasCAD oferCad=new OfertasCAD();
@@ -93,6 +93,14 @@ namespace library
 
             return oferCad.deleteOferta(this);
         }
+
+        public bool readOferta()
+        {
+            OfertasCAD oferCad=new OfertasCAD();
+
+            return oferCad.readOferta(this);
+        }
+
 
     }
 }

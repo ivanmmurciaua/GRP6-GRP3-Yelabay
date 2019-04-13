@@ -8,10 +8,12 @@ namespace library
 {
     public class MarcaEN
     {
-        private int idMarca;
 
-        private string nombre;
+        //Atributos privados
+        private int idMarca;//Id de la marca
+        private string nombre;//Nombre de la marca
 
+        //Getters y setters
         public int getIdMarca() 
         {
             return idMarca;
@@ -32,6 +34,7 @@ namespace library
             this.nombre=nombre;
         }
 
+        //Constructores
         public MarcaEN() 
         {
             idMarca=0;
@@ -44,6 +47,7 @@ namespace library
             this.nombre=nombre;
         }
 
+        //Funciones publicas
         public bool createMarca()
         {
             MarcaCAD marCad=new MarcaCAD();
@@ -65,6 +69,12 @@ namespace library
             return marCad.deleteMarca(this);
         }
 
+        public bool readMarca()
+        {
+            MarcaCAD marCad=new MarcaCAD();
+
+            return marCad.readMarca(this);
+        }
 
 
 

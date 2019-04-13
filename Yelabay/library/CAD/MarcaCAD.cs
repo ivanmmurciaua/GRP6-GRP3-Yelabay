@@ -8,9 +8,12 @@ namespace library
 {
     public class MarcaCAD
     {
+        private string constring;
+
         public MarcaCAD()
         {
-            
+            //constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
+            constring="";
         }
 
         public bool createMarca(MarcaEN marcEn)
@@ -24,6 +27,11 @@ namespace library
         }
 
         public bool deleteMarca(MarcaEN marcEn)
+        {
+            return true;
+        }
+
+        public bool readMarca(MarcaEN marcEn)
         {
             return true;
         }
