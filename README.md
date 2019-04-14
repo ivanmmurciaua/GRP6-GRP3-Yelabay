@@ -1,6 +1,5 @@
 # GRP6_GRP3_Yelabay
 
-## Deadline1
 Descripción: Tienda Online denonimada Yelabay destinada a la venta de productos informáticos donde el usuario podrá comprar, visualizar productos y tener su propio menú como usuario registrado.
 
 Parte pública: 
@@ -30,12 +29,12 @@ Parte privada:
 
 Listado EN Privada:
 * Toda lo de la parte públicaEN.
-* devolucionesEN.
-* carritoEN.
-* reclamacionesEN.
-* adminEN.
-* pedidosEN.
-* servicioTécnicoEN.
+* DevolucionesEN.
+* CarritoEN.
+* ReclamacionesEN.
+* AdminEN.
+* PedidosEN.
+* ServicioTécnicoEN.
 
 Posibles mejoras:
 * Chat en directo con uno de nuestros técnicos
@@ -53,11 +52,4 @@ Asignación EN:
 * ReclamacionesEN -> 48766639S
 * AdminEN -> 48729799K
 * PedidosEN -> 48685367W
-* ServicioTecnicoEN -> 48685367Wcon uno de nuestros técnicos
-* Importación de productos desde un CMS como Prestashop o Magento
-* Email de confirmación después de comprar un producto
-
-## Deadline2
-### El pdf con el esquema UML se puede encontrar en Yelabay/Scheme/DiagramaClases.pdf
-##### Anotaciones
--El UML es un borrador al igual que todo el código, a medida que avance el proyecto iremos modificando como creamos conveniente los métodos para conseguir que nuestro proyecto sea funcional.
+* ServicioTecnicoEN -> 48685367W
