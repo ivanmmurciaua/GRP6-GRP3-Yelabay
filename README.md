@@ -29,14 +29,27 @@ Parte privada:
 
 Listado EN Privada:
 * Toda lo de la parte públicaEN.
-* devolucionesEN.
-* carritoEN.
-* reclamacionesEN.
-* adminEN.
-* pedidosEN.
-* servicioTécnicoEN.
+* DevolucionesEN.
+* CarritoEN.
+* ReclamacionesEN.
+* AdminEN.
+* PedidosEN.
+* ServicioTécnicoEN.
 
 Posibles mejoras:
 * Chat en directo con uno de nuestros técnicos
 * Importación de productos desde un CMS como Prestashop o Magento
-* ...
+* Comentarios de los usuarios (opiniones sobre los productos)
+
+Asignación EN:
+* UsuarioEN -> X7197828R
+* ProductoEN -> X7197828R
+* MarcaEN -> 51239910G
+* OfertasEN -> 51239910G
+* CategoriaEN -> 50386084F
+* DevolucionesEN -> 50386084F
+* CarritoEN -> 48766639S
+* ReclamacionesEN -> 48766639S
+* AdminEN -> 48729799K
+* PedidosEN -> 48685367W
+* ServicioTecnicoEN -> 48685367W

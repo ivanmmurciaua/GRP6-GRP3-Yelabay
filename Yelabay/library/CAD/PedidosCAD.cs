@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class PedidosCAD
+    public class PedidosCAD
     {
+        public PedidosCAD()
+        {
+        }
+        ~PedidosCAD()
+        {
+        }
+        public void createPedido(PedidosEN en)
+        {
+        }
+        public void readPedido(PedidosEN en)
+        {
+        }
+        public void updatePedido(PedidosEN en)
+        {
+        }
+        public void deletePedido( PedidosEN en )
+        {
+        }
     }
 }
