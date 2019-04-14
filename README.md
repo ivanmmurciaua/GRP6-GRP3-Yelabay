@@ -53,3 +53,8 @@ Asignación EN:
 * AdminEN -> 48729799K
 * PedidosEN -> 48685367W
 * ServicioTecnicoEN -> 48685367W
+
+## Deadline2
+### El pdf con el esquema UML se puede encontrar en Yelabay/Scheme/DiagramaClases.pdf
+##### Anotaciones
+-El UML es un borrador al igual que todo el código, a medida que avance el proyecto iremos modificando como creamos conveniente los métodos para conseguir que nuestro proyecto sea funcional.
