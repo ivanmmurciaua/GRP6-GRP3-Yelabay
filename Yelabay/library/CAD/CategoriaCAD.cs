@@ -6,7 +6,25 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class CategoriaCAD
+    public class CategoriaCAD 
     {
+        public CategoriaCAD()
+        {
+        }
+
+        public bool createCategoria(CategoriaEN catEn)
+        {
+            return true;
+        }
+
+        public bool updateCategoria(CategoriaEN catEn)
+        {
+            return true;
+        }
+        public bool deleteCategoria(CategoriaEN catEn)
+        {
+            return true;
+        }
+        
     }
 }
