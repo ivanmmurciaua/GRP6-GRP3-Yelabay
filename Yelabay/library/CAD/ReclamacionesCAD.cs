@@ -8,8 +8,6 @@ namespace library
 {
     class ReclamacionesCAD
     {
-        class ReclamacionesCAD
-    {
         public ReclamacionesCAD()
         {
             //se establece la conexion con la BD
