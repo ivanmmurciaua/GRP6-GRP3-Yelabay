@@ -45,7 +45,7 @@ namespace library
             descuento=0;
         }
 
-        public OfertaEN(int codigoOferta, string fechaInicio, string fechaFin, float descuento)
+        public OfertasEN(int codigoOferta, string fechaInicio, string fechaFin, float descuento)
         {
             this.fechaInicio=fechaInicio;
             this.fechaFin=fechaFin;
