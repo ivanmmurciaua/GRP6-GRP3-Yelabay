@@ -68,7 +68,7 @@ namespace library
             bool borrada = false;
             ReclamacionesCAD cad = new ReclamacionesCAD();
             if (cad.createReclamacion(this)) borrada = true;
-            return borradao;
+            return borrada;
         }
 
     }
