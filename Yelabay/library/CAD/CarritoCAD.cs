@@ -31,14 +31,14 @@ namespace library
 
         public bool deleteCarrito(CarritoEN carrito)
         {
-            bool deleted;
+            bool deleted = true;
 
             return deleted;
         }
 
         public bool readCarrito(CarritoEN carrito)
         {
-            bool leido = falso;
+            bool leido = false;
 
             return leido;
         }
