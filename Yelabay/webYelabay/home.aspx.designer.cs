@@ -10,6 +10,6 @@
 namespace webYelabay {
     
     
-    public partial class prueba {
+    public partial class home {
     }
 }
