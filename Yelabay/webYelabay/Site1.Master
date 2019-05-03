@@ -4,23 +4,45 @@
 
 <html>
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
-<body style="background-color:yellow">
+<body>
+    <link href="StyleMaster.css" type="text/css" rel="stylesheet" id="stylesheet" />
     <form id="form1" runat="server">
-        <div style="background-color:red">
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <asp:Image ID="Image1" runat="server" Height="148px" ImageUrl="logo.png" Width="171px" />
-            </asp:ContentPlaceHolder>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            YELABAY SHOP
+        <div id="container">
+           <div id="header">
 
-        </div>
-        <div style="background-color:black">
-            HHHOHOHOHO
+               <div class =" column-left">
+                    <asp:Menu ID="MenuLeft" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" class= "center" style="text-align: center" RenderingMode="List" OnMenuItemClick="MenuLeft_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem Text="Inicio" Value="home"></asp:MenuItem>
+                        <asp:MenuItem Text="Catálogo" Value="producto"></asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle Font-Size="XX-Large" ForeColor="Black" />
+                </asp:Menu>
+                </div>
+
+                <div class =" column-right">
+                    <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonProfile" ImageUrl="images/perfil.png" Visible="false" OnClick="buttonProfile_Click" ></asp:ImageButton>
+                    <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonLogin" ImageUrl="images/login.png" OnClick="buttonLogin_Click" ></asp:ImageButton>
+                    <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonCarrito" ImageUrl="images/carrito.png" OnClick="buttonCarrito_Click"></asp:ImageButton>
+                    <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonLogout" ImageUrl="images/cerrarSesion.png" Visible="false" OnClick="buttonLogout_Click"></asp:ImageButton>
+                </div>
+
+           </div>
+           <div id="body">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+           </div>
+           <div id="footer">
+               <div class ="center">
+                    <asp:Menu ID="MenuContact" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="List" OnMenuItemClick="MenuContact_MenuItemClick">
+                        <Items><asp:MenuItem Text="Contacta con nosotros." Value="contact"></asp:MenuItem></items>
+                    </asp:Menu>
+                </div>
+           </div>
         </div>
     </form>
 </body>

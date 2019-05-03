@@ -10,6 +10,6 @@
 namespace webYelabay {
     
     
-    public partial class Home {
+    public partial class Carrito {
     }
 }
