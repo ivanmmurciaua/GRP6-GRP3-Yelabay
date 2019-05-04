@@ -7,5 +7,8 @@
         <div id ="title">
             <h1>Carrito</h1>
         </div>
+        <div id="content">
+            <h1>Artículos actualmente en el carrito:</h1>
+        </div>
     </div>
 </asp:Content>
