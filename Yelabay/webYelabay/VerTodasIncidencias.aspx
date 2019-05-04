@@ -1,16 +1,14 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="VerTodasIncidencias.aspx.cs" Inherits="webYelabay.VerTodasIncidencias" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="webYelabay.Home" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id ="innerContainer">
+        <div id ="title">
+            <h1>Incidencias:</h1>
         </div>
-    </form>
-</body>
-</html>
+        <div id="content">
+            <h1>Lista de incidencias registradas en el servidor:</h1>
+        </div>
+    </div>
+</asp:Content>
