@@ -11,7 +11,14 @@ namespace webYelabay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                LabelUsuario.Visible = false;
+                LabelErrorEmail.Visible = false;
+                LabelErrorPassword.Visible = false;
+                LabelErrorPassworddiferente.Visible = false;
 
+            }
         }
     }
 }
