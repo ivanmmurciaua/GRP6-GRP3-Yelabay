@@ -60,7 +60,7 @@
                  </asp:TableCell> 
                  <asp:TableCell>750€</asp:TableCell>
                 <asp:TableCell>
-                    <asp:Button ID="EliminarProducto2" runat="server" Text="X" ForeColor="Red" Font-Bold="True" />
+                    <asp:Button ID="EliminarProducto2" runat="server" Text="X" ForeColor="Red" Font-Bold="True" OnClick="EliminarProducto2_Click" />
 
                 </asp:TableCell>
                 </asp:TableRow>
@@ -83,7 +83,7 @@
                  </asp:TableCell> 
                  <asp:TableCell>100€</asp:TableCell>
                 <asp:TableCell>
-                    <asp:Button ID="EliminarProducto3" runat="server" Text="X" ForeColor="Red" Font-Bold="True" />
+                    <asp:Button ID="EliminarProducto3" runat="server" Text="X" ForeColor="Red" Font-Bold="True" OnClick="EliminarProducto2_Click"/>
 
                 </asp:TableCell>
                 </asp:TableRow>

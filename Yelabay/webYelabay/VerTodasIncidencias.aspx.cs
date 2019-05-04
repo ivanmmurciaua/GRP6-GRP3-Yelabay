@@ -13,5 +13,20 @@ namespace webYelabay
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)//De prueba
+        {
+            Response.Redirect("VerIncidencia.aspx");
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)//De prueba
+        {
+
+        }
+
+        protected void Button3_Click(object sender, EventArgs e)//De prueba
+        {
+
+        }
     }
 }
