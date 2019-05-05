@@ -11,7 +11,16 @@ namespace webYelabay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                LabelError.Visible = false;
+            }
+                
+        }
 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("/Register.aspx");
         }
     }
 }
