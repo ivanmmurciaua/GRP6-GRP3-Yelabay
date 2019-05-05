@@ -5,9 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer">
         <div id ="title">
-            <h1>Bienvenid@</h1>
         </div>
         <div id="content">
+            <h1>Bienvenid@</h1>
             </div>
             <h1>Yelabay.com, Tu Tienda De Tecnología.</h1>
         <div
