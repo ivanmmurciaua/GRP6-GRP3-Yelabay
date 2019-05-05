@@ -7,5 +7,10 @@
         <div id ="title">
             <h1>Catálogo</h1>
         </div>
+        <b>HyperX Predator DDR4 RGB HX432C16PB3A/8</b>
+        <br />
+        <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonRam" ImageUrl="images/ram.png" Visible="true" OnClick="buttonRam_Click"></asp:ImageButton>
+
+
     </div>
 </asp:Content>
