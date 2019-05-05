@@ -13,5 +13,9 @@ namespace webYelabay
         {
 
         }
+        protected void buttonRam_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("VerProducto.aspx");
+        }
     }
 }
