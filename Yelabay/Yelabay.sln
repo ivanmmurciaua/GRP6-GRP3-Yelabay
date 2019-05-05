@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "library", "library\library.csproj", "{552511FB-B9E3-4773-93F6-91AAE0B6ABA7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webYelabay", "webYelabay\webYelabay.csproj", "{F5388628-9361-487F-9878-C207617B2341}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{552511FB-B9E3-4773-93F6-91AAE0B6ABA7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{552511FB-B9E3-4773-93F6-91AAE0B6ABA7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{552511FB-B9E3-4773-93F6-91AAE0B6ABA7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5388628-9361-487F-9878-C207617B2341}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5388628-9361-487F-9878-C207617B2341}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5388628-9361-487F-9878-C207617B2341}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5388628-9361-487F-9878-C207617B2341}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

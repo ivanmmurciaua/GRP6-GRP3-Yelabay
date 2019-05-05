@@ -17,8 +17,8 @@ namespace library
 
 
         //Metodos publicos
-        public int getCantidad() { return cantidad; }//Obtendremos la cantidad del producto elegido en el carrito
-        public float getPreciProdxCant() { return precioProdxCant; }//Obtendremos la cantidad del producto elegido en el carrito por el precio
+        public int getCantidad() { return 1; }//Obtendremos la cantidad del producto elegido en el carrito
+        public float getPreciProdxCant() { return 1; }//Obtendremos la cantidad del producto elegido en el carrito por el precio
         public float getPrecioTotal() { return precioTotal; }
 
 
@@ -44,7 +44,7 @@ namespace library
             
             //Lo de abajo quiza va en CarritoCAD
             productos.Add(producto);
-            cantidad.Add(cantidad);
+            this.cantidad.Add(cantidad);
             precioProdxCant.Add(producto.getPrecio()*cantidad);
             precioTotal += producto.getPrecio() * cantidad;
             anyadido = true;
@@ -54,13 +54,13 @@ namespace library
 
         public bool eliminarProducto(ProductoEN producto)
         {
-            bool eliminado;
+            bool eliminado=true;
 
             for(int i=0; i < productos.Count(); i++)
             {
-                if (producto.codigo==productos[i].codigo)
+                if (producto.getCodigo()==productos[i].getCodigo())
                 {
-                    productos.Remove(i);
+                    productos.Remove(producto);
                     cantidad.Remove(i);
                     precioTotal -= precioProdxCant[i];
                     precioProdxCant.Remove(i);
@@ -77,10 +77,10 @@ namespace library
 
             for (int i = 0; i < productos.Count(); i++)
             {
-                if (producto.codigo == productos[i].codigo)
+                if (producto.getCodigo() == productos[i].getCodigo())
                 { 
                     cantidad[i]=nuevaCantidad;
-                    precioProdxCant[i] = nuevaCantidad * productos[i].precio;
+                    precioProdxCant[i] = nuevaCantidad * productos[i].getPrecio();
                     precioTotal -= precioProdxCant[i];
                     alterado=true;
                 }
@@ -111,7 +111,7 @@ namespace library
 
         public bool deleteCarrito()
         {
-            bool deleted;
+            bool deleted=true;
             CarritoCAD cad = new CarritoCAD();
 
             if (cad.deleteCarrito(this)) deleted = true;
@@ -121,7 +121,7 @@ namespace library
         
         public bool readCarrito()
         {
-            bool leido = falso;
+            bool leido = false;
             CarritoCAD cad = new CarritoCAD();
 
             if (cad.readCarrito(this))
