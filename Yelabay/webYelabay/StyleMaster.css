@@ -23,11 +23,11 @@
 }
 
 body {
-	margin: 0;
-	padding: 0;
-	height: 100%;
-	font-family:Corbel;
-    background-color: beige;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: white;
 }
 
 #container {
@@ -76,12 +76,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8800', end
 }
 
 #footer {
-	clear: both;
-	position: fixed;
+    clear: both;
+    position: fixed;
     width: 100%;
-	bottom: 0;
-    background-color: darkorange;
-    
+    bottom: 0;
+    background-color: #249cf4;
 }
 
 .column-left {
