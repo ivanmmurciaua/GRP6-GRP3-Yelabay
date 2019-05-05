@@ -13,5 +13,11 @@ namespace webYelabay
         {
 
         }
+        protected void addCarrito_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Carrito.aspx");
+        }
+
+        
     }
 }
