@@ -68,7 +68,7 @@ Asignación EN:
 * Limpiar ambos proyectos y la solución, y a continuación compilar solución
 * Ctrl + F5
 
-## Incluido en la entrega:
+### Incluido en la entrega:
 - Interfaz web básica, junto a su menú correspondiente y enlaces a distintas páginas ya realizadas.
 - Visualización de articulo, login y demás funcionalidades que serán operativos en la próxima entrega.
 - Base de datos abierta a cambios en sus tablas
