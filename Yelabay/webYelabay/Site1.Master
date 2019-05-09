@@ -15,6 +15,10 @@
            <div id="header">
 
                <div class =" column-left">
+
+               <asp:ImageMap ID="ImageMap1" runat="server" ImageUrl="images/yelabay.png" Height="39px" Width="175px">
+               </asp:ImageMap>
+                   <br>
                     <asp:Menu ID="MenuLeft" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" class= "center" style="text-align: center" RenderingMode="List" OnMenuItemClick="MenuLeft_MenuItemClick">
                     <Items>
                         <asp:MenuItem Text="Inicio" Value="home"></asp:MenuItem>
@@ -31,7 +35,7 @@
                 </div>
 
                 <div class =" column-right">
-                    <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonProfile" ImageUrl="images/perfil.png" Visible="false" OnClick="buttonProfile_Click"  Height="21px" Width="22px" ></asp:ImageButton>
+                    <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonProfile" ImageUrl="images/perfil.png"  OnClick="buttonProfile_Click"  Height="21px" Width="22px" ></asp:ImageButton>
                     <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonLogin" ImageUrl="images/login.png" OnClick="buttonLogin_Click" Height="21px" Width="22px" ></asp:ImageButton>
                     <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonCarrito" ImageUrl="images/carrito.png" OnClick="buttonCarrito_Click"  Height="21px" Width="22px"></asp:ImageButton>
                     <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonLogout" ImageUrl="images/cerrarSesion.png" Visible="false" OnClick="buttonLogout_Click"  Height="21px" Width="22px"></asp:ImageButton>
@@ -39,18 +43,46 @@
 
            </div>
            <div id="body">
+             
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
            </div>
+            
+           <html lang="es">
+               <head>
+                   <title>SLIDER AUTOMATICO</title>
+                   <meta charset="utf-8">
+                   <meta name="viewport" content="width=device-width, user-scalable=no,
+                       initial-scale=1, maximum-scale=1, minimum-scale=1">
+                        <link rel="stylesheet" href="estilos.css">
+               </head>
+
+               <body>
+                   <div class="slider">
+                       <ul>
+                           <li><img src="images/Banner1.png" alt=""></li>
+                           <li><img src="images/Banner2.png" alt=""></li>
+                           <li><img src="images/Banner3.png" alt=""></li>
+                           <li><img src="images/Banner4.png" alt=""></li>
+                       </ul>
+                   </div>
+               </body>
+           </html>
+
+
            <div id="footer">
+
                <div class ="center">
                     <asp:Menu ID="MenuContact" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="List" OnMenuItemClick="MenuContact_MenuItemClick">
                         <Items><asp:MenuItem Text="" Value="contact"></asp:MenuItem></items>
                     </asp:Menu>
+                  
                     © Yelabay.com Tu Tienda De Tecnología.
                 </div>
            </div>
         </div>
+        <p>
+            &nbsp;</p>
     </form>
 </body>
 </html>

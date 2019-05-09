@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Usuario.aspx.cs" Inherits="webYelabay.Usuario" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -41,18 +40,8 @@
                 <div class="invisibleCol">
                     <asp:Label ID="LabelUsername" runat="server" ></asp:Label>
                 </div>
-            </div>
-            <div class="invisibleRow">
-                <div class="invisibleCol">
-                    <asp:Button ID="ButtonModify" style="background:#249cf4" runat="server" Text="Actualizar Información" OnClick="ButtonModify_Click" />
-                </div>
-            </div>
-            <asp:Menu ID="MenuOrders" runat="server" StaticSubMenuIndent="16px" OnMenuItemClick="MenuOrders_MenuItemClick">
-                <Items>
-                    <asp:MenuItem Text="Ver Pedidos" Value="orders"></asp:MenuItem>
-                </Items>
-            </asp:Menu>
-        </div>
+           
+          
     </div>
 </asp:Content>
 
