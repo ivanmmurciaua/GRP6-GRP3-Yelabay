@@ -60,14 +60,7 @@ body {
 }
 
 #header {
-    background: rgba(255,136,0,1);
-    background: -moz-linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,136,0,1)), color-stop(19%, rgba(255,174,52,1)), color-stop(50%, rgba(255,188,106,1)), color-stop(81%, rgba(255,174,52,1)), color-stop(100%, rgba(255,136,0,1)));
-    background: -webkit-linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    background: linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1 );
+  backface-color: white;
 }
 
 #body {
@@ -298,3 +291,49 @@ input#ContentPlaceHolder1_SearchModelButton {
 .comentariosProducto {
     width: 50%;
 }
+/*
+    AQUI COMIENZA EL ESTILO DEL SLIDER.
+*/
+.slider {
+    width: 95%;
+    margin: auto;
+    overflow: hidden; /* Los elementos(imagenes) ya no se quedan fuera.*/
+}
+
+.slider ul {
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: cambio 20s infinite alternate;
+    animation-timing-function: ease-in; /*empieza rapido y termina lento(paso de la img)*/
+    
+}
+
+ .slider li {
+     width : 100%;
+     list-style: none;
+}
+
+ .slider img {
+     width : 100%;
+ }
+
+ @keyframes cambio{
+     0% { margin-left: 0; }
+     20% { margin-left: 0; }
+     /*TIEMPO QUE TARDA EN PASAR LA IMAGEN, 20*0,5= 1s*/
+     25% { margin-left: -100%; }
+     45% { margin-left: -100%; }
+
+    50% {  margin-left: -200%; }
+    70% { margin-left: -200%;  }
+
+    75% { margin-left: -300%; }
+    100% { margin-left: -300%; }
+
+       
+ }
+
+    /* 
+        AQUÍ FINALIZA.
+    */
