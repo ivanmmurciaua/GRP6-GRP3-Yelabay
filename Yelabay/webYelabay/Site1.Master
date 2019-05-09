@@ -43,32 +43,11 @@
 
            </div>
            <div id="body">
+               <br><br><br>
              
                 <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
                 </asp:ContentPlaceHolder>
            </div>
-            
-           <html lang="es">
-               <head>
-                   <title>SLIDER AUTOMATICO</title>
-                   <meta charset="utf-8">
-                   <meta name="viewport" content="width=device-width, user-scalable=no,
-                       initial-scale=1, maximum-scale=1, minimum-scale=1">
-                        <link rel="stylesheet" href="estilos.css">
-               </head>
-
-               <body>
-                   <div class="slider">
-                       <ul>
-                           <li><img src="images/Banner1.png" alt=""></li>
-                           <li><img src="images/Banner2.png" alt=""></li>
-                           <li><img src="images/Banner3.png" alt=""></li>
-                           <li><img src="images/Banner4.png" alt=""></li>
-                       </ul>
-                   </div>
-               </body>
-           </html>
-
 
            <div id="footer">
 
