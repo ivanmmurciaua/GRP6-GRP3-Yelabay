@@ -12,5 +12,6 @@
         <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonRam" ImageUrl="images/ram.png" Visible="true" OnClick="buttonRam_Click"></asp:ImageButton>
 
 
+
     </div>
 </asp:Content>
