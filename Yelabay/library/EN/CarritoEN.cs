@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class CarritoEN
+    public class CarritoEN
     {
         //Atributos privados
-        private List<ProductoEN> productos;// = new List<ProductoEN>();
-        private List<int> cantidad;// { get; set; }//Numero de unidades de articulos
-        private List<float> precioProdxCant;// { get; set; }//Precio de los articulos por cantidad de este
+        public List<ProductoEN> productos;// = new List<ProductoEN>();
+        public List<int> cantidad;// { get; set; }//Numero de unidades de articulos
+        public List<float> precioProdxCant;// { get; set; }//Precio de los articulos por cantidad de este
         private float precioTotal;// { get; set; }//Suma total de todos los productos del carrito
 
 
@@ -80,8 +80,9 @@ namespace library
                 if (producto.getCodigo() == productos[i].getCodigo())
                 { 
                     cantidad[i]=nuevaCantidad;
-                    precioProdxCant[i] = nuevaCantidad * productos[i].getPrecio();
                     precioTotal -= precioProdxCant[i];
+                    precioProdxCant[i] = nuevaCantidad * productos[i].getPrecio();
+                    precioTotal += precioProdxCant[i];
                     alterado=true;
                 }
             }
