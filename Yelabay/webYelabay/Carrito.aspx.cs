@@ -21,8 +21,16 @@ namespace webYelabay
             carro.anyadirProducto(prod2, 1);
             carro.anyadirProducto(prod3, 3);
 
+            mostrarTabla(carro);
 
-            for (int i=0; i< carro.productos.Count; i++)
+
+
+
+        }
+
+        protected void mostrarTabla(CarritoEN carro)
+        {
+            for (int i = 0; i < carro.productos.Count; i++)
             {
                 TableRow row = new TableRow();
 
@@ -54,7 +62,11 @@ namespace webYelabay
                 TableCell celdaEliminar = new TableCell();
                 Button botonEliminar = new Button();
                 botonEliminar.Text = "X";
-                botonEliminar.OnClick = "EliminarProducto1_Click";
+                botonEliminar.Font.Bold = true;
+                botonEliminar.ForeColor = System.Drawing.Color.Red;
+                botonEliminar.Attributes.Add("runat", "server");
+                //botonEliminar.OnClick = "EliminarProducto1_Click";
+                botonEliminar.Click += new EventHandler(this.EliminarProducto1_Click);
                 celdaEliminar.Controls.Add(botonEliminar);
                 row.Cells.Add(celdaEliminar);
 
@@ -72,22 +84,33 @@ namespace webYelabay
             TableCell celdaVacia3 = new TableCell();
             celdaVacia3.Text = "";
             ultimaFila.Cells.Add(celdaVacia3);
-            TableCell celdaPrecio = new TableCell();
-            celdaPrecio.Text = "Precio Total:";
-            ultimaFila.Cells.Add(celdaPrecio);
-            TableCell precioTotal= new TableCell();
+            TableCell celdaVacia4 = new TableCell();
+            celdaVacia4.Text = "";
+            ultimaFila.Cells.Add(celdaVacia4);
+
+            
+            TableCell precioTotal = new TableCell();
             precioTotal.Text = carro.getPrecioTotal().ToString();
             ultimaFila.Cells.Add(precioTotal);
+            TableCell celdaPrecio = new TableCell();
+            celdaPrecio.Text = "€ en total";
+            ultimaFila.Cells.Add(celdaPrecio);
 
             tablaCarrito.Rows.Add(ultimaFila);
+        }
 
 
+        protected void eliminarFila(int fila)
+        {
+            TableRow rw = tablaCarrito.Rows[fila];
+            tablaCarrito.Rows.Remove(rw);
         }
 
         protected void EliminarProducto1_Click(object sender, EventArgs e)//De prueba
         {
             TableRow rw = tablaCarrito.Rows[1];
             tablaCarrito.Rows.Remove(rw);
+            //carro.eliminarProducto(carro.productos[1]);
         }
 
         protected void Comprar_Click(object sender, EventArgs e)//De prueba
