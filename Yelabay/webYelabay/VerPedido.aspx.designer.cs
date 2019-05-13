@@ -10,7 +10,7 @@
 namespace webYelabay {
     
     
-    public partial class Verpedid {
+    public partial class Pedido {
         
         /// <summary>
         /// Control tablaCarrito.
