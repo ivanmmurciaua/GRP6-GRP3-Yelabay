@@ -18,7 +18,7 @@ namespace webYelabay
             ProductoEN prod3 = new ProductoEN(5, "Consola Nintendo Switch Grey + Juego Monopoly", "", 7);
 
             carro.anyadirProducto(prod1, 2);
-            carro.anyadirProducto(prod2, 1);
+            carro.anyadirProducto(prod2, 10);
             carro.anyadirProducto(prod3, 3);
 
             mostrarTabla(carro);

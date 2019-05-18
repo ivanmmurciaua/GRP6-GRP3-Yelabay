@@ -17,7 +17,6 @@
                  <asp:TableCell></asp:TableCell>
                  <asp:TableCell>Cantidad</asp:TableCell> 
                  <asp:TableCell></asp:TableCell>
-                 <asp:TableCell></asp:TableCell>
                  <asp:TableCell>Precio</asp:TableCell>
                  <asp:TableCell></asp:TableCell>
                 </asp:TableRow>
