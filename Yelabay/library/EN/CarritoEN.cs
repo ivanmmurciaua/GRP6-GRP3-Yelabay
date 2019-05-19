@@ -60,8 +60,9 @@ namespace library
             {
                 if (producto.getCodigo()==productos[i].getCodigo())
                 {
-                    productos.Remove(producto);
-                    cantidad.Remove(i);
+                    //productos.Remove(producto);
+                    productos.RemoveAt(i);
+                    cantidad.RemoveAt(i);
                     precioTotal -= precioProdxCant[i];
                     precioProdxCant.Remove(i);
                     eliminado = true;

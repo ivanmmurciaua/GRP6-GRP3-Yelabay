@@ -21,10 +21,9 @@ namespace webYelabay
             carro.anyadirProducto(prod1, 2);
             carro.anyadirProducto(prod2, 10);
             carro.anyadirProducto(prod3, 3);
+            //carro.eliminarProducto(prod3);
 
             mostrarTabla(carro);
-
-
 
 
         }
@@ -66,8 +65,8 @@ namespace webYelabay
                 botonEliminar.Font.Bold = true;
                 botonEliminar.ForeColor = System.Drawing.Color.Red;
                 botonEliminar.Attributes.Add("runat", "server");
-                //botonEliminar.OnClick = "EliminarProducto1_Click";
-                botonEliminar.Click += new EventHandler(this.EliminarProducto1_Click);
+                botonEliminar.Click += (sendr, EventArgs) => { EliminarProducto1_Click(sendr, EventArgs, carro, i); }; ;
+                //botonEliminar.Click += new EventHandler(this.EliminarProducto1_Click);
                 celdaEliminar.Controls.Add(botonEliminar);
                 row.Cells.Add(celdaEliminar);
 
@@ -107,10 +106,15 @@ namespace webYelabay
             tablaCarrito.Rows.Remove(rw);
         }
 
-        protected void EliminarProducto1_Click(object sender, EventArgs e)//De prueba
+        protected void EliminarProducto1_Click(object sender, EventArgs e, CarritoEN carro, int posicion)//De prueba
         {
-            TableRow rw = tablaCarrito.Rows[1];
+
+            TableRow rw = tablaCarrito.Rows[posicion];
             tablaCarrito.Rows.Remove(rw);
+            carro.eliminarProducto(carro.productos[posicion]);
+            //UpdatePanel1.Update();
+            //mostrarTabla(carro);
+            
             //carro.eliminarProducto(carro.productos[1]);
         }
 
