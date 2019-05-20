@@ -25,11 +25,12 @@
                         </asp:TableRow>
                     </asp:Table>
 
-
+                    <asp:Label ID="CuentaProductos" runat="server"></asp:Label>
                 </ContentTemplate>
             </asp:UpdatePanel>
             <asp:Button ID="Comprar" runat="server" Text="Confirmar Compra" OnClick="Comprar_Click"/>
             <asp:Label ID="PruebaCompra" runat="server"></asp:Label>
+            
         </div>
     </div>
 </asp:Content>

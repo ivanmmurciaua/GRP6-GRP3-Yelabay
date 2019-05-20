@@ -40,6 +40,15 @@ namespace webYelabay {
         protected global::System.Web.UI.WebControls.Table tablaCarrito;
         
         /// <summary>
+        /// Control CuentaProductos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CuentaProductos;
+        
+        /// <summary>
         /// Control Comprar.
         /// </summary>
         /// <remarks>

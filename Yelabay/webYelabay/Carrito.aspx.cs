@@ -22,13 +22,41 @@ namespace webYelabay
             carro.anyadirProducto(prod2, 10);
             carro.anyadirProducto(prod3, 3);
             //carro.eliminarProducto(prod3);
-
-            mostrarTabla(carro);
+            mostrarDatosTabla(carro);
+            mostrarPrecioTotal(carro);
 
 
         }
 
-        protected void mostrarTabla(CarritoEN carro)
+        protected void mostrarPrecioTotal(CarritoEN carro)
+        {
+            TableRow ultimaFila = new TableRow();
+
+            TableCell celdaVacia = new TableCell();
+            celdaVacia.Text = "";
+            ultimaFila.Cells.Add(celdaVacia);
+            TableCell celdaVacia2 = new TableCell();
+            celdaVacia2.Text = "";
+            ultimaFila.Cells.Add(celdaVacia2);
+            TableCell celdaVacia3 = new TableCell();
+            celdaVacia3.Text = "";
+            ultimaFila.Cells.Add(celdaVacia3);
+            TableCell celdaVacia4 = new TableCell();
+            celdaVacia4.Text = "";
+            ultimaFila.Cells.Add(celdaVacia4);
+
+
+            TableCell precioTotal = new TableCell();
+            precioTotal.Text = carro.getPrecioTotal().ToString();
+            ultimaFila.Cells.Add(precioTotal);
+            TableCell celdaPrecio = new TableCell();
+            celdaPrecio.Text = "€ en total";
+            ultimaFila.Cells.Add(celdaPrecio);
+
+            tablaCarrito.Rows.Add(ultimaFila);
+        }
+
+        protected void mostrarDatosTabla(CarritoEN carro)
         {
             for (int i = 0; i < carro.productos.Count; i++)
             {
@@ -41,7 +69,7 @@ namespace webYelabay
                 TableCell celdaDecrementar = new TableCell();
                 Button botonDecrementar = new Button();
                 botonDecrementar.Text = "-";
-                //botonDecrementar.OnClick=carro.alterarCantidadProducto(carro.productos[i], (carro.cantidad[i] - 1));
+                botonDecrementar.Click += (sendr, EventArgs) => { DecrementarProducto_Click(sendr, EventArgs, carro, i); }; ;
                 celdaDecrementar.Controls.Add(botonDecrementar);
                 row.Cells.Add(celdaDecrementar);
 
@@ -50,9 +78,10 @@ namespace webYelabay
                 row.Cells.Add(celdaCantidad);
 
                 TableCell celdaIncrementar = new TableCell();
-                Button botonINcrementar = new Button();
-                botonINcrementar.Text = "+";
-                celdaIncrementar.Controls.Add(botonINcrementar);
+                Button botonIncrementar = new Button();
+                botonIncrementar.Text = "+";
+                botonIncrementar.Click += (sendr, EventArgs) => { IncrementarProducto_Click(sendr, EventArgs, carro, i); }; ;
+                celdaIncrementar.Controls.Add(botonIncrementar);
                 row.Cells.Add(celdaIncrementar);
 
                 TableCell precioProdxCant = new TableCell();
@@ -73,48 +102,71 @@ namespace webYelabay
                 tablaCarrito.Rows.Add(row);
             }
 
-            TableRow ultimaFila = new TableRow();
-
-            TableCell celdaVacia = new TableCell();
-            celdaVacia.Text = "";
-            ultimaFila.Cells.Add(celdaVacia);
-            TableCell celdaVacia2 = new TableCell();
-            celdaVacia2.Text = "";
-            ultimaFila.Cells.Add(celdaVacia2);
-            TableCell celdaVacia3 = new TableCell();
-            celdaVacia3.Text = "";
-            ultimaFila.Cells.Add(celdaVacia3);
-            TableCell celdaVacia4 = new TableCell();
-            celdaVacia4.Text = "";
-            ultimaFila.Cells.Add(celdaVacia4);
-
             
-            TableCell precioTotal = new TableCell();
-            precioTotal.Text = carro.getPrecioTotal().ToString();
-            ultimaFila.Cells.Add(precioTotal);
-            TableCell celdaPrecio = new TableCell();
-            celdaPrecio.Text = "€ en total";
-            ultimaFila.Cells.Add(celdaPrecio);
-
-            tablaCarrito.Rows.Add(ultimaFila);
         }
 
-
-        protected void eliminarFila(int fila)
+        protected void DecrementarProducto_Click(object sender, EventArgs e, CarritoEN carro, int posicion)//De prueba
         {
-            TableRow rw = tablaCarrito.Rows[fila];
-            tablaCarrito.Rows.Remove(rw);
+
+            for (int i = 1; i < tablaCarrito.Rows.Count; i++)
+            {
+                if (carro.productos[posicion - 1].getNombre() == tablaCarrito.Rows[i].Cells[0].Text)
+                {
+                    if (carro.alterarCantidadProducto(carro.productos[posicion - 1], (carro.cantidad[posicion - 1] - 1)))
+                    {
+                        //int cantidadAumentar = int.Parse(tablaCarrito.Rows[i].Cells[2].Text);
+                        //cantidadAumentar--;
+                        tablaCarrito.Rows[i].Cells[2].Text = carro.cantidad[posicion - 1].ToString()/*cantidadAumentar.ToString()*/;
+                    }
+                    else CuentaProductos.Text = "No se pudo decrementar el producto: " + carro.productos[posicion - 1].getNombre();
+                }
+            }
         }
 
-        protected void EliminarProducto1_Click(object sender, EventArgs e, CarritoEN carro, int posicion)//De prueba
+        protected void IncrementarProducto_Click(object sender, EventArgs e, CarritoEN carro, int posicion)//De prueba
         {
 
-            TableRow rw = tablaCarrito.Rows[posicion];
-            tablaCarrito.Rows.Remove(rw);
-            carro.eliminarProducto(carro.productos[posicion]);
-            //UpdatePanel1.Update();
-            //mostrarTabla(carro);
-            
+            //TableRow rw = tablaCarrito.Rows[posicion];
+            //tablaCarrito.Rows.Remove(rw);
+            //carro.eliminarProducto(carro.productos[posicion-1]);
+            for (int i = 1; i < tablaCarrito.Rows.Count; i++)
+            {
+                if (carro.productos[posicion - 1].getNombre() == tablaCarrito.Rows[i].Cells[0].Text)
+                {
+                    if (carro.alterarCantidadProducto(carro.productos[posicion - 1], (carro.cantidad[posicion - 1] + 1)))
+                    {
+                        //int cantidadAumentar= int.Parse(tablaCarrito.Rows[i].Cells[2].Text);
+                        //cantidadAumentar++;
+                        tablaCarrito.Rows[i].Cells[2].Text= carro.cantidad[posicion - 1].ToString()/*cantidadAumentar.ToString()*/;
+                    }
+                    else CuentaProductos.Text = "No se pudo incrementar el producto: " + carro.productos[posicion - 1].getNombre();
+                }
+            }
+        }
+
+        protected void EliminarProducto1_Click(object sender, EventArgs e, CarritoEN carro, int posicion)
+        {
+
+            //CuentaProductos.Text = "Hola " + carro.productos[posicion-1].getNombre() + " = " + tablaCarrito.Rows[posicion-1].Cells[0].Text;
+            //carro.eliminarProducto(carro.productos[posicion - 1]);
+            //CuentaProductos.Text = "A ver " + carro.productos.Count.ToString();
+            for (int i = 1; i < tablaCarrito.Rows.Count; i++)
+            {
+                if (carro.productos[posicion - 1].getNombre()==tablaCarrito.Rows[i].Cells[0].Text)
+                {
+                    if (carro.eliminarProducto(carro.productos[posicion - 1]))
+                    {
+                        TableRow row = tablaCarrito.Rows[i];
+                        tablaCarrito.Rows.Remove(row);
+                    }
+                    else CuentaProductos.Text = "No se pudo eliminar el producto: " + carro.productos[posicion - 1].getNombre();
+                }   
+            }
+            //bool eliminado=carro.eliminarProducto(carro.productos[posicion - 1]);
+            //if (eliminado) CuentaProductos.Text += " Eliminado " + carro.productos[posicion - 1].getNombre();
+            //mostrarDatosTabla(carro);
+            //mostrarPrecioTotal(carro);
+
             //carro.eliminarProducto(carro.productos[1]);
         }
 

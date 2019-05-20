@@ -76,15 +76,18 @@ namespace library
         {
             bool alterado=false;
 
-            for (int i = 0; i < productos.Count(); i++)
+            if (nuevaCantidad > 0)
             {
-                if (producto.getCodigo() == productos[i].getCodigo())
-                { 
-                    cantidad[i]=nuevaCantidad;
-                    precioTotal -= precioProdxCant[i];
-                    precioProdxCant[i] = nuevaCantidad * productos[i].getPrecio();
-                    precioTotal += precioProdxCant[i];
-                    alterado=true;
+                for (int i = 0; i < productos.Count(); i++)
+                {
+                    if (producto.getCodigo() == productos[i].getCodigo())
+                    {
+                        cantidad[i] = nuevaCantidad;
+                        precioTotal -= precioProdxCant[i];
+                        precioProdxCant[i] = nuevaCantidad * productos[i].getPrecio();
+                        precioTotal += precioProdxCant[i];
+                        alterado = true;
+                    }
                 }
             }
 
