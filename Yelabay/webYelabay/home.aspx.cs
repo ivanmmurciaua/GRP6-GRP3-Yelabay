@@ -13,5 +13,23 @@ namespace webYelabay
         {
 
         }
+        protected void LinkCatalogo_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = LinkCatalogo.SelectedValue;
+
+            Response.Redirect("VerTodosProductos.aspx");
+        }
+        protected void LinkRegistro_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = LinkRegistro.SelectedValue;
+
+            Response.Redirect("Register.aspx");
+        }
+        protected void LinkLogin_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = LinkLogin.SelectedValue;
+
+            Response.Redirect("Login.aspx");
+        }
     }
 }
