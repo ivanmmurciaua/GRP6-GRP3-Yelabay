@@ -25,6 +25,19 @@ namespace webYelabay
             mostrarDatosTabla(carro);
             mostrarPrecioTotal(carro);
 
+            //COOKIES USER
+            HttpCookie userCookie;
+            userCookie = Request.Cookies["UserID"];
+            if (userCookie != null)
+            {
+                //Label1.Text = "Bienvenida otra vez, " + userCookie.Value;
+                //Se rellena el carrito
+            }
+            else
+            {
+                //Label con= "Para acceder a tu carrito es necesario estar registrado como usuario";
+            }
+
 
         }
 
