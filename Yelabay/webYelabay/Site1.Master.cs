@@ -22,7 +22,7 @@ namespace webYelabay
                     Response.Redirect("Home.aspx");
                     break;
                 default:
-                    Response.Redirect("VerTodosProductos.aspx");
+                    Response.Redirect("VerTodosProductos.aspx?cat="+itemClicked);
                     break;
             }
         }

@@ -22,12 +22,12 @@
                     <asp:Menu ID="MenuLeft" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" class= "center" style="text-align: center" RenderingMode="List" OnMenuItemClick="MenuLeft_MenuItemClick">
                     <Items>
                         <asp:MenuItem Text="Inicio" Value="home"></asp:MenuItem>
-                        <asp:MenuItem Text="Catálogo" Value="producto">
-                            <asp:MenuItem Text="Componentes" Value="componentes"></asp:MenuItem>
-                            <asp:MenuItem Text="Ordenadores" Value="ordenadores"></asp:MenuItem>
-                            <asp:MenuItem Text="Audio / Foto / Vídeo" Value="sonido"></asp:MenuItem>
-                            <asp:MenuItem Text="Periféricos" Value="perifericos"></asp:MenuItem>
-                            <asp:MenuItem Text="Consolas / Gaming" Value="consolas"></asp:MenuItem>
+                        <asp:MenuItem Text="Catálogo" Value="Catalogo">
+                            <asp:MenuItem Text="Componentes" Value="Componentes"></asp:MenuItem>
+                            <asp:MenuItem Text="Ordenadores" Value="Ordenadores"></asp:MenuItem>
+                            <asp:MenuItem Text="Impresoras" Value="Impresoras"></asp:MenuItem>
+                            <asp:MenuItem Text="Periféricos" Value="Perifericos"></asp:MenuItem>
+                            <asp:MenuItem Text="Consolas / Gaming" Value="Consolas/Gaming"></asp:MenuItem>
                         </asp:MenuItem>
                     </Items>
                     <StaticMenuItemStyle Font-Size="XX-Large" ForeColor="Black" />

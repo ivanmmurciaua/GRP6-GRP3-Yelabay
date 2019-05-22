@@ -11,6 +11,8 @@ namespace webYelabay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var categ = Request.QueryString["cat"];
+            Titulo.Text = "<h1>" + categ + "</h1>";
 
         }
         protected void buttonRam_Click(object sender, ImageClickEventArgs e)
