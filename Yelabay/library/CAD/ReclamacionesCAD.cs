@@ -18,7 +18,7 @@ namespace library
         public ReclamacionesCAD()
         {
             //se establece la conexion con la BD
-            //constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
+            constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
         }
 
         public bool createReclamacion(ReclamacionesEN reclamacion)
