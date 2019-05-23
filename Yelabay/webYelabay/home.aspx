@@ -5,12 +5,18 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer">
         <div id ="title">
-            <h1>Bienvenid@</h1>
         </div>
         <div id="content">
+            <h1>Bienvenid@</h1>
             </div>
             <h1>Yelabay.com, Tu Tienda De Tecnología.</h1>
-        <div
+        <div class="slider">
+            <ul>
+                <li><img src="images/Banner1.png" alt=""></li>
+                <li><img src="images/Banner2.png" alt=""></li>
+                <li><img src="images/Banner3.png" alt=""></li>
+                <li><img src="images/Banner4.png" alt=""></li>
+            </ul>
         </div>
     </div>
 </asp:Content>
