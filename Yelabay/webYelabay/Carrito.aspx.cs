@@ -13,7 +13,7 @@ namespace webYelabay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            CarritoEN carro = new CarritoEN();
+            /*CarritoEN carro = new CarritoEN();
             ProductoEN prod1 = new ProductoEN(3, "Disco Sólido Western Digital Green 3d Nand 240gb - Sata Iii - 2.5/6.35cm", "", 30);
             ProductoEN prod2 = new ProductoEN(4, "Caja Minitorre Tacens Anima Ac4", "", 10);
             ProductoEN prod3 = new ProductoEN(5, "Consola Nintendo Switch Grey + Juego Monopoly", "", 7);
@@ -23,7 +23,7 @@ namespace webYelabay
             carro.anyadirProducto(prod3, 3);
             //carro.eliminarProducto(prod3);
             mostrarDatosTabla(carro);
-            mostrarPrecioTotal(carro);
+            mostrarPrecioTotal(carro);*/
 
             //COOKIES USER
             HttpCookie userCookie;
