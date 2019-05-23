@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using library;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace library
 {
@@ -10,77 +15,144 @@ namespace library
     {
         private UsuarioEN usuario;
         private ProductoEN producto;
-        private int numPedido { get; set; }
-        private int articulos { get; set; }
+        
+        private int id { get; set; }
         private string fechaCompra { get; set; }
+        private string fechaEmpaquetado { get; set; }
+        private string fechaEnvio { get; set; }
         private string fechaEntrega { get; set; }
-        private string paisEntrega { get; set; }
-        private string ciudadEntrega { get; set; }
-        private string direccionEntrega { get; set; }
+        private string direccion { get; set; }
+        private string ciudad { get; set; }
+        private string pais { get; set; }
+        private float precioSinIVA { get; set; }
+        private int IVA { get; set; }
+        private float precioConIVA { get; set; }
         private string agenciaDeTransporte { get; set; }
-
-        public int getNumPedido() { return numPedido; }
-        public int getArticulos() { return articulos; }
-        public string getFechaCompra() { return fechaCompra; }
-        public string getFechaEntrega() { return fechaEntrega; }
-        public string getPaisEntrega() { return paisEntrega; }
-        public string getCiudadEntrega() { return ciudadEntrega; }
-        public string getDireccionEntrega() { return direccionEntrega; }
-        public string getAgenciaDeTransporte() { return agenciaDeTransporte; }
+        private string estado { get; set; }
+        
+        public  int id_pbl
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        public string fechaCompra_pbl
+        {
+            get { return fechaCompra; }
+            set { fechaCompra = value; }
+        }
+        public string fechaEmpaquetado_pbl
+        {
+            get { return fechaEmpaquetado; }
+            set { fechaEmpaquetado = value; }
+        }
+        public string fechaEnvio_pbl
+        {
+            get { return fechaEnvio; }
+            set { fechaEnvio = value; }
+        }
+        public string fechaEntrega_pbl
+        {
+            get { return fechaEntrega; }
+            set { fechaEntrega = value; }
+        }
+        public string direccion_pbl
+        {
+            get { return direccion; }
+            set { direccion = value; }
+        }
+        public string ciudad_pbl
+        {
+            get { return ciudad; }
+            set { ciudad = value; }
+        }
+        public string pais_pbl
+        {
+            get { return pais; }
+            set { pais = value; }
+        }
+        public float precioSinIVA_pbl
+        {
+            get { return precioSinIVA; }
+            set { precioSinIVA = value; }
+        }
+        public int IVA_pbl
+        {
+            get { return IVA; }
+            set { IVA = value; }
+        }
+        public float precioConIVA_pbl
+        {
+            get { return precioConIVA; }
+            set { precioConIVA = value; }
+        }
+        public string agenciaDeTransporte_pbl
+        {
+            get { return agenciaDeTransporte; }
+            set { agenciaDeTransporte = value; }
+        }
+        public string estado_pbl
+        {
+            get { return estado; }
+            set { estado = value; }
+        }
         public PedidosEN()
         {
-            numPedido = 0;
-            articulos = 0;
+            id = 0;
             fechaCompra = "";
+            fechaEmpaquetado = "";
             fechaEntrega = "";
-            paisEntrega = "";
-            ciudadEntrega = "";
-            direccionEntrega = "";
-            agenciaDeTransporte = "";
+            direccion = "";
+            ciudad = "";
+            pais = "";
+            precioSinIVA = 0;
+            IVA = 0;
+            precioConIVA = 0;
         }
-        public PedidosEN( int numPedido, int articulos, string fechaCompra, string fechaEntrega, string paisEntrega, string ciudadEntrega, string direccionEntrega, string agenciaDeTransporte )
+        public PedidosEN(string fechaCompra, string fechaEmpaquetado, string fechaEntrega, string pais, string ciudad, string direccion, int precioSinIVA, int precioConIVA, int IVA)
         {
-            this.numPedido = numPedido;
-            this.articulos = articulos;
+            id = 0;
             this.fechaCompra = fechaCompra;
+            this.fechaEmpaquetado = fechaEmpaquetado;
             this.fechaEntrega = fechaEntrega;
-            this.paisEntrega = paisEntrega;
-            this.ciudadEntrega = ciudadEntrega;
-            this.direccionEntrega = direccionEntrega;
-            this.agenciaDeTransporte = agenciaDeTransporte;
-
+            this.pais = pais;
+            this.ciudad = ciudad;
+            this.direccion = direccion;
+            this.precioSinIVA = precioSinIVA;
+            this.precioConIVA = precioConIVA;
         }
         public void createPedido()
         {
             PedidosCAD cad = new PedidosCAD();
             PedidosEN en = new PedidosEN();
+
             cad.createPedido(en);
         }
         public void readPedido()
         {
             PedidosCAD cad = new PedidosCAD();
-            PedidosEN en = new PedidosEN();
-            cad.readPedido(en);
-            numPedido = en.numPedido;
-            articulos = en.articulos;
-            fechaCompra = en.fechaCompra;
-            fechaEntrega = en.fechaEntrega;
-            paisEntrega = en.paisEntrega;
-            ciudadEntrega = en.ciudadEntrega;
-            direccionEntrega = en.direccionEntrega;
-            agenciaDeTransporte = en.agenciaDeTransporte;
+
+            cad.readPedido(this);
         }
         public void updatePedido()
         {
             PedidosCAD cadp = new PedidosCAD();
             PedidosEN en = new PedidosEN();
+
             cadp.updatePedido(en);
         }
         public void deletePedido()
         {
             PedidosCAD cadp = new PedidosCAD();
             PedidosEN en = new PedidosEN();
+
             cadp.deletePedido(en);
+        }
+        public DataSet ListarPedidos()
+        {
+            PedidosCAD cadp = new PedidosCAD();
+
+            return cadp.ListarPedidos(this);
         }
     }
 }
+

@@ -7,11 +7,13 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace webYelabay {
-    
-    
-    public partial class VerTodasIncidencias {
-        
+namespace webYelabay
+{
+
+
+    public partial class VerTodasIncidencias
+    {
+
         /// <summary>
         /// Control TablaIncidencias.
         /// </summary>
@@ -20,7 +22,7 @@ namespace webYelabay {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Table TablaIncidencias;
-        
+
         /// <summary>
         /// Control Button1.
         /// </summary>
@@ -29,7 +31,7 @@ namespace webYelabay {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// Control Button2.
         /// </summary>
@@ -38,7 +40,7 @@ namespace webYelabay {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button2;
-        
+
         /// <summary>
         /// Control Button3.
         /// </summary>

@@ -72,7 +72,7 @@ namespace library
         public void createUsuario()
         {
             UsuarioCAD cad = new UsuarioCAD();
-
+            
             cad.createUsuario(this);
         }
 
@@ -99,7 +99,7 @@ namespace library
         public bool login()
         {
             UsuarioCAD cad = new UsuarioCAD();
-            UsuarioEN en = cad.readBy("nif", Nif);
+            UsuarioEN en = cad.readBy("nif",Nif);
             if (en != null)
             {
                 Email = en.Email;
@@ -122,8 +122,8 @@ namespace library
         public UsuarioEN buscarUsuario(string clave)
         {
             UsuarioCAD cad = new UsuarioCAD();
-            UsuarioEN en = cad.buscarUsuario(clave);
-
+            UsuarioEN en= cad.buscarUsuario(clave);
+            
             return en;
 
         }
@@ -131,13 +131,13 @@ namespace library
         public static bool noexiste(string field, string s)
         {
             UsuarioCAD cad = new UsuarioCAD();
-            /* if (cad.readBy(field, s) == null)
-             {
-                 return true;
-             }
-             else
-             {*/
-            return true;
+           /* if (cad.readBy(field, s) == null)
+            {
+                return true;
+            }
+            else
+            {*/
+                return true;
             //}
         }
     }

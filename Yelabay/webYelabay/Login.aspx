@@ -32,7 +32,7 @@
                 </div>
                 <asp:Label ID="LabelError" runat="server" CssClass="ErrorMessage" Text="La contraseña o el usuario son incorrectos"></asp:Label>
             </div>
-            <asp:Button ID="Button1" runat="server" Text="Log in" />
+            <asp:Button ID="Button1" runat="server" Text="Log in" OnClick="Button1_Click1" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; O si aun no estas registrado pulsa aquí para registrarte:&nbsp;
             <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Registrar" />
             <br />

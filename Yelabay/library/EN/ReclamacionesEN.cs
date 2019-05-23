@@ -12,13 +12,13 @@ namespace library
         private UsuarioEN usuarioReclama;
         private string reclamacion { get; set; }
         private string fecha { get; set; }
-        private bool devolucion {get; set;}
+        private bool devolucion { get; set; }
 
 
         //metodos publicos
 
         public UsuarioEN GetUsuarioReclama() { return usuarioReclama; }
-        public string getReclamacion() {return reclamacion; }
+        public string getReclamacion() { return reclamacion; }
         public string getFecha() { return fecha; }
         public bool getDevolucion() { return devolucion; }
 

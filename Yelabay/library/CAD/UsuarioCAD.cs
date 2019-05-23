@@ -37,13 +37,13 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand co = new SqlCommand("INSERT INTO USUARIOS (nombre,apellido1,apellido2,nif,email,contrasenya,tipo) VALUES ('" +
+                SqlCommand co = new SqlCommand("INSERT INTO USUARIOS (nombre,apellido1,apellido2,nif,email,contrasenya,tipo) VALUES ('" + 
                   us.Nombre + " ','" + us.Apellidos1 + "','" + us.Apellidos2 + "','" + us.Nif + "','" + us.Email + "','" + us.Contraseña
                   + "','" + us.Direccion + "') ", c);
-                co.ExecuteNonQuery();
+                 co.ExecuteNonQuery();
                 res = true;
-
-
+               
+                 
             }
             catch (SqlException e)
             {
@@ -54,7 +54,7 @@ namespace library
                 c.Close();
             }
             return res;
-
+            
         }
 
         public void borrarUsuario(UsuarioEN en)
@@ -80,9 +80,9 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("SELECT * FROM USUARIOS WHERE nif =" + clave + "' OR email = '" + clave + "'", c);
+                SqlCommand com =new SqlCommand( "SELECT * FROM USUARIOS WHERE nif =" + clave + "' OR email = '" + clave + "'" ,c);
                 SqlDataReader dr = com.ExecuteReader();
-
+                
                 while (dr.Read())
                 {
                     u = new UsuarioEN();
@@ -93,15 +93,15 @@ namespace library
                     u.Nif += dr["nif"].ToString();
                     u.Email += dr["email"].ToString();
                     u.Contraseña += dr.GetString(0);
-
+                   
                     u.Direccion += dr["tipo"].ToString();
-
-                    // com.ExecuteNonQuery();
+                   
+                   // com.ExecuteNonQuery();
                 }
-
+                
                 dr.Close();
-
-
+                
+        
             }
             catch (Exception ex)
             {
@@ -153,7 +153,7 @@ namespace library
             return u;
         }
 
-
+        
 
     }
 }
