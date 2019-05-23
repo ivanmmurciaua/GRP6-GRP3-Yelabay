@@ -15,7 +15,7 @@ namespace library.ServiceLayer
             return Regex.IsMatch(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
         }
 
-        public static bool IsOnlyeLetters(string letter)
+        public static bool IsOnlyLetters(string letter)
         {
             return Regex.IsMatch(letter, @"^[a-zA-ZñÑ\s]+$");
         }

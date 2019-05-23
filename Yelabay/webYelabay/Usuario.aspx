@@ -5,39 +5,41 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer">
         <div id ="title">
-            <h1> Mi Perfil </h1>
+            <h1>
+                Mis Datos<asp:Image ID="Image1" runat="server" ImageUrl="images/VectorPerfil.png" Height="50px" Width="84px" />
+                </h1>
         </div>
     </div>
     <div id="content">
             <div class="invisibleRow">
-                <div class="invisibleCol">Nombre:</div>
+                <div class="invisibleCol"><b>Nombre:</b></div>
                 <div class="invisibleCol">
                     <asp:TextBox ID="TextBoxName" runat="server"></asp:TextBox>
                 </div>
                 <asp:Label ID="LabelErrorName" runat="server" CssClass="ErrorMessage" Text="¡Nombre Obligatorio! Solo debe contener letras."></asp:Label>
             </div>
             <div class="invisibleRow">
-                <div class="invisibleCol">Apellidos:</div>
+                <div class="invisibleCol"><b>Apellidos:</b></div>
                 <div class="invisibleCol">
                     <asp:TextBox ID="TextBoxLastname" runat="server"></asp:TextBox>
                 </div>
                 <asp:Label ID="LabelErrorLastname" runat="server" CssClass="ErrorMessage" Text="¡Apellido Obligatorios! Solo deben contener letras."></asp:Label>
             </div>
             <div class="invisibleRow">
-                <div class="invisibleCol">Teléfono:</div>
+                <div class="invisibleCol"><b>Teléfono:</b></div>
                 <div class="invisibleCol">
                     <asp:TextBox ID="TextBoxPhone" runat="server"></asp:TextBox>
                 </div>
                 <asp:Label ID="LabelErrorPhone" runat="server" CssClass="ErrorMessage" Text="¡Teléfono NO válido!"></asp:Label>
             </div>
             <div class="invisibleRow">
-                <div class="invisibleCol">Correo electronico:</div>
+                <div class="invisibleCol"><b>Correo electronico:</b></div>
                 <div class="invisibleCol">
                     <asp:Label ID="LabelEmail" runat="server" ></asp:Label>
                 </div>
             </div>
             <div class="invisibleRow">
-                <div class="invisibleCol">Usuario:</div>
+                <div class="invisibleCol"><b>Nick:</b></div>
                 <div class="invisibleCol">
                     <asp:Label ID="LabelUsername" runat="server" ></asp:Label>
                 </div>

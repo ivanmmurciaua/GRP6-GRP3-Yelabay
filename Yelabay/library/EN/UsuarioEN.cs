@@ -3,81 +3,117 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using library;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace library
 {
-    class UsuarioEN
+    public class UsuarioEN
     {
-        private string email { get; set; }
-        private string nombre { get; set; }
-        private string direccion { get; set; }
-        private string contraseña { get; set; }
+        public int id
+        {
+            get;
+            set;
+        }
+        
+        public string email { get; set; }
+        public string nombre { get; set; }
+        public string apellidos { get; set; }
+        public string userNick { get; set; }
+        public string contraseña { get; set; }
+        public string telefono { get; set; }
 
-        public UsuarioEN(string email, string nombre, string direccion, string contraseña)
+
+        public UsuarioEN(int id, string email, string nombre, string apellidos, string contraseña,string telefono, string userNick)
         {
             this.email = email;
             this.nombre = nombre;
-            this.direccion = direccion;
+            this.apellidos = apellidos;
             this.contraseña = contraseña;
+            this.telefono = telefono;
+            this.userNick = userNick;
+            this.id = 0;
         }
         public UsuarioEN()
         {
             email = "";
             nombre = "";
-            direccion = "";
+            apellidos = "";
             contraseña = "";
+            telefono = "";
+            userNick = "";
+            id = 0;
         }
-        public string getEmail()
+        
+        public void save()
         {
-            return email;
-        }
-
-        public string getNombre()
-        {
-            return nombre;
-        }
-
-        public string getDireccion()
-        {
-            return direccion;
-        }
-
-        public string getContraseña()
-        {
-            return contraseña;
-        }
-
-        public void hacerConsultaServicioTecnico()
-        {
-
+            CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
+           // id = cadUsu.create(this);
         }
 
         public void createUsuario()
         {
-            UsuarioCAD cad = new UsuarioCAD();
+           // UsuarioCAD cad = new UsuarioCAD();
             UsuarioEN en = new UsuarioEN();
-            cad.createUsuario(en);
-        }
-
-        public void borrarUsuario()
-        {
-            UsuarioCAD cad = new UsuarioCAD();
-            UsuarioEN en = new UsuarioEN();
-            cad.borrarUsuario(en);
-        }
-
-        public void actualizarUsuario()
-        {
-            UsuarioCAD cad = new UsuarioCAD();
-            UsuarioEN en = new UsuarioEN();
-            cad.actualizarUsuario(en);
+           // cad.createUsuario(en);
         }
 
         public void leerUsuario()
         {
-            UsuarioCAD cad = new UsuarioCAD();
-            UsuarioEN en = new UsuarioEN();
-            cad.leerUsuario(en);
+            CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
+           /* cadUsu en = (UsuarioEN)cadUsu.leerUsuario(this.id);
+            if(en != null)
+            {
+                id = en.id;
+                nombre = en.nombre;
+                contraseña = en.contraseña;
+                email = en.email;
+                telefono = en.telefono;
+                apellidos = en.apellidos;
+                userNick = en.userNick;
+            }*/
         }
+        public bool leerPorNombreUsuario()
+        {
+            CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
+            /*UsuarioEN en = cadUsu.readBy("userNick", userNick);
+            if (en != null)
+            {
+                id = en.id;
+                nombre = en.nombre;
+                contraseña = en.contraseña;
+                email = en.email;
+                telefono = en.telefono;
+                apellidos = en.apellidos;
+                userNick = en.userNick;
+                return true;
+            }
+            else
+            {
+                return false;
+            }*/
+
+            return false; // borrar
+        }
+        public void borrarUsuario()
+        {
+           /* CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
+            cadUsu.borrarUsuario(this.id);*/
+        }
+
+        public void actualizarUsuario()
+        {
+            CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
+            cadUsu.actualizarUsuario(this);
+        }
+
+        /*public DataSet getOrders()
+        {
+            //return getList(this.id); // Arreglar
+        }*/
+        
     }
 }

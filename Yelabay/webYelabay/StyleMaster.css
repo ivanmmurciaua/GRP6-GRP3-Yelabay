@@ -295,7 +295,7 @@ input#ContentPlaceHolder1_SearchModelButton {
     AQUI COMIENZA EL ESTILO DEL SLIDER.
 */
 .slider {
-    width: 95%;
+    width: 70%; /*Desde aquí controlamos el ancho de las imágenes.*/
     margin: auto;
     overflow: hidden; /* Los elementos(imagenes) ya no se quedan fuera.*/
 }
