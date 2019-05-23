@@ -38,7 +38,8 @@
                 <asp:TextBox ID="TextBoxRepassword" runat="server" type="password"></asp:TextBox>
             </div>
             <asp:Label ID="LabelErrorPassworddiferente" runat="server" CssClass="ErrorMessage" Text="Las contraseñas no coinciden"></asp:Label>
+            <asp:Label ID="nocoinciden" runat="server" CssClass="ErrorMessage" Text="Las dos contraseñas han de ser iguales"></asp:Label>
         </div>
-        <asp:Button ID="Button1" runat="server" Text="Registrarse" />
+        <asp:Button ID="Button1" runat="server" Text="Registrarse" OnClick="Button1_Click1" />
     </div>
 </asp:Content>
