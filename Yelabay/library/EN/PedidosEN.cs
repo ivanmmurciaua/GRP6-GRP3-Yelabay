@@ -30,7 +30,11 @@ namespace library
         private string agenciaDeTransporte { get; set; }
         private string estado { get; set; }
         
-        public  int getId() { return id; }
+        public  int id_pbl
+        {
+            get { return id; }
+            set { id = value; }
+        }
         public string fechaCompra_pbl
         {
             get { return fechaCompra; }

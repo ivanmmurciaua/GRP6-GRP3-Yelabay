@@ -13,13 +13,13 @@ namespace webYelabay {
     public partial class Pedido {
         
         /// <summary>
-        /// Control LabelCalle.
+        /// Control LabelDireccion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelCalle;
+        protected global::System.Web.UI.WebControls.Label LabelDireccion;
         
         /// <summary>
         /// Control LabelPrecioSinIva.
@@ -31,13 +31,13 @@ namespace webYelabay {
         protected global::System.Web.UI.WebControls.Label LabelPrecioSinIva;
         
         /// <summary>
-        /// Control LabelProvincia.
+        /// Control LabelCiudad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LabelProvincia;
+        protected global::System.Web.UI.WebControls.Label LabelCiudad;
         
         /// <summary>
         /// Control LabelPais.
