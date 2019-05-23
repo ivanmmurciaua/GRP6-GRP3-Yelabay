@@ -26,11 +26,11 @@ namespace webYelabay
                     Response.Redirect("Login.aspx"); //Para que inicie sesion o se registre.
                 }
                 UsuarioEN u = (UsuarioEN)Session["usuario"];
-                TextBoxName.Text = u.nombre;
-                TextBoxLastname.Text = u.apellidos;
-                TextBoxPhone.Text = "" + u.telefono;
-                LabelEmail.Text = u.email;
-                LabelUsername.Text = u.userNick;
+                TextBoxName.Text = u.Nombre;
+                TextBoxLastname.Text = u.Apellido1;
+                TextBoxPhone.Text = "" + u.Telefono;
+                LabelEmail.Text = u.Email;
+                LabelUsername.Text = u.Nick;
                 LabelErrorName.Visible = false;
                 LabelErrorLastname.Visible = false;
                 LabelErrorPhone.Visible = false;
