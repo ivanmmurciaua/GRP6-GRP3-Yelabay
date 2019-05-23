@@ -13,107 +13,132 @@ namespace library
 {
     public class UsuarioEN
     {
-        public int id
-        {
-            get;
-            set;
-        }
-        
-        public string email { get; set; }
-        public string nombre { get; set; }
-        public string apellidos { get; set; }
-        public string userNick { get; set; }
-        public string contraseña { get; set; }
-        public string telefono { get; set; }
+        public string Email { get; set; }
+        public string Apellidos1 { get; set; }
+        public string Apellidos2 { get; set; }
+        public string Nif { get; set; }
+        public string Nombre { get; set; }
+        public string Direccion { get; set; }
+        public string Contraseña { get; set; }
+        public int Id { get; set; }
 
-
-        public UsuarioEN(int id, string email, string nombre, string apellidos, string contraseña,string telefono, string userNick)
+        public UsuarioEN(string Email, string Nombre, string Direccion, string Contraseña, string Apellidos1, string Apellidos2, string Nif, int Id)
         {
-            this.email = email;
-            this.nombre = nombre;
-            this.apellidos = apellidos;
-            this.contraseña = contraseña;
-            this.telefono = telefono;
-            this.userNick = userNick;
-            this.id = 0;
+            this.Email = Email;
+            this.Nombre = Nombre;
+            this.Direccion = Direccion;
+            this.Contraseña = Contraseña;
+            this.Apellidos1 = Apellidos1;
+            this.Apellidos2 = Apellidos2;
+            this.Nif = Nif;
+            this.Id = Id;
         }
         public UsuarioEN()
         {
-            email = "";
-            nombre = "";
-            apellidos = "";
-            contraseña = "";
-            telefono = "";
-            userNick = "";
-            id = 0;
+            Email = "";
+            Nombre = "";
+            Direccion = "";
+            Contraseña = "";
+            Apellidos1 = "";
+            Apellidos2 = "";
+            Nif = "";
+            Id = 0;
         }
-        
-        public void save()
+        public string getEmail()
         {
-            CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
-           // id = cadUsu.create(this);
+            return Email;
+        }
+
+        public string getNombre()
+        {
+            return Nombre;
+        }
+
+        public string getDireccion()
+        {
+            return Direccion;
+        }
+
+        public string getContraseña()
+        {
+            return Contraseña;
+        }
+
+        public void hacerConsultaServicioTecnico()
+        {
+
         }
 
         public void createUsuario()
         {
-           // UsuarioCAD cad = new UsuarioCAD();
+            UsuarioCAD cad = new UsuarioCAD();
+
+            cad.createUsuario(this);
+        }
+
+        public void borrarUsuario()
+        {
+            UsuarioCAD cad = new UsuarioCAD();
             UsuarioEN en = new UsuarioEN();
-           // cad.createUsuario(en);
+            cad.borrarUsuario(en);
+        }
+
+        public void actualizarUsuario()
+        {
+            UsuarioCAD cad = new UsuarioCAD();
+            UsuarioEN en = new UsuarioEN();
+            cad.actualizarUsuario(en);
         }
 
         public void leerUsuario()
         {
-            CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
-           /* cadUsu en = (UsuarioEN)cadUsu.leerUsuario(this.id);
-            if(en != null)
-            {
-                id = en.id;
-                nombre = en.nombre;
-                contraseña = en.contraseña;
-                email = en.email;
-                telefono = en.telefono;
-                apellidos = en.apellidos;
-                userNick = en.userNick;
-            }*/
+            UsuarioCAD cad = new UsuarioCAD();
+            UsuarioEN en = new UsuarioEN();
+            cad.leerUsuario(en);
         }
-        public bool leerPorNombreUsuario()
+        public bool login()
         {
-            CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
-            /*UsuarioEN en = cadUsu.readBy("userNick", userNick);
+            UsuarioCAD cad = new UsuarioCAD();
+            UsuarioEN en = cad.readBy("nif", Nif);
             if (en != null)
             {
-                id = en.id;
-                nombre = en.nombre;
-                contraseña = en.contraseña;
-                email = en.email;
-                telefono = en.telefono;
-                apellidos = en.apellidos;
-                userNick = en.userNick;
+                Email = en.Email;
+                Nombre = en.Nombre;
+                Direccion = en.Direccion;
+                Contraseña = en.Contraseña;
+                Apellidos1 = en.Apellidos1;
+                Apellidos2 = en.Apellidos2;
+                Nif = en.Nif;
+                Id = en.Id;
                 return true;
             }
             else
             {
                 return false;
-            }*/
+            }
 
-            return false; // borrar
-        }
-        public void borrarUsuario()
-        {
-           /* CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
-            cadUsu.borrarUsuario(this.id);*/
         }
 
-        public void actualizarUsuario()
+        public UsuarioEN buscarUsuario(string clave)
         {
-            CAD.UsuarioCAD cadUsu = new CAD.UsuarioCAD();
-            cadUsu.actualizarUsuario(this);
+            UsuarioCAD cad = new UsuarioCAD();
+            UsuarioEN en = cad.buscarUsuario(clave);
+
+            return en;
+
         }
 
-        /*public DataSet getOrders()
+        public static bool noexiste(string field, string s)
         {
-            //return getList(this.id); // Arreglar
-        }*/
-        
+            UsuarioCAD cad = new UsuarioCAD();
+            /* if (cad.readBy(field, s) == null)
+             {
+                 return true;
+             }
+             else
+             {*/
+            return true;
+            //}
+        }
     }
 }

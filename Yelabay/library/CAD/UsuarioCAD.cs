@@ -3,35 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.Sql;
-using System.Data.SqlClient;
 using System.Data;
-using System.Configuration;
-using library;
 using System.Data.Common;
+using System.Data.SqlClient;
 using System.Data.SqlTypes;
+using System.Configuration;
+using System.Collections;
+using library;
 
-namespace library.CAD
+
+
+
+namespace library
 {
     public class UsuarioCAD
     {
-        
-        public UsuarioCAD() //Constructor
-        {
+        //public abstract int createUsuario(UsuarioEN en);
+        private string constring;
 
+        public UsuarioCAD()
+        {
+            //string s = "data source=.\\SQLEXPRESS;Integrated Security = SSPI; AttachDBFilename =| DataDirectory |\\Database1.mdf";
+            constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
         }
+        // constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
 
-        public void createUsuario(UsuarioEN en)
+
+        public bool createUsuario(UsuarioEN en)
         {
-           /* int id = -1;
-            UsuarioEN user = (UsuarioEN)user;
+            bool res = false;
+            UsuarioEN us = (UsuarioEN)en;
+            SqlConnection c = new SqlConnection(constring);
             try
             {
-                SqlCommand c = new SqlCommand("INSERT INTO USERS (nombre, apellido1, email, contrasenya,telefono,userNick) VALUES ('" +
-                   user.nombre + "','" + user.apellidos + "','" + user.email + "','" +
-                    user.contraseña + "', '" + user.telefono + "' ,'" + user.userNick + "'); SELECT SCOPE_IDENTITY() ", sc);
-                id = Convert.ToInt32(c.ExecuteScalar());
-                return id;
+                c.Open();
+                SqlCommand co = new SqlCommand("INSERT INTO USUARIOS (nombre,apellido1,apellido2,nif,email,contrasenya,tipo) VALUES ('" +
+                  us.Nombre + " ','" + us.Apellidos1 + "','" + us.Apellidos2 + "','" + us.Nif + "','" + us.Email + "','" + us.Contraseña
+                  + "','" + us.Direccion + "') ", c);
+                co.ExecuteNonQuery();
+                res = true;
+
+
             }
             catch (SqlException e)
             {
@@ -39,9 +51,10 @@ namespace library.CAD
             }
             finally
             {
-                sc.Close();
+                c.Close();
             }
-            return id;*/
+            return res;
+
         }
 
         public void borrarUsuario(UsuarioEN en)
@@ -54,23 +67,79 @@ namespace library.CAD
 
         }
 
-        public void leerUsuario(int id)
-        {/*
-            EN.UsuarioEN u = new UsuarioEN();
+        public void leerUsuario(UsuarioEN en)
+        {
+
+        }
+
+        public UsuarioEN buscarUsuario(string clave)
+        {
+            UsuarioEN u = null;
+            // UsuarioEN u = new UsuarioEN();
+            SqlConnection c = new SqlConnection(constring);
             try
             {
-                SqlCommand c = new SqlCommand("SELECT userNick, nombre, apellido1, email, contrasenya, telefono FROM USERS WHERE Id = " + id + ";", sc);
-                SqlDataReader cr = c.ExecuteReader();
+                c.Open();
+                SqlCommand com = new SqlCommand("SELECT * FROM USUARIOS WHERE nif =" + clave + "' OR email = '" + clave + "'", c);
+                SqlDataReader dr = com.ExecuteReader();
+
+                while (dr.Read())
+                {
+                    u = new UsuarioEN();
+                    u.Id = Convert.ToInt16(dr["id"]);
+                    u.Nombre += dr["nombre"].ToString();
+                    u.Apellidos1 += dr["apellidos1"].ToString();
+                    u.Apellidos2 += dr["apellidos2"].ToString();
+                    u.Nif += dr["nif"].ToString();
+                    u.Email += dr["email"].ToString();
+                    u.Contraseña += dr.GetString(0);
+
+                    u.Direccion += dr["tipo"].ToString();
+
+                    // com.ExecuteNonQuery();
+                }
+
+                dr.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Opening connection failed.\nError: {0}", ex.Message);
+            }
+            finally
+            {
+                c.Close();
+            }
+
+            return u;
+
+        }
+
+        public UsuarioEN readBy(string a, string b)
+        {
+            UsuarioEN u = null;
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand cm = new SqlCommand("SELECT id,nombre,apellido1,apellido2,nif,email,contrasenya,tipo FROM USUARIOS WHERE " + a + " = '" + b + "';", c);
+                Console.WriteLine(cm.CommandText);
+                SqlDataReader cr = cm.ExecuteReader();
 
                 while (cr.Read())
                 {
-                    u.userNick = cr.GetString(0);
-                    u.nombre = cr.GetString(1);
-                    u.apellidos = cr.GetString(2);
-                    u.email = cr.GetString(3);
-                    u.contraseña = cr.GetString(4);
-                    u.telefono = cr.GetString(5);
+                    u = new UsuarioEN();
+                    u.Id = cr.GetInt32(0);
+                    u.Nombre = cr.GetString(1);
+                    u.Apellidos1 = cr.GetString(2);
+                    u.Apellidos2 = cr.GetString(3);
+                    u.Nif = cr.GetString(4);
+                    u.Email = cr.GetString(5);
+                    u.Contraseña = cr.GetString(6);
+                    u.Direccion = cr.GetString(7);
                 }
+                //cm.ExecuteNonQuery();
                 cr.Close();
             }
             catch (SqlException e)
@@ -79,10 +148,12 @@ namespace library.CAD
             }
             finally
             {
-                sc.Close();
+                c.Close();
             }
-            return u;*/
+            return u;
         }
+
+
+
     }
-    
 }
