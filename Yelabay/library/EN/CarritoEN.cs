@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class CarritoEN
+    public class CarritoEN
     {
         //Atributos privados
-        private List<ProductoEN> productos;// = new List<ProductoEN>();
-        private List<int> cantidad;// { get; set; }//Numero de unidades de articulos
-        private List<float> precioProdxCant;// { get; set; }//Precio de los articulos por cantidad de este
+        public List<ProductoEN> productos;// = new List<ProductoEN>();
+        public List<int> cantidad;// { get; set; }//Numero de unidades de articulos
+        public List<float> precioProdxCant;// { get; set; }//Precio de los articulos por cantidad de este
         private float precioTotal;// { get; set; }//Suma total de todos los productos del carrito
 
 
@@ -37,15 +37,15 @@ namespace library
             this.precioProdxCant = precioProdxCant;
             this.precioTotal = precioTotal;
         }
-        
+
         public bool anyadirProducto(ProductoEN producto, int cantidad)
         {
             bool anyadido = false;
-            
+
             //Lo de abajo quiza va en CarritoCAD
             productos.Add(producto);
             this.cantidad.Add(cantidad);
-            precioProdxCant.Add(producto.getPrecio()*cantidad);
+            precioProdxCant.Add(producto.getPrecio() * cantidad);
             precioTotal += producto.getPrecio() * cantidad;
             anyadido = true;
 
@@ -54,14 +54,15 @@ namespace library
 
         public bool eliminarProducto(ProductoEN producto)
         {
-            bool eliminado=true;
+            bool eliminado = true;
 
-            for(int i=0; i < productos.Count(); i++)
+            for (int i = 0; i < productos.Count(); i++)
             {
-                if (producto.getCodigo()==productos[i].getCodigo())
+                if (producto.getCodigo() == productos[i].getCodigo())
                 {
-                    productos.Remove(producto);
-                    cantidad.Remove(i);
+                    //productos.Remove(producto);
+                    productos.RemoveAt(i);
+                    cantidad.RemoveAt(i);
                     precioTotal -= precioProdxCant[i];
                     precioProdxCant.Remove(i);
                     eliminado = true;
@@ -73,16 +74,20 @@ namespace library
 
         public bool alterarCantidadProducto(ProductoEN producto, int nuevaCantidad)
         {
-            bool alterado=false;
+            bool alterado = false;
 
-            for (int i = 0; i < productos.Count(); i++)
+            if (nuevaCantidad > 0)
             {
-                if (producto.getCodigo() == productos[i].getCodigo())
-                { 
-                    cantidad[i]=nuevaCantidad;
-                    precioProdxCant[i] = nuevaCantidad * productos[i].getPrecio();
-                    precioTotal -= precioProdxCant[i];
-                    alterado=true;
+                for (int i = 0; i < productos.Count(); i++)
+                {
+                    if (producto.getCodigo() == productos[i].getCodigo())
+                    {
+                        cantidad[i] = nuevaCantidad;
+                        precioTotal -= precioProdxCant[i];
+                        precioProdxCant[i] = nuevaCantidad * productos[i].getPrecio();
+                        precioTotal += precioProdxCant[i];
+                        alterado = true;
+                    }
                 }
             }
 
@@ -101,7 +106,7 @@ namespace library
 
         public bool updateCarrito()
         {
-            bool actualizado=false;
+            bool actualizado = false;
 
             CarritoCAD cad = new CarritoCAD();
             if (cad.updateCarrito(this)) actualizado = true;
@@ -111,14 +116,14 @@ namespace library
 
         public bool deleteCarrito()
         {
-            bool deleted=true;
+            bool deleted = true;
             CarritoCAD cad = new CarritoCAD();
 
             if (cad.deleteCarrito(this)) deleted = true;
 
             return deleted;
         }
-        
+
         public bool readCarrito()
         {
             bool leido = false;
