@@ -31,7 +31,7 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Select * from Pedidos where id='" + en.getId() + "'", c);
+                SqlCommand com = new SqlCommand("Select * from Pedidos where id='" + en.id_pbl + "'", c);
                 SqlDataReader dr = com.ExecuteReader();
 
                 if (dr.Read() == true)

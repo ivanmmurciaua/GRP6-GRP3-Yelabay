@@ -19,11 +19,11 @@ namespace webYelabay
                 id = Request.QueryString["PedidoId"];
             }
             PedidosEN en = new PedidosEN();
-            en.numPedido_pbl = Int32.Parse(id);
+            en.id_pbl = Int32.Parse(id);
             en.readPedido();
-            LabelDireccion.Text = en.getDireccion();
-            LabelCiudad.Text = en.getCiudad();
-            LabelPais.Text = en.getPais();
+            LabelDireccion.Text = en.direccion_pbl.ToString();
+            LabelCiudad.Text = en.ciudad_pbl.ToString();
+            LabelPais.Text = en.pais_pbl.ToString();
             LabelPrecioSinIva.Text = en.precioSinIVA_pbl.ToString();
             LabelIVA.Text = en.IVA_pbl.ToString();
             LabelPrecioConIVA.Text = en.precioConIVA_pbl.ToString();

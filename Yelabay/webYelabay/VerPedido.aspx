@@ -37,9 +37,6 @@
             <h1>Detalles del Pedido</h1>
         </div>
         <div id="content">
-            
-            
-            
             <table class="tablaPedido">
                 <tr>
                     <td class="auto-style1" colspan="2"><h3><b>Direccion de envío</b></h3></td>
@@ -48,18 +45,17 @@
                 </tr>
                 <tr>
                     <td class="auto-style1" colspan="2">
-                        <asp:Label ID="LabelCalle" runat="server"></asp:Label>
+                        <asp:Label ID="LabelDireccion" runat="server"></asp:Label>
                         
                     </td>
                     <td class="auto-style2"><b>Precio sin IVA:</b></></td>
                     <td>
                         <asp:Label ID="LabelPrecioSinIva" runat="server"></asp:Label>
-                       
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style3" colspan="2">
-                        <asp:Label ID="LabelProvincia" runat="server" Width="167px"></asp:Label>
+                        <asp:Label ID="LabelCiudad" runat="server" Width="167px"></asp:Label>
                         <asp:Label ID="LabelPais" runat="server" Width="116px"></asp:Label>
                     </td>
                     <td class="auto-style4"><b>IVA:</b></td>
@@ -107,10 +103,6 @@
                     <td>&nbsp;</td>
                 </tr>
             </table>
-            
-            
-            
         </div>
-        
     </div>
 </asp:Content>
