@@ -6,20 +6,24 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ProductoEN
+    public class ProductoEN
     {
         private int codigo { get; set; }
         private string nombre { get; set; }
         private string descripcion { get; set; }
         private int stock { get; set; }
         private float precio { get; set; }
+        private string imagen { get; set; }
 
-        public ProductoEN(int codigo, string nombre, string descripcion, int stock)
+
+
+        public ProductoEN(int codigo, string nombre, string descripcion, int stock, string imagen)
         {
             this.codigo = codigo;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.stock = stock;
+            this.imagen = imagen;
         }
 
         public ProductoEN()
@@ -29,6 +33,7 @@ namespace library
             descripcion = "";
             stock = 0;
             precio = 0;
+            imagen = "";
         }
 
         public int getCodigo()
@@ -56,33 +61,75 @@ namespace library
             return precio;
         }
 
+        public string getImagen()
+        {
+            return imagen;
+        }
+
+
+
+
+
+
+
+
+        public void setCodigo(int cod2)
+        {
+            codigo = cod2;
+        }
+
+        public void setNombre(string nomb2)
+        {
+            nombre = nomb2;
+        }
+
+        public void setDescripcion(string descripcion2)
+        {
+            descripcion = descripcion2;
+        }
+
+        public void setStock(int stock2)
+        {
+            stock = stock2;
+        }
+
+        public void setPrecio(float precio2)
+        {
+            precio = precio2;
+        }
+
+        public void setImagen(string imagen2)
+        {
+            imagen = imagen2;
+        }
+
 
         public void crearProductos()
         {
             ProductoCAD cad = new ProductoCAD();
-            ProductoEN en = new ProductoEN();
-            cad.crearProductos(en);
+
+            cad.crearProductos(this);
 
         }
 
         public void borrarProductos()
         {
             ProductoCAD cad = new ProductoCAD();
-            ProductoEN en = new ProductoEN();
-            cad.borrarProductos(en);
+
+            cad.borrarProductos(this);
         }
 
         public void actualizarProductos()
         {
             ProductoCAD cad = new ProductoCAD();
-            ProductoEN en = new ProductoEN();
-            cad.actualizarProductos(en);
+
+            cad.actualizarProductos(this);
         }
         public void leerProductos()
         {
             ProductoCAD cad = new ProductoCAD();
-            ProductoEN en = new ProductoEN();
-            cad.leerProductos(en);
+
+            cad.leerProductos(this);
         }
     }
 }
