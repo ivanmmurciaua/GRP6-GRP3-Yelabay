@@ -3,7 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using library;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace library
 {
@@ -26,7 +30,11 @@ namespace library
         private string agenciaDeTransporte { get; set; }
         private string estado { get; set; }
         
-        public  int getId() { return id; }
+        public  int id_pbl
+        {
+            get { return id; }
+            set { id = value; }
+        }
         public string fechaCompra_pbl
         {
             get { return fechaCompra; }

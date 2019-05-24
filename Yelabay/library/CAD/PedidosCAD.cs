@@ -8,6 +8,7 @@ using System.Data.Common;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Configuration;
+using System.Collections;
 
 namespace library
 {
@@ -30,7 +31,7 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Select * from Pedidos where id='" + en.getId() + "'", c);
+                SqlCommand com = new SqlCommand("Select * from Pedidos where id='" + en.id_pbl + "'", c);
                 SqlDataReader dr = com.ExecuteReader();
 
                 if (dr.Read() == true)

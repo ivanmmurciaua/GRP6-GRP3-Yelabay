@@ -15,34 +15,37 @@ namespace library
     {
         public string Email { get; set; }
         public string Apellidos1 { get; set; }
-        public string Apellidos2 { get; set; }
         public string Nif { get; set; }
         public string Nombre { get; set; }
         public string Direccion { get; set; }
-        public string Contraseña { get; set; }
+        public string Contrasenya { get; set; }
         public int Id { get; set; }
+        public string Nick { get; set; }
+        public string Telefono { get; set; }
+        public string Tipo { get; internal set; }
 
-        public UsuarioEN(string Email, string Nombre, string Direccion, string Contraseña, string Apellidos1, string Apellidos2, string Nif, int Id)
+        public UsuarioEN(string Email, string Nombre, string Direccion, string Contrasenya, string Apellidos1, string Nif, int Id, string Nick, int Telefono)
         {
             this.Email = Email;
             this.Nombre = Nombre;
             this.Direccion = Direccion;
-            this.Contraseña = Contraseña;
+            this.Contrasenya = Contrasenya;
             this.Apellidos1 = Apellidos1;
-            this.Apellidos2 = Apellidos2;
             this.Nif = Nif;
             this.Id = Id;
+            this.Nick = Nick;
         }
         public UsuarioEN()
         {
             Email = "";
             Nombre = "";
             Direccion = "";
-            Contraseña = "";
+            Contrasenya = "";
             Apellidos1 = "";
-            Apellidos2 = "";
             Nif = "";
+            Nick = "";
             Id = 0;
+            Telefono = "";
         }
         public string getEmail()
         {
@@ -61,7 +64,7 @@ namespace library
 
         public string getContraseña()
         {
-            return Contraseña;
+            return Contrasenya;
         }
 
         public void hacerConsultaServicioTecnico()
@@ -105,9 +108,8 @@ namespace library
                 Email = en.Email;
                 Nombre = en.Nombre;
                 Direccion = en.Direccion;
-                Contraseña = en.Contraseña;
+                Contrasenya = en.Contrasenya;
                 Apellidos1 = en.Apellidos1;
-                Apellidos2 = en.Apellidos2;
                 Nif = en.Nif;
                 Id = en.Id;
                 return true;

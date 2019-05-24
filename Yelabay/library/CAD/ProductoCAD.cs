@@ -45,8 +45,7 @@ namespace library
                     en.setPrecio(Convert.ToSingle(dr["precio"].ToString()));
                     en.setStock(Int32.Parse(dr["stock"].ToString()));
                     en.setImagen(dr["foto"].ToString());
-                    //falta descripcion en la base de datos
-                    //en.setDescripcion(dr["descripcion"].ToString());
+                    en.setDescripcion(dr["descripcion"].ToString());
 
                 }
                 dr.Close();

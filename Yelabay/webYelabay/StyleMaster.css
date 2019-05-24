@@ -55,11 +55,11 @@ body {
     width: 100%;
     height: 1%;
     padding-bottom: 0.5%;
-    padding-top: 2%;
-    /*background-color: darkorange;*/
+    padding-top: 3%;
+    background-color: black;
     z-index: 1;
 }
-
+/*
 #header {
     background: rgba(255,136,0,1);
     background: -moz-linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
@@ -70,7 +70,7 @@ body {
     background: linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8800', endColorstr='#ff8800', GradientType=1 );
 }
-
+*/
 #body {
     padding-top: 2%;
 }
@@ -85,6 +85,14 @@ body {
 
 .column-left {
     float: left;
+    width: 33%;
+    padding-left: 5%;
+    padding-bottom: 0.3%;
+    margin-top: -2%;
+}
+
+.column-center {
+    float: none;
     width: 33%;
     padding-left: 5%;
     padding-bottom: 0.3%;
@@ -128,7 +136,7 @@ th, td {
 }
 
 tr:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: white;
 }
 
 td {
@@ -175,7 +183,7 @@ html {
     background: -o-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(246,143,33,1) 34%, rgba(238,118,0,0.93) 61%, rgba(238,118,0,0.9) 72%, rgba(238,118,0,0.84) 100%);
     background: -ms-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(246,143,33,1) 34%, rgba(238,118,0,0.93) 61%, rgba(238,118,0,0.9) 72%, rgba(238,118,0,0.84) 100%);
     background: linear-gradient(to bottom, rgba(255,175,75,1) 0%, rgba(246,143,33,1) 34%, rgba(238,118,0,0.93) 61%, rgba(238,118,0,0.9) 72%, rgba(238,118,0,0.84) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ee7600', GradientType=0 );
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
 }
 
 
@@ -186,7 +194,7 @@ html {
 
 
 .commentButtonProduct {
-    float left;
+    float: left;
 }
 
 .invisibleRowProduct {
@@ -299,3 +307,61 @@ input#ContentPlaceHolder1_SearchModelButton {
 .comentariosProducto {
     width: 50%;
 }
+/*
+    AQUI COMIENZA EL ESTILO DEL SLIDER.
+*/
+.slider {
+    width: 70%; /*Desde aquí controlamos el ancho de las imágenes.*/
+    margin: auto;
+    overflow: hidden; /* Los elementos(imagenes) ya no se quedan fuera.*/
+}
+
+    .slider ul {
+        display: flex;
+        padding: 0;
+        width: 400%;
+        animation: cambio 20s infinite alternate;
+        animation-timing-function: ease-in; /*empieza rapido y termina lento(paso de la img)
+                                            Hay más tipos de transiccion entre imagenes.
+                                            */
+    }
+
+    .slider li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .slider img {
+        width: 100%;
+    }
+
+@keyframes cambio {
+    0% {
+        margin-left: 0;
+    }
+    20% {
+        margin-left: 0;
+    }
+    /*TIEMPO QUE TARDA EN PASAR LA IMAGEN, 20*0,5= 1s*/
+    25% {
+        margin-left: -100%;
+    }
+    45% {
+        margin-left: -100%;
+    }
+    50% {
+        margin-left: -200%;
+    }
+    70% {
+        margin-left: -200%;
+    }
+    75% {
+        margin-left: -300%;
+    }
+    100% {
+        margin-left: -300%;
+    }
+}
+/* 
+    AQUÍ FINALIZA.
+*/

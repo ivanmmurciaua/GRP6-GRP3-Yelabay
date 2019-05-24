@@ -21,15 +21,28 @@ namespace webYelabay
                 case "home":
                     Response.Redirect("Home.aspx");
                     break;
+                case "producto":
+                    Response.Redirect("VerTodosProductos.aspx");
+                    break;
+                case "componentes":
+                    Response.Redirect("VerComponentes.aspx");
+                    break;
+                case "ordenadores":
+                    Response.Redirect("VerOrdenadores.aspx");
+                    break;
+                case "sonido":
+                    Response.Redirect("VerSmartphones.aspx");
+                    break;
+                case "perifericos":
+                    Response.Redirect("VerPerifericos.aspx");
+                    break;
+                case "consolas":
+                    Response.Redirect("VerConsolas.aspx");
+                    break;
                 default:
                     Response.Redirect("VerTodosProductos.aspx");
                     break;
             }
-        }
-        protected void MenuContact_MenuItemClick(object sender, MenuEventArgs e)
-        {
-            if (MenuContact.SelectedValue == "contact")
-                Response.Redirect("Contact.aspx");
         }
         protected void buttonHome_Click(object sender, ImageClickEventArgs e)
         {
