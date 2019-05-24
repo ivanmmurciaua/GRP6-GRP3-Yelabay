@@ -24,7 +24,7 @@
         <div id="content">
 
 
-            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal">
+            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="10">
                 <ItemTemplate>
                     <table class="tablaPedido">
                         <tr>
