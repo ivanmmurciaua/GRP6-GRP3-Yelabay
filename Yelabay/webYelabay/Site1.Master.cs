@@ -26,11 +26,6 @@ namespace webYelabay
                     break;
             }
         }
-        protected void MenuContact_MenuItemClick(object sender, MenuEventArgs e)
-        {
-            if (MenuContact.SelectedValue == "contact")
-                Response.Redirect("Contact.aspx");
-        }
         protected void buttonHome_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Home.aspx");
