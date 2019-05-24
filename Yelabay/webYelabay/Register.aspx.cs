@@ -71,7 +71,7 @@ namespace webYelabay
             }
             else
             {
-                us.Contraseña = TextBoxRepassword.Text;
+                us.Contrasenya = TextBoxRepassword.Text;
             }
 
             if (TextBoxPassword.Text != TextBoxRepassword.Text)

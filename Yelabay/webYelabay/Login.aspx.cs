@@ -65,7 +65,7 @@ namespace webYelabay
      UsuarioEN u = new UsuarioEN();
      u.Nif = txtUsername.Text;
 
-     if (u.login() && u.Contraseña == txtPassword.Text)
+     if (u.login() && u.Contrasenya == txtPassword.Text)
      {
          Session["user"] = u;
          Response.Redirect("Home.aspx");
