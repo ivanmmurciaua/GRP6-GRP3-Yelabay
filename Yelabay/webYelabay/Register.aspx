@@ -5,13 +5,13 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer">
         <div id ="title">
-            <h1>Resgístrate</h1>
+            <h1>Regístrate</h1>
         </div>
         <div class="invisibleRow">
             <div class="invisibleCol">
                 Nombre de usuario</div>
             <div class="invisibleCol">
-                <asp:TextBox ID="TextBoxLastname" runat="server"></asp:TextBox>
+                <asp:TextBox ID="TextBoxNick" runat="server"></asp:TextBox>
             </div>
             <asp:Label ID="LabelUsuario" runat="server" CssClass="ErrorMessage" Text="El campo nombre de usuario es obligatorio"></asp:Label>
         </div>

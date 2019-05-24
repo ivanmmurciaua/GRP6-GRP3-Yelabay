@@ -49,12 +49,12 @@
                     <asp:Button ID="ButtonModify" style="background:#249cf4" runat="server" Text="Actualizar Información" OnClick="ButtonModify_Click" />
                 </div>
             </div>
-            <asp:Menu ID="MenuOrders" runat="server" StaticSubMenuIndent="16px" OnMenuItemClick="MenuOrders_MenuItemClick">
+            <asp:Menu ID="MenuOrders" runat="server" StaticSubMenuIndent="16px" >
                 <Items>
                     <asp:MenuItem Text="Ver Pedidos" Value="orders"></asp:MenuItem>
                 </Items>
             </asp:Menu>
         </div>
-    </div>
+    
 </asp:Content>
 

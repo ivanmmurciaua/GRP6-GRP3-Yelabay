@@ -34,14 +34,14 @@ namespace webYelabay
             UsuarioEN us = new UsuarioEN();
             LabelUsuario.Visible = false;
             nocoinciden.Visible = false;
-            if (TextBoxLastname.Text == "")
+            if (TextBoxNick.Text == "")
             {
                 LabelUsuario.Visible = true;
                 todobien = true;
             }
             else
             {
-                us.Nif = TextBoxLastname.Text;
+                us.Nick = TextBoxNick.Text;
             }
             LabelErrorEmail.Visible = false;
             if (TextBoxEmail.Text == "")
@@ -61,7 +61,7 @@ namespace webYelabay
             }
             else
             {
-                //us.Contraseña = TextBoxPassword.Text;
+                //us.Contrasenya = TextBoxPassword.Text;
             }
             LabelErrorPassworddiferente.Visible = false;
             if (TextBoxRepassword.Text == "")
@@ -81,7 +81,7 @@ namespace webYelabay
             }
             
 
-            if (!UsuarioEN.noexiste("nombre", TextBoxLastname.Text))
+            if (!UsuarioEN.noexiste("Nick", TextBoxNick.Text))
             {
                 nocoinciden.Visible = true;
                 todobien = true;
@@ -89,16 +89,16 @@ namespace webYelabay
             
             if (todobien == false)
             {
-                /*if (us != null)
+                if (us != null)
                 {
                     nocoinciden.Visible = true; // confimarmos que us  no es null
-                }*/
-                us.createUsuario();
-                Session["Usuarios"] = us;
-                MessageBox.Show("Bienvenido , tu cuenta ha sido creada con exito");
-                Response.Redirect("Login.aspx");
 
+                    us.createUsuario();
+                    Session["Usuarios"] = us;
+                    MessageBox.Show("Bienvenido , tu cuenta ha sido creada con exito");
+                    Response.Redirect("Usuario.aspx");
 
+                }
 
             }
         }

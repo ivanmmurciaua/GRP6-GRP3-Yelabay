@@ -80,7 +80,7 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand com =new SqlCommand( "SELECT * FROM USUARIOS WHERE nif =" + clave + "' OR email = '" + clave + "'" ,c);
+                SqlCommand com =new SqlCommand( "SELECT * FROM USUARIOS WHERE nif =" + clave + "' OR email = '" + clave + "' OR nick = '" + clave + "'" ,c);
                 SqlDataReader dr = com.ExecuteReader();
                 
                 while (dr.Read())
@@ -93,6 +93,8 @@ namespace library
                     u.Email += dr["email"].ToString();
                     u.Contrasenya += dr.GetString(0);
                     u.Direccion += dr["tipo"].ToString();
+                    u.Nick = dr["nick"].ToString();
+                    u.Telefono = dr["telefono"].ToString();
                    
                    // com.ExecuteNonQuery();
                 }
