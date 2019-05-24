@@ -24,7 +24,7 @@ namespace library
         public string Telefono { get; set; }
         public string Tipo { get; internal set; }
 
-        public UsuarioEN(string Email, string Nombre, string Direccion, string Contrasenya, string Apellidos1, string Nif, int Id, string Nick, int Telefono)
+        public UsuarioEN(string Email, string Nombre, string Direccion, string Contrasenya, string Apellidos1, string Nif, int Id, string Nick, string Telefono)
         {
             this.Email = Email;
             this.Nombre = Nombre;
@@ -34,6 +34,7 @@ namespace library
             this.Nif = Nif;
             this.Id = Id;
             this.Nick = Nick;
+            this.Telefono = Telefono;
         }
         public UsuarioEN()
         {
@@ -112,6 +113,9 @@ namespace library
                 Apellidos1 = en.Apellidos1;
                 Nif = en.Nif;
                 Id = en.Id;
+                Nick = en.Nick;
+                Telefono = en.Telefono;
+
                 return true;
             }
             else

@@ -91,7 +91,7 @@ namespace library
                     u.Apellidos1 += dr["apellidos1"].ToString();
                     u.Nif += dr["nif"].ToString();
                     u.Email += dr["email"].ToString();
-                    u.Contrasenya += dr.GetString(0);
+                    u.Contrasenya += dr["contrasenya"].ToString();
                     u.Direccion += dr["tipo"].ToString();
                    
                    // com.ExecuteNonQuery();
@@ -121,7 +121,7 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand cm = new SqlCommand("SELECT id,nombre,apellido1,apellido2,nif,email,contrasenya,tipo FROM USUARIOS WHERE " + a + " = '" + b + "';", c);
+                SqlCommand cm = new SqlCommand("SELECT id,nombre,apellido1,telefono,nif,email,contrasenya,tipo,nick FROM USUARIOS WHERE " + a + " = '" + b + "';", c);
                 Console.WriteLine(cm.CommandText);
                 SqlDataReader cr = cm.ExecuteReader();
 
@@ -131,10 +131,12 @@ namespace library
                     u.Id = cr.GetInt32(0);
                     u.Nombre = cr.GetString(1);
                     u.Apellidos1 = cr.GetString(2);
+                    u.Telefono = cr.GetString(3);
                     u.Nif = cr.GetString(4);
                     u.Email = cr.GetString(5);
                     u.Contrasenya = cr.GetString(6);
-                    u.Direccion = cr.GetString(7);
+                    u.Tipo= cr.GetString(7);
+                    u.Nick = cr.GetString(8);
                 }
                 //cm.ExecuteNonQuery();
                 cr.Close();

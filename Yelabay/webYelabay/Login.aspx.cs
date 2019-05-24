@@ -65,11 +65,11 @@ namespace webYelabay
      UsuarioEN u = new UsuarioEN();
      u.Nif = txtUsername.Text;
 
-            if (u.login() && u.Contraseña == txtPassword.Text)
+            if (u.login() && u.Contrasenya == txtPassword.Text)
             {
 
                 Session["user"] = u.Nif;
-                Session["password"] = u.Contraseña;
+                Session["password"] = u.Contrasenya;
                 Response.Write("bienvenido");
                 Response.Write(Session["user"]);
                 
