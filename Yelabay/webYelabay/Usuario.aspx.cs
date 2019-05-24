@@ -27,7 +27,7 @@ namespace webYelabay
                 }
                 UsuarioEN u = (UsuarioEN)Session["usuario"];
                 TextBoxName.Text = u.Nombre;
-                TextBoxLastname.Text = u.Apellido1;
+                TextBoxLastname.Text = u.Apellidos1;
                 TextBoxPhone.Text = "" + u.Telefono;
                 LabelEmail.Text = u.Email;
                 LabelUsername.Text = u.Nick;
@@ -45,7 +45,7 @@ namespace webYelabay
             if (Validator.IsOnlyLetters(TextBoxName.Text))
             {
                 LabelErrorName.Visible = false;
-                u.nombre = TextBoxName.Text;
+                u.Nombre = TextBoxName.Text;
             }
             else
             {
@@ -54,7 +54,7 @@ namespace webYelabay
             if (Validator.IsOnlyLetters(TextBoxLastname.Text))
             {
                 LabelErrorLastname.Visible = false;
-                u.apellidos = TextBoxLastname.Text;
+                u.Apellidos1 = TextBoxLastname.Text;
             }
             else
             {
@@ -66,7 +66,7 @@ namespace webYelabay
                 if (Validator.IsPhone(TextBoxPhone.Text))
                 {
                     LabelErrorPhone.Visible = false;
-                    u.telefono = TextBoxPhone.Text;
+                    u.Telefono = TextBoxPhone.Text;
                 }
                 else
                 {
