@@ -41,7 +41,7 @@ namespace webYelabay
 
         }
 
-        protected void mostrarPrecioTotal(CarritoEN carro)
+        /*protected void mostrarPrecioTotal(CarritoEN carro)
         {
             TableRow ultimaFila = new TableRow();
 
@@ -129,7 +129,7 @@ namespace webYelabay
                     {
                         //int cantidadAumentar = int.Parse(tablaCarrito.Rows[i].Cells[2].Text);
                         //cantidadAumentar--;
-                        tablaCarrito.Rows[i].Cells[2].Text = carro.cantidad[posicion - 1].ToString()/*cantidadAumentar.ToString()*/;
+                        tablaCarrito.Rows[i].Cells[2].Text = carro.cantidad[posicion - 1].ToString()/*cantidadAumentar.ToString();
                     }
                     else CuentaProductos.Text = "No se pudo decrementar el producto: " + carro.productos[posicion - 1].getNombre();
                 }
@@ -150,7 +150,7 @@ namespace webYelabay
                     {
                         //int cantidadAumentar= int.Parse(tablaCarrito.Rows[i].Cells[2].Text);
                         //cantidadAumentar++;
-                        tablaCarrito.Rows[i].Cells[2].Text = carro.cantidad[posicion - 1].ToString()/*cantidadAumentar.ToString()*/;
+                        tablaCarrito.Rows[i].Cells[2].Text = carro.cantidad[posicion - 1].ToString()/*cantidadAumentar.ToString();
                     }
                     else CuentaProductos.Text = "No se pudo incrementar el producto: " + carro.productos[posicion - 1].getNombre();
                 }
@@ -181,7 +181,7 @@ namespace webYelabay
             //mostrarPrecioTotal(carro);
 
             //carro.eliminarProducto(carro.productos[1]);
-        }
+        }*/
 
         protected void Comprar_Click(object sender, EventArgs e)//De prueba
         {
