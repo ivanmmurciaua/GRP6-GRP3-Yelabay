@@ -21,11 +21,11 @@ namespace webYelabay
             */
             if (!IsPostBack)
             {
-                if(Session["usuario"] == null)
+                if(Session["Usuarios"] == null)
                 {
                     Response.Redirect("Login.aspx"); //Para que inicie sesion o se registre.
                 }
-                UsuarioEN u = (UsuarioEN)Session["usuario"];
+                UsuarioEN u = (UsuarioEN)Session["Usuarios"];
                 TextBoxName.Text = u.Nombre;
                 TextBoxLastname.Text = u.Apellidos1;
                 TextBoxPhone.Text = "" + u.Telefono;
@@ -39,7 +39,7 @@ namespace webYelabay
 
         protected void ButtonModify_Click(object sender, EventArgs e)
         {
-            UsuarioEN u = (UsuarioEN)Session["usuario"];
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];
             bool correcto = true;
 
             if (Validator.IsOnlyLetters(TextBoxName.Text))
@@ -75,7 +75,7 @@ namespace webYelabay
                 }
             }
            // u.actualizarUsuario();
-            Session["user"] = u;
+            Session["Usuarios"] = u;
         }
     }
 }
