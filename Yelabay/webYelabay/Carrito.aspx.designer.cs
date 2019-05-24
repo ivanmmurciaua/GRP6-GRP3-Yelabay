@@ -7,13 +7,11 @@
 // </generado automáticamente>
 //------------------------------------------------------------------------------
 
-namespace webYelabay
-{
-
-
-    public partial class Carrito
-    {
-
+namespace webYelabay {
+    
+    
+    public partial class Carrito {
+        
         /// <summary>
         /// Control ScriptManager1.
         /// </summary>
@@ -22,34 +20,25 @@ namespace webYelabay
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.ScriptManager ScriptManager1;
-
+        
         /// <summary>
-        /// Control UpdatePanel1.
+        /// Control DataList1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-
+        protected global::System.Web.UI.WebControls.DataList DataList1;
+        
         /// <summary>
-        /// Control tablaCarrito.
+        /// Control SqlDataSource1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tablaCarrito;
-
-        /// <summary>
-        /// Control CuentaProductos.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CuentaProductos;
-
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        
         /// <summary>
         /// Control Comprar.
         /// </summary>
@@ -58,7 +47,7 @@ namespace webYelabay
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Comprar;
-
+        
         /// <summary>
         /// Control PruebaCompra.
         /// </summary>
