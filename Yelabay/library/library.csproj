@@ -65,6 +65,8 @@
     <Compile Include="CAD\ServicioTecnicoCAD.cs" />
     <Compile Include="CAD\UsuarioCAD.cs" />
     <Compile Include="EN\UsuarioEN.cs" />
+    <Compile Include="Validaciones\Validator.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

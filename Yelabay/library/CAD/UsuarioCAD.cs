@@ -37,9 +37,9 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand co = new SqlCommand("INSERT INTO USUARIOS (nombre,apellido1,apellido2,nif,email,contrasenya,tipo) VALUES ('" + 
-                  us.Nombre + " ','" + us.Apellidos1 + "','" + us.Apellidos2 + "','" + us.Nif + "','" + us.Email + "','" + us.Contraseña
-                  + "','" + us.Direccion + "') ", c);
+                SqlCommand co = new SqlCommand("INSERT INTO USUARIOS (nombre,apellido1,nif,email,contrasenya,tipo, nick, telefono) VALUES ('" + 
+                  us.Nombre + " ','" + us.Apellidos1 +  "','" + us.Nif + "','" + us.Email + "','" + us.Contrasenya
+                  + "','" + us.Tipo + "','" + us.Nick + "','" + us.Telefono + "') ", c);
                  co.ExecuteNonQuery();
                 res = true;
                
@@ -89,11 +89,9 @@ namespace library
                     u.Id = Convert.ToInt16(dr["id"]);
                     u.Nombre += dr["nombre"].ToString();
                     u.Apellidos1 += dr["apellidos1"].ToString();
-                    u.Apellidos2 += dr["apellidos2"].ToString();
                     u.Nif += dr["nif"].ToString();
                     u.Email += dr["email"].ToString();
-                    u.Contraseña += dr.GetString(0);
-                   
+                    u.Contrasenya += dr.GetString(0);
                     u.Direccion += dr["tipo"].ToString();
                    
                    // com.ExecuteNonQuery();
@@ -133,10 +131,9 @@ namespace library
                     u.Id = cr.GetInt32(0);
                     u.Nombre = cr.GetString(1);
                     u.Apellidos1 = cr.GetString(2);
-                    u.Apellidos2 = cr.GetString(3);
                     u.Nif = cr.GetString(4);
                     u.Email = cr.GetString(5);
-                    u.Contraseña = cr.GetString(6);
+                    u.Contrasenya = cr.GetString(6);
                     u.Direccion = cr.GetString(7);
                 }
                 //cm.ExecuteNonQuery();
