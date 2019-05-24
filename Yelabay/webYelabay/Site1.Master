@@ -21,7 +21,7 @@
                         <asp:MenuItem Text="Catálogo" Value="producto">
                             <asp:MenuItem Text="Componentes" Value="componentes"></asp:MenuItem>
                             <asp:MenuItem Text="Ordenadores" Value="ordenadores"></asp:MenuItem>
-                            <asp:MenuItem Text="Audio / Foto / Vídeo" Value="sonido"></asp:MenuItem>
+                            <asp:MenuItem Text="Smartphones" Value="sonido"></asp:MenuItem>
                             <asp:MenuItem Text="Periféricos" Value="perifericos"></asp:MenuItem>
                             <asp:MenuItem Text="Consolas / Gaming" Value="consolas"></asp:MenuItem>
                         </asp:MenuItem>
