@@ -65,13 +65,21 @@ namespace webYelabay
      UsuarioEN u = new UsuarioEN();
      u.Nif = txtUsername.Text;
 
-     if (u.login() && u.Contraseña == txtPassword.Text)
-     {
-         Session["user"] = u;
-         Response.Redirect("Home.aspx");
-     }
-     LabelError.Visible = true;
+            if (u.login() && u.Contraseña == txtPassword.Text)
+            {
 
+                Session["user"] = u.Nif;
+                Session["password"] = u.Contraseña;
+                Response.Write("bienvenido");
+                Response.Write(Session["user"]);
+                
+
+                Response.Redirect("Home.aspx");
+            }
+            else
+            {
+                LabelError.Visible = true;
+            }
         }
     }
 }
