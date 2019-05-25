@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using library;
 using System.Windows.Forms;
 using library.ServiceLayer;
+using System.Security.Cryptography;
 
 
 namespace webYelabay
@@ -77,7 +78,12 @@ namespace webYelabay
                 LabelErrorPassword.Visible = true;
                 todobien = true;
             }
-
+            us.Contrasenya = TextBoxPassword.Text;
+            MD5 md5 = MD5.Create();
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(us.Contrasenya);
+            byte[] hash = md5.ComputeHash(inputBytes);
+            us.Contrasenya = BitConverter.ToString(hash).Replace("-", "");
+            
 
             if (!Validator.noExiste("nif", TextBoxNick.Text))
             {
