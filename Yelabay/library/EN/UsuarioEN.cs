@@ -51,6 +51,10 @@ namespace library
             Tipo = "";
         }
 
+        public int getId()
+        {
+            return Id;
+        }
         public string getTipo()
         {
             return Tipo;

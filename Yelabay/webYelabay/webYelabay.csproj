@@ -80,6 +80,7 @@
     <Content Include="CrearReclamacion.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="PedidosAdmin.aspx" />
     <Content Include="ProductosAdmin.aspx" />
     <Content Include="UsuariosAdmin.aspx" />
     <Content Include="VerComponentes.aspx" />
@@ -137,6 +138,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosAdmin.aspx.cs">
+      <DependentUpon>PedidosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosAdmin.aspx.designer.cs">
+      <DependentUpon>PedidosAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="ProductosAdmin.aspx.cs">
       <DependentUpon>ProductosAdmin.aspx</DependentUpon>

@@ -158,6 +158,13 @@ namespace library
 
             return cadp.ListarPedidos(this);
         }
+
+        public DataSet ListarPedidoUsu(int id)
+        {
+            PedidosCAD cadp = new PedidosCAD();
+
+            return cadp.ListarPedidosUser(id);
+        }
     }
 }
 
