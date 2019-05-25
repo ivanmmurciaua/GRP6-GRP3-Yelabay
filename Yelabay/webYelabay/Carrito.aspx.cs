@@ -252,13 +252,6 @@ namespace webYelabay
             //pedido.precioConIVA_pbl= precioSinIVA ;
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //GridView1.DeleteRow(GridView1.SelectedIndex);
-            /*CarritoEN carro = new CarritoEN();
-            DataSet d = carro.eliminarProducto(GridView1.SelectedIndex);
-            GridView1.DataSource = d;
-            GridView1.DataBind();*/
-        }
+        
     }
 }
