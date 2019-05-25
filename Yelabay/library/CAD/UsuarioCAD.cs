@@ -94,24 +94,19 @@ namespace library
         public bool actualizarUsuario(UsuarioEN en)
         {
             bool exito = false;
-
+            UsuarioEN us= (UsuarioEN)en;
 
             SqlConnection c = new SqlConnection(constring);
             try
             {
                 c.Open();
                 //SqlCommand com = new SqlCommand("UPDATE Usuarios SET nombre=@nombre, apellido1=@apellido1, nif=@nif, email=@email, contrasenya=@contrasenya, tipo=@tipo, nick=@nick, telefono=@telefono where id=@id", c);
-                SqlCommand com = new SqlCommand("UPDATE Usuarios SET nombre=@nombre, apellido1=@apellido1, nif=@nif, email=@email, contrasenya=@contrasenya, nick=@nick, telefono=@telefono where id=@id", c);
-                com.Parameters.AddWithValue("@nombre", en.getNombre().ToString());
-                com.Parameters.AddWithValue("@apellido1", en.Apellidos1.ToString());
-                com.Parameters.AddWithValue("@nif", en.Nif.ToString());
-                com.Parameters.AddWithValue("@email", en.getEmail().ToString());
-                
-                com.Parameters.AddWithValue("@contrasenya", en.getContraseña().ToString());
-                com.Parameters.AddWithValue("@tipo", en.getTipo());
-                com.Parameters.AddWithValue("@nick", en.Nick.ToString());
-                com.Parameters.AddWithValue("@telefono", en.Telefono.ToString());
-                com.Parameters.AddWithValue("@id", en.Id.ToString());
+                SqlCommand com = new SqlCommand("UPDATE Usuarios SET nombre= '" + us.Nombre
+                    + "', telefono = '" + us.Telefono
+                    + "', apellido1 = '" + us.Apellidos1
+                    + "' WHERE nif = '" + us.Nif
+                    + "';", c);
+
                 com.ExecuteNonQuery();
 
 
