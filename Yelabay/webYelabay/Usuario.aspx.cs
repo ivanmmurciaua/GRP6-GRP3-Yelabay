@@ -90,10 +90,10 @@ namespace webYelabay
                     Response.Redirect("VerPedido.aspx");
                     break;
                 case "inc":
-                    Response.Redirect("VerIncidencia.aspx");
+                    Response.Redirect("VerTodasIncidencias.aspx");
                     break;
                 case "rec":
-                    Response.Redirect("VerReclamacion.aspx");
+                    Response.Redirect("CrearReclamacion.aspx");
                     break;
                 default:
                     Response.Redirect("Usuario.aspx");

@@ -12,8 +12,8 @@
                     <Items>
                         <asp:MenuItem Text="Mis datos" Value="usu"></asp:MenuItem>
                         <asp:MenuItem Text="Mis pedidos" Value="ped"></asp:MenuItem>
-                        <asp:MenuItem Text="Incidencias" Value="inc"></asp:MenuItem>
-                        <asp:MenuItem Text="Reclamaciones" Value="rec"></asp:MenuItem>
+                        <asp:MenuItem Text="Mis Reclamaciones" Value="rec"></asp:MenuItem>
+                        <asp:MenuItem Text="Realizar Reclamación" Value="inc"></asp:MenuItem>
                     </Items>
                     <StaticMenuItemStyle Font-Size="XX-Large" ForeColor="Black" />
                 </asp:Menu>
@@ -63,11 +63,7 @@
                     <asp:Button ID="ButtonModify" style="background:#249cf4" runat="server" Text="Actualizar Información" OnClick="ButtonModify_Click" />
                 </div>
             </div>
-            <asp:Menu ID="MenuOrders" runat="server" StaticSubMenuIndent="16px" >
-                <Items>
-                    <asp:MenuItem Text="Ver Pedidos" Value="orders"></asp:MenuItem>
-                </Items>
-            </asp:Menu>
+
         </div>
     
 </asp:Content>
