@@ -34,7 +34,7 @@
                     <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonProfile" ImageUrl="images/perfil.png" Visible="true" OnClick="buttonProfile_Click"  Height="21px" Width="22px" ></asp:ImageButton>
                     <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonLogin" ImageUrl="images/login.png" OnClick="buttonLogin_Click" Height="21px" Width="22px" ></asp:ImageButton>
                     <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonCarrito" ImageUrl="images/carrito.png" OnClick="buttonCarrito_Click"  Height="21px" Width="22px"></asp:ImageButton>
-                    <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonLogout" ImageUrl="images/cerrarSesion.png" Visible="false" OnClick="buttonLogout_Click"  Height="21px" Width="22px"></asp:ImageButton>
+                    <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonLogout" ImageUrl="images/cerrarSesion.png" Visible="true" OnClick="buttonLogout_Click"  Height="21px" Width="22px"></asp:ImageButton>
                 </div>
 
            </div>

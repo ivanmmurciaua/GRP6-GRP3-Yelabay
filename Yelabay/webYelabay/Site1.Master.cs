@@ -11,7 +11,11 @@ namespace webYelabay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Usuarios"] == null)
+            {
+                buttonProfile.Visible = false;
+                buttonLogout.Visible = false;
+            }
         }
         protected void MenuLeft_MenuItemClick(object sender, MenuEventArgs e)
         {
@@ -62,7 +66,7 @@ namespace webYelabay
         }
         protected void buttonLogout_Click(object sender, ImageClickEventArgs e)
         {
-            Session["user"] = null;
+            Session["Usuarios"] = null;
             Response.Redirect("Home.aspx");
         }
     }
