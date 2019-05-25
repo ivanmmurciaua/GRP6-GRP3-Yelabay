@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace library
 {
@@ -104,26 +108,26 @@ namespace library
         }
 
 
-        public void crearProductos()
+        public bool crearProductos(int idMarca, int idOferta, int idCategoria)
         {
             ProductoCAD cad = new ProductoCAD();
 
-            cad.crearProductos(this);
+            return cad.crearProductos(this, idMarca, idOferta, idCategoria);
 
         }
 
-        public void borrarProductos()
+        public bool borrarProductos()
         {
             ProductoCAD cad = new ProductoCAD();
 
-            cad.borrarProductos(this);
+            return cad.borrarProductos(this);
         }
 
-        public void actualizarProductos()
+        public bool actualizarProductos(int idMarca, int idOferta, int idCategoria)
         {
             ProductoCAD cad = new ProductoCAD();
 
-            cad.actualizarProductos(this);
+            return cad.actualizarProductos(this, idMarca, idOferta, idCategoria);
         }
         public void leerProductos()
         {
@@ -131,5 +135,13 @@ namespace library
 
             cad.leerProductos(this);
         }
+
+        public DataSet ListarProductos()
+        {
+            ProductoCAD cadp = new ProductoCAD();
+
+            return cadp.ListarProductos(this);
+        }
+
     }
 }

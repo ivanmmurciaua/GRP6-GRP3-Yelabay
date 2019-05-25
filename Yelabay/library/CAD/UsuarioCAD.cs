@@ -58,14 +58,81 @@ namespace library
             
         }
 
-        public void borrarUsuario(UsuarioEN en)
+        public bool borrarUsuario(UsuarioEN en)
         {
+            bool exito = false;
 
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("DELETE FROM Usuarios WHERE id = " + en.Id.ToString(), c);
+
+
+                com.ExecuteNonQuery();
+
+
+
+
+                c.Close();
+                exito = true;
+
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+
+            }
+
+
+            return exito;
         }
 
-        public void actualizarUsuario(UsuarioEN en)
+        public bool actualizarUsuario(UsuarioEN en)
         {
+            bool exito = false;
 
+
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                //SqlCommand com = new SqlCommand("UPDATE Usuarios SET nombre=@nombre, apellido1=@apellido1, nif=@nif, email=@email, contrasenya=@contrasenya, tipo=@tipo, nick=@nick, telefono=@telefono where id=@id", c);
+                SqlCommand com = new SqlCommand("UPDATE Usuarios SET nombre=@nombre, apellido1=@apellido1, nif=@nif, email=@email, contrasenya=@contrasenya, nick=@nick, telefono=@telefono where id=@id", c);
+                com.Parameters.AddWithValue("@nombre", en.getNombre().ToString());
+                com.Parameters.AddWithValue("@apellido1", en.Apellidos1.ToString());
+                com.Parameters.AddWithValue("@nif", en.Nif.ToString());
+                com.Parameters.AddWithValue("@email", en.getEmail().ToString());
+                
+                com.Parameters.AddWithValue("@contrasenya", en.getContraseña().ToString());
+                //com.Parameters.AddWithValue("@tipo", en.Tipo.ToString());
+                com.Parameters.AddWithValue("@nick", en.Nick.ToString());
+                com.Parameters.AddWithValue("@telefono", en.Telefono.ToString());
+                com.Parameters.AddWithValue("@id", en.Id.ToString());
+                com.ExecuteNonQuery();
+
+
+
+
+                c.Close();
+                exito = true;
+
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+
+            }
+
+
+
+            return exito;
         }
 
         public void leerUsuario(UsuarioEN en)
@@ -155,7 +222,18 @@ namespace library
             return u;
         }
 
-        
+        public DataSet ListarUsuarios(UsuarioEN en)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+            SqlDataAdapter da = new SqlDataAdapter("select * from Usuarios", c);
+
+            da.Fill(bdvirtual, "Usuarios");
+
+            return bdvirtual;
+        }
+
+
 
     }
 }
