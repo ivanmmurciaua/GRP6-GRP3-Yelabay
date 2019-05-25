@@ -11,11 +11,20 @@ namespace webYelabay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["Usuarios"] == null)
-            {
+           
+            if(Session["Usuarios"]==null){
                 buttonProfile.Visible = false;
                 buttonLogout.Visible = false;
+                buttonLogin.Visible = true;
             }
+            else
+            {
+                buttonProfile.Visible = true;
+                buttonLogout.Visible = true;
+                buttonLogin.Visible = false;
+            }
+            
+
         }
         protected void MenuLeft_MenuItemClick(object sender, MenuEventArgs e)
         {
