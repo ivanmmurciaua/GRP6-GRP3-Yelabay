@@ -15,18 +15,121 @@ namespace library
         {
             constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
         }
-        public void crearProductos(ProductoEN en)
+        public bool crearProductos(ProductoEN en, int idMarca, int idOferta, int idCategoria)
         {
+            bool exito = false;
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                //String nom = (en.getNombre()).ToString();
+                c.Open();
+                SqlCommand com = new SqlCommand("insert into Productos (nombre, precio, stock, fkmarca, fkcategoria, descripcion, foto) VALUES (@nombre, @precio, @stock, @fkmarca, @fkcategoria, @descripcion, @foto)", c);
+                //SqlCommand com = new SqlCommand("insert into Productos (nombre, precio, stock, descripcion, foto) VALUES (@nombre, @precio, @stock, @descripcion, @foto)", c);
+
+                com.Parameters.AddWithValue("@nombre", en.getNombre().ToString());
+
+                com.Parameters.AddWithValue("@precio", (en.getPrecio()).ToString());
+                com.Parameters.AddWithValue("@stock", (en.getStock()).ToString());
+
+                com.Parameters.AddWithValue("@fkmarca", idMarca.ToString());
+                //com.Parameters.AddWithValue("@fkoferta", idOferta);
+                com.Parameters.AddWithValue("@fkcategoria", idCategoria.ToString());
+
+                com.Parameters.AddWithValue("@descripcion", en.getDescripcion().ToString());
+                com.Parameters.AddWithValue("@foto", en.getImagen().ToString());
+
+                com.ExecuteNonQuery();
+
+
+
+
+                c.Close();
+                exito = true;
+
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+
+            }
+            return exito;
 
         }
 
-        public void borrarProductos(ProductoEN en)
+        public bool borrarProductos(ProductoEN en)
         {
+            bool exito = false;
 
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("DELETE FROM Productos WHERE id = " + en.getCodigo(), c);
+
+
+                com.ExecuteNonQuery();
+
+
+
+
+                c.Close();
+                exito = true;
+
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+
+            }
+
+
+            return exito;
         }
 
-        public void actualizarProductos(ProductoEN en)
+        public bool actualizarProductos(ProductoEN en, int idMarca, int idOferta, int idCategoria)
         {
+            bool exito = false;
+
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("UPDATE Productos SET nombre=@nombre, precio=@precio, stock=@stock, fkmarca=@fkmarca, fkcategoria=@fkcategoria, descripcion=@descripcion, foto=@foto where id=@id", c);
+                com.Parameters.AddWithValue("@nombre", en.getNombre().ToString());
+                com.Parameters.AddWithValue("@precio", en.getPrecio().ToString());
+                com.Parameters.AddWithValue("@stock", en.getStock().ToString());
+                com.Parameters.AddWithValue("@fkmarca", idMarca.ToString());
+                //com.Parameters.AddWithValue("@fkoferta", idOferta.ToString());
+                com.Parameters.AddWithValue("@fkcategoria", idCategoria.ToString());
+                com.Parameters.AddWithValue("@descripcion", en.getDescripcion().ToString());
+                com.Parameters.AddWithValue("@foto", en.getImagen().ToString());
+                com.Parameters.AddWithValue("@id", en.getCodigo().ToString());
+                com.ExecuteNonQuery();
+
+
+
+
+                c.Close();
+                exito = true;
+
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+
+            }
+
+
+            return exito;
 
         }
         public void leerProductos(ProductoEN en)
