@@ -108,7 +108,7 @@ namespace library
                 com.Parameters.AddWithValue("@email", en.getEmail().ToString());
                 
                 com.Parameters.AddWithValue("@contrasenya", en.getContraseña().ToString());
-                //com.Parameters.AddWithValue("@tipo", en.Tipo.ToString());
+                com.Parameters.AddWithValue("@tipo", en.getTipo());
                 com.Parameters.AddWithValue("@nick", en.Nick.ToString());
                 com.Parameters.AddWithValue("@telefono", en.Telefono.ToString());
                 com.Parameters.AddWithValue("@id", en.Id.ToString());
