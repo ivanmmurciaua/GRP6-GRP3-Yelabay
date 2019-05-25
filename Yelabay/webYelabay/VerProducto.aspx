@@ -26,7 +26,6 @@
                                 <asp:Image ID="Image1" runat="server" Height="500" ImageUrl='<%# Eval("foto") %>' />
                             </ItemTemplate>
                         </asp:DataList>
-                        <asp:Label ID="Anyadido" runat="server" Text="NoAnyadido"></asp:Label>
                     </td>
                     <td>&nbsp;</td>  
                     <td style="vertical-align: top; text-align:left;">
