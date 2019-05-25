@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net.Mail;
 using System.Web;
@@ -28,14 +29,15 @@ namespace webYelabay
             CarritoEN carro = new CarritoEN();
             ProductoEN prod1 = new ProductoEN();
             prod1.setCodigo(1);
-            prod1.setNombre("ProductoPrueba");
-            prod1.setPrecio(50);
+            prod1.setNombre("ProductoPrueba3");
+            prod1.setPrecio(30);
             prod1.setStock(5);
             prod1.setDescripcion("Producto para probar el carrito");
 
-            UsuarioEN user = new UsuarioEN("pruebaCarrito@user.com", "Andres", "Calle Preuba", "1234", "Tebar Moreno", "498765A", 22, "Andres96", 69696);
+            UsuarioEN user = new UsuarioEN("pruebaCarrito@user.com", "Andres", "Calle Preuba", "1234", "Tebar Moreno", "498765A", 22, "Andres96", "849595839");
 
             carro.setProducto(prod1);
+            carro.setCantidad(1);
             carro.setUsuario(user);
 
             //if(carro.anyadirProducto(prod1, 1)) CompruebaBD.Text = "Añadido producto";
@@ -223,6 +225,15 @@ namespace webYelabay
             {
                 PruebaCompra.Text = "No se pudo enviar mensaje de confirmación";
             }
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //GridView1.DeleteRow(GridView1.SelectedIndex);
+            /*CarritoEN carro = new CarritoEN();
+            DataSet d = carro.eliminarProducto(GridView1.SelectedIndex);
+            GridView1.DataSource = d;
+            GridView1.DataBind();*/
         }
     }
 }

@@ -42,7 +42,8 @@ namespace library
                 try
                 {
                     c.Open();
-                    SqlCommand com = new SqlCommand("Insert Into Carrito (precio, cantidad, precioxcantidad) VALUES ('"/* + carr.getProducto() + "','" + carr.getUsuario() + "','" */ +  carr.getProducto().getPrecio() + "','"+ 3 + "','" + carr.getProducto().getPrecio() * 3  + "')", c);
+                    decimal precioDecimal = decimal.Parse(carr.getProducto().getPrecio().ToString().Replace(',', '.'));
+                    SqlCommand com = new SqlCommand("Insert Into Carrito (nombreproducto, precio, cantidad, precioxcantidad, emailusuario) VALUES ('"/* + carr.getProducto() + "','"*/ + carr.getProducto().getNombre() + "','" + precioDecimal + "','"+ carr.getCantidad() + "','" + precioDecimal * carr.getCantidad()  + "','" + carr.getUsuario().getEmail() + "')", c);
                     com.ExecuteNonQuery();
                     
                     anyadidio = true;
@@ -77,9 +78,9 @@ namespace library
             return deleted;
         }
 
-        public int calcularPrecioTotal(CarritoEN carrito)
+        public float calcularPrecioTotal(CarritoEN carrito)
         {
-            int precio = 0;
+            float precio = 0;
 
             CarritoEN carr = carrito;
 
@@ -92,7 +93,16 @@ namespace library
                     SqlDataAdapter da = new SqlDataAdapter("select * from Carrito", c);
                     da.Fill(bdvirtual, "Carrito");
                     DataTable t = new DataTable();
-                    t = bdvirtual.Tables["cliente"];
+                    t = bdvirtual.Tables["Carrito"];
+                    //precio = 5;
+                    for (int i=0; i<t.Rows.Count;i++)
+                    {
+                        
+                        //DataRow fila=t.Rows[i];
+                        precio++;
+                        //precio += (float) fila["precioxcantidad"];
+                        precio = (float) t.Rows[i][2];
+                    }
                     /*
                     DataRow nuevafila = t.NewRow();
                     nuevafila[0] = cli.Usuario;
@@ -101,11 +111,11 @@ namespace library
                     t.Rows.Add(nuevafila);
 
                     SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
-                    da.Update(bdvirtual, "Carrito");*/
+                    da.Update(bdvirtual, "Carrito");
 
-                    //cambiado = true;
+                    cambiado = true;*/
                 }
-                catch (Exception ex) {  }
+                catch (Exception ex) { }
                 finally { c.Close(); }
             }
 
@@ -117,6 +127,25 @@ namespace library
             bool leido = false;
 
             return leido;
+        }
+
+        public DataSet eliminarProducto(CarritoEN carrito, int i)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring); SqlDataAdapter da = new
+            SqlDataAdapter("select * from Carrito", c);
+            da.Fill(bdvirtual, "Carrito");
+            DataTable t = new DataTable();
+            t = bdvirtual.Tables["Carrito"];
+            DataRow fila = t.Rows[i];
+            fila.Delete();
+            t.AcceptChanges();
+            //t.Rows[i].Delete();
+            //t.Rows[i]["usuario"] = cli.Usuario;
+            //t.Rows[i]["contraseña"] = cli.Contraseña;
+            SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
+            da.Update(bdvirtual, "Carrito");
+            return bdvirtual;
         }
 
     }

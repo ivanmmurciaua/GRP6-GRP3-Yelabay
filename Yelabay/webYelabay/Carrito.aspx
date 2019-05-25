@@ -12,14 +12,18 @@
             <h1>Artículos actualmente en el carrito:<asp:Label ID="CompruebaBD" runat="server"></asp:Label>
             </h1>
 
-                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataCarrito">
+                <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataCarrito" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                     <Columns>
+                        <asp:BoundField DataField="nombreproducto" HeaderText="Producto" SortExpression="nombreproducto" />
                         <asp:BoundField DataField="precio" HeaderText="Precio" SortExpression="precio" />
+                        <asp:ButtonField ButtonType="Button" CommandName="Update" Text="-" />
                         <asp:BoundField DataField="cantidad" HeaderText="Cantidad" SortExpression="cantidad" />
+                        <asp:ButtonField ButtonType="Button" CommandName="Update" Text="+" />
                         <asp:BoundField DataField="precioxcantidad" HeaderText="Total" SortExpression="precioxcantidad" />
+                        <asp:ButtonField ButtonType="Button" CommandName="Delete" Text="X" />
                     </Columns>
             </asp:GridView>
-            <asp:SqlDataSource ID="SqlDataCarrito" runat="server" ConnectionString="<%$ ConnectionStrings:miconexion %>" SelectCommand="SELECT [precio], [cantidad], [precioxcantidad] FROM [Carrito]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataCarrito" runat="server" ConnectionString="<%$ ConnectionStrings:miconexion %>" SelectCommand="SELECT [nombreproducto], [precio], [cantidad], [precioxcantidad] FROM [Carrito]"></asp:SqlDataSource>
                 <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:miconexion %>" SelectCommand="SELECT * FROM [Carrito]"></asp:SqlDataSource>
             
             
