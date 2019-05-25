@@ -27,10 +27,14 @@ namespace webYelabay
             LabelProductoID.Text = en.getCodigo().ToString();
             LabelStock.Text = en.getStock().ToString();
 
-
-
-
-
+            if (Session["Usuarios"] == null)
+            {
+                buttonAddCarrito.Visible = false;
+            }
+            else
+            {
+                buttonAddCarrito.Visible = true;
+            }
         }
         protected void addCarrito_Click(object sender, EventArgs e)
         {
