@@ -18,5 +18,10 @@ namespace webYelabay
         {
 
         }
+
+        protected void ButtonModify_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

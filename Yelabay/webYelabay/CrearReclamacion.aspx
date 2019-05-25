@@ -25,10 +25,10 @@
                     <asp:TextBox ID="TextBoxMotivo" runat="server" Height="87px" Width="569px"></asp:TextBox>
                 </div>
             </div>
-                    <asp:Button ID="ButtonModify" style="background:#249cf4" runat="server" Text="Enviar Reclamación" OnClick="ButtonModify_Click" />
-     </div>
-         <div class="invisibleRow">
+                
+            <div class="invisibleRow">
                 <div class="invisibleCol">
+                    <asp:Button ID="ButtonModify" style="background:#249cf4" runat="server" Text="Enviar Reclamación" OnClick="ButtonModify_Click" />
                 </div>
             </div>
 
