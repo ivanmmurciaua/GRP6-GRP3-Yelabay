@@ -34,11 +34,11 @@ namespace webYelabay
 
             if (Session["Usuarios"] == null)
             {
-                buttonAddCarrito.Visible = false;
+                butAddCarrito.Visible = false;
             }
             else
             {
-                buttonAddCarrito.Visible = true;
+                butAddCarrito.Visible = true;
             }
         }
         protected void addCarrito_Click(object sender, EventArgs e)
