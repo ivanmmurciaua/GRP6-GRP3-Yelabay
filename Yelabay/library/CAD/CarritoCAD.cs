@@ -141,7 +141,7 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("DELETE FROM Carrito WHERE nombreproducto = " + nombreProd + " and emailusuario = " +email, c);
+                SqlCommand com = new SqlCommand("DELETE FROM Carrito WHERE emailusuario LIKE '%" +email + "%' AND nombreproducto LIKE '%"+ nombreProd+"%'", c);
 
 
                 com.ExecuteNonQuery();

@@ -13,7 +13,7 @@
                 
            
 
-                    <asp:GridView ID="GridCarrito" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="id"
+                    <asp:GridView ID="GridCarrito" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="nombreproducto"
                 OnRowCommand="GridCarrito_RowCommand" OnRowEditing="GridCarrito_RowEditing" OnRowCancelingEdit="GridCarrito_RowCancelingEdit" 
                 OnRowUpdating="GridCarrito_RowUpdating" OnRowDeleting="GridCarrito_RowDeleting"
                 

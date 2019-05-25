@@ -146,12 +146,21 @@ namespace webYelabay
 
         protected void GridCarrito_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            int identi = Int32.Parse(GridCarrito.DataKeys[e.RowIndex].Value.ToString());
+            //int identi = Int32.Parse(GridCarrito.DataKeys[e.RowIndex].Value.ToString());
 
             //UsuarioEN usuEN = new UsuarioEN();
             //usuEN.Id = identi;
-
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];
             CarritoEN carrito = new CarritoEN();
+            ProductoEN producto = new ProductoEN();
+            //(GridCarrito.Rows[e.RowIndex].FindControl("textNombreProducto") as TextBox).Text.Trim().ToString();
+            String nombreProd = GridCarrito.Rows[e.RowIndex].Cells[4].ToString();
+            //String nombreProd = "Silla Spirit Of Gamer Racing White";
+            producto.setNombre(nombreProd);
+
+
+            carrito.setUsuario(u);
+            carrito.setProducto(producto);
 
 
             bool borrado = carrito.eliminarProducto();
