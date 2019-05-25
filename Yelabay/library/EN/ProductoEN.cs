@@ -70,13 +70,7 @@ namespace library
             return imagen;
         }
 
-
-
-
-
-
-
-
+        
         public void setCodigo(int cod2)
         {
             codigo = cod2;
@@ -141,6 +135,12 @@ namespace library
             ProductoCAD cadp = new ProductoCAD();
 
             return cadp.ListarProductos(this);
+        }
+
+        public bool disminuirStock(int cantidad)
+        {
+            ProductoCAD cadp = new ProductoCAD();
+            return cadp.disminuirStock(this,cantidad);
         }
 
     }
