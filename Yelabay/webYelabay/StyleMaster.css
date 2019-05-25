@@ -81,7 +81,12 @@ body {
     padding-right: 18.75%;
     width: 90%;
 }
-
+/*Todos los productos*/
+#content6 {
+    padding-left: 10%;
+    padding-right: 10%;
+    width: 90%;
+}
 #header {
     position: fixed;
     width: 100%;
