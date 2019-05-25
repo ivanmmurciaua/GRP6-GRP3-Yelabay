@@ -25,6 +25,23 @@ namespace webYelabay
             mostrarDatosTabla(carro);
             mostrarPrecioTotal(carro);*/
 
+            CarritoEN carro = new CarritoEN();
+            ProductoEN prod1 = new ProductoEN();
+            prod1.setCodigo(1);
+            prod1.setNombre("ProductoPrueba");
+            prod1.setPrecio(50);
+            prod1.setStock(5);
+            prod1.setDescripcion("Producto para probar el carrito");
+
+            UsuarioEN user = new UsuarioEN("pruebaCarrito@user.com", "Andres", "Calle Preuba", "1234", "Tebar Moreno", "498765A", 22, "Andres96", 69696);
+
+            carro.setProducto(prod1);
+            carro.setUsuario(user);
+
+            //if(carro.anyadirProducto(prod1, 1)) CompruebaBD.Text = "Añadido producto";
+            CosteTotal.Text= "Total: " + carro.getPrecioTotal().ToString() + "€";
+            
+
             //COOKIES USER
             HttpCookie userCookie;
             userCookie = Request.Cookies["UserID"];
