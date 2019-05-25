@@ -23,6 +23,7 @@ namespace webYelabay
             if (!IsPostBack)
             {
                 RellenarGridView();
+                CalcularTotal();
             }
 
             //COOKIES USER
@@ -39,6 +40,17 @@ namespace webYelabay
             }*/
 
 
+        }
+
+        public void CalcularTotal()
+        {
+            CarritoEN carrito = new CarritoEN();
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];
+            carrito.setUsuario(u);
+
+            carrito.calcularPrecioTotal();
+            
+            CosteTotal.Text = "Total: " + carrito.getPrecioTotal().ToString() + "€";
         }
 
         public void RellenarGridView()
@@ -99,23 +111,24 @@ namespace webYelabay
 
 
 
-        protected void GridCarrito_RowEditing(object sender, GridViewEditEventArgs e)
+        /*protected void GridCarrito_RowEditing(object sender, GridViewEditEventArgs e)
         {
             GridCarrito.EditIndex = e.NewEditIndex;
             RellenarGridView();
-        }
+        }*/
 
-        protected void GridCarrito_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
+        /*protected void GridCarrito_RowCancelingEdit(object sender, GridViewCancelEditEventArgs e)
         {
             GridCarrito.EditIndex = -1;
             RellenarGridView();
-        }
+        }*/
 
 
 
         protected void GridCarrito_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            int identi = Int32.Parse(GridCarrito.DataKeys[e.RowIndex].Value.ToString());
+            NombreProduct.Text = "Llama a actualiza";
+            /*int identi = Int32.Parse(GridCarrito.DataKeys[e.RowIndex].Value.ToString());
 
             String nomb = (GridCarrito.Rows[e.RowIndex].FindControl("textNombre") as TextBox).Text.Trim().ToString();
 
@@ -127,11 +140,20 @@ namespace webYelabay
             String nicki = (GridCarrito.Rows[e.RowIndex].FindControl("textNick") as TextBox).Text.Trim().ToString();
             String telef = (GridCarrito.Rows[e.RowIndex].FindControl("textTelefono") as TextBox).Text.Trim().ToString();
 
-            UsuarioEN usuEN = new UsuarioEN(emal, nomb, "", contra, apelli, ni, identi, nicki, telef, "estándar");
+            UsuarioEN usuEN = new UsuarioEN(emal, nomb, "", contra, apelli, ni, identi, nicki, telef, "estándar");*/
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];
+            CarritoEN carrito = new CarritoEN();
+            ProductoEN producto = new ProductoEN();
+
+            String nombreProd = "Silla Spirit Of Gamer Racing White";
+            producto.setNombre(nombreProd);
 
 
-            bool actualizado = usuEN.actualizarUsuario();
-           GridCarrito.EditIndex = -1;
+            carrito.setUsuario(u);
+            carrito.setProducto(producto);
+
+            bool actualizado = carrito.eliminarProducto();
+            //GridCarrito.EditIndex = -1;
             RellenarGridView();
 
             if (actualizado)
@@ -154,8 +176,9 @@ namespace webYelabay
             CarritoEN carrito = new CarritoEN();
             ProductoEN producto = new ProductoEN();
             //(GridCarrito.Rows[e.RowIndex].FindControl("textNombreProducto") as TextBox).Text.Trim().ToString();
-            String nombreProd = GridCarrito.Rows[e.RowIndex].Cells[4].ToString();
-            //String nombreProd = "Silla Spirit Of Gamer Racing White";
+            //String nombreProd = GridCarrito.Rows[e.RowIndex].Cells[4].ToString();
+            //NombreProduct.Text= GridCarrito.Rows[e.RowIndex].Cells["nombreproducto"].ToString();
+            String nombreProd = "Silla Spirit Of Gamer Racing White";
             producto.setNombre(nombreProd);
 
 
