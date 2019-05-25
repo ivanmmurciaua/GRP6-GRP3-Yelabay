@@ -82,28 +82,17 @@ namespace webYelabay
                 MessageBox.Show("Tu cuenta se ha actualizado");
             }
         }
-
-        protected void MenuLeftUsu_MenuItemClick(object sender, MenuEventArgs e)
+        protected void ButtonPedidos_Click(object sender, EventArgs e)
         {
-            string itemClicked = MenuLeftUsu.SelectedValue;
-            switch (itemClicked)
-            {
-                case "usu":
-                    Response.Redirect("Usuario.aspx");
-                    break;
-                case "ped":
-                    Response.Redirect("VerTodosPedidos.aspx");
-                    break;
-                case "inc":
-                    Response.Redirect("VerTodasIncidencias.aspx");
-                    break;
-                case "rec":
-                    Response.Redirect("CrearReclamacion.aspx");
-                    break;
-                default:
-                    Response.Redirect("Usuario.aspx");
-                    break;
-            }
+            Response.Redirect("VerTodosPedidos.aspx");
+        }
+        protected void ButtonReclamaciones_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerTodasIncidencias.aspx");
+        }
+        protected void ButtonNuevaReclamacion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CrearReclamacion.aspx");
         }
     }
 }

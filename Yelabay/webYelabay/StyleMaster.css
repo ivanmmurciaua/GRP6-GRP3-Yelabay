@@ -196,7 +196,6 @@ body {
     margin-top: -3%;
     margin-right: -18%;
 }
-
 .center {
     display: flex;
     flex-wrap: wrap; /* Optional. only if you want the items to wrap */
@@ -245,12 +244,14 @@ td {
     padding-bottom: 3%;
     padding-top: 2%;
 }
-
 .invisibleCol {
     float: left;
     width: 20%;
 }
-
+.invisibleCol2 {
+    float: left;
+    width: 20%;
+}
 .invisibleCol10 {
     float: left;
     width: 10%;
