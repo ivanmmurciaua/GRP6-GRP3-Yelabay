@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace library
 {
@@ -131,5 +135,13 @@ namespace library
 
             cad.leerProductos(this);
         }
+
+        public DataSet ListarProductos()
+        {
+            ProductoCAD cadp = new ProductoCAD();
+
+            return cadp.ListarProductos(this);
+        }
+
     }
 }

@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlTypes;
+using System.Collections;
 
 namespace library
 {
@@ -160,6 +164,17 @@ namespace library
                 Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
 
             }
+        }
+
+        public DataSet ListarProductos(ProductoEN en)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+            SqlDataAdapter da = new SqlDataAdapter("select * from Productos", c);
+
+            da.Fill(bdvirtual, "Productos");
+
+            return bdvirtual;
         }
     }
 }
