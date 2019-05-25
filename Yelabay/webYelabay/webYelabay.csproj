@@ -78,9 +78,14 @@
     <Content Include="Contact.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="VerComponentes.aspx" />
+    <Content Include="VerConsolas.aspx" />
     <Content Include="VerIncidencia.aspx" />
+    <Content Include="VerOrdenadores.aspx" />
     <Content Include="VerPedido.aspx" />
+    <Content Include="VerPerifericos.aspx" />
     <Content Include="VerProducto.aspx" />
+    <Content Include="VerSmartphones.aspx" />
     <Content Include="VerTodasIncidencias.aspx" />
     <Content Include="VerTodosPedidos.aspx" />
     <Content Include="VerTodosProductos.aspx" />
@@ -115,12 +120,33 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VerComponentes.aspx.cs">
+      <DependentUpon>VerComponentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerComponentes.aspx.designer.cs">
+      <DependentUpon>VerComponentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerConsolas.aspx.cs">
+      <DependentUpon>VerConsolas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerConsolas.aspx.designer.cs">
+      <DependentUpon>VerConsolas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VerIncidencia.aspx.cs">
       <DependentUpon>VerIncidencia.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VerIncidencia.aspx.designer.cs">
       <DependentUpon>VerIncidencia.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerOrdenadores.aspx.cs">
+      <DependentUpon>VerOrdenadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerOrdenadores.aspx.designer.cs">
+      <DependentUpon>VerOrdenadores.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerPedido.aspx.cs">
       <DependentUpon>VerPedido.aspx</DependentUpon>
@@ -129,12 +155,26 @@
     <Compile Include="VerPedido.aspx.designer.cs">
       <DependentUpon>VerPedido.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VerPerifericos.aspx.cs">
+      <DependentUpon>VerPerifericos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerPerifericos.aspx.designer.cs">
+      <DependentUpon>VerPerifericos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VerProducto.aspx.cs">
       <DependentUpon>VerProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VerProducto.aspx.designer.cs">
       <DependentUpon>VerProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerSmartphones.aspx.cs">
+      <DependentUpon>VerSmartphones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerSmartphones.aspx.designer.cs">
+      <DependentUpon>VerSmartphones.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerTodasIncidencias.aspx.cs">
       <DependentUpon>VerTodasIncidencias.aspx</DependentUpon>

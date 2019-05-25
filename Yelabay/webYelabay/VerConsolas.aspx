@@ -1,7 +1,19 @@
 ﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="VerConsolas.aspx.cs" Inherits="webYelabay.VerConsolas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
+    <style type="text/css">
+        .auto-style1 {
+            height: 23px;
+        }
+        .auto-style2 {
+            text-align: right;
+            height: 23px;
+        }
+        .auto-style3 {
+            height: 23px;
+            text-align: left;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer">
@@ -13,7 +25,7 @@
 
 
 
-            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal">
+            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="10">
                 <ItemTemplate>
                     <table class="tablaPedido">
                         <tr>
@@ -28,8 +40,8 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>Precio:</td>
-                            <td>
+                            <td class="auto-style2">Precio:</td>
+                            <td class="auto-style3">
                                 <asp:Label ID="LabelPrecioProducto" runat="server" Text='<%# Eval("precio", "{0:C}") %>'></asp:Label>
                             </td>
                         </tr>
