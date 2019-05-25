@@ -64,7 +64,7 @@ namespace webYelabay
                     int stck = Int32.Parse((GridUsuariosAdmin.FooterRow.FindControl("textStockFooter") as TextBox).Text.Trim().ToString());
                     */
 
-                    UsuarioEN usuEN = new UsuarioEN(emal, nomb,"" ,contra, apelli, ni, 0, nicki, telef);
+                    UsuarioEN usuEN = new UsuarioEN(emal, nomb,"" ,contra, apelli, ni, 0, nicki, telef, "estándar");
 
                     
                     usuEN.createUsuario();
@@ -119,7 +119,7 @@ namespace webYelabay
 
             
 
-            UsuarioEN usuEN = new UsuarioEN(emal, nomb, "", contra, apelli, ni, identi, nicki, telef);
+            UsuarioEN usuEN = new UsuarioEN(emal, nomb, "", contra, apelli, ni, identi, nicki, telef,"estándar");
             
 
             bool actualizado = usuEN.actualizarUsuario();

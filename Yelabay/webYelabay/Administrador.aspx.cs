@@ -13,5 +13,22 @@ namespace webYelabay
         {
 
         }
+
+        protected void MenuLef_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = MenuLef.SelectedValue;
+            switch (itemClicked)
+            {
+                case "usuarios":
+                    Response.Redirect("UsuariosAdmin.aspx");
+                    break;
+                case "articulos":
+                    Response.Redirect("ProductosAdmin.aspx");
+                    break;
+                default:
+                    Response.Redirect("Administrador.aspx");
+                    break;
+            }
+        }
     }
 }
