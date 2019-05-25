@@ -176,5 +176,30 @@ namespace library
 
             return bdvirtual;
         }
+
+        public bool disminuirStock(ProductoEN en, int cantidad)
+        {
+            bool exito = false;
+
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("UPDATE Productos SET stock = stock - 1 WHERE id = " + en.getCodigo(), c);
+                com.ExecuteNonQuery();
+
+                c.Close();
+                exito = true;
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+
+            }
+            return exito;
+        }
     }
 }
