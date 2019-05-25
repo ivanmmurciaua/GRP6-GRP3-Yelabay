@@ -67,14 +67,14 @@ namespace webYelabay
 
             if (u.login() && u.Contrasenya == txtPassword.Text)
             {
-
-                Session["user"] = u.Nif;
-                Session["password"] = u.Contrasenya;
-                Response.Write("bienvenido");
-                Response.Write(Session["user"]);
+                Session["Usuarios"] = u;
+                //Session["user"] = u.Nif;
+                //Session["password"] = u.Contrasenya;
+                //Response.Write("bienvenido");
+                //Response.Write(Session["user"]);
                 
 
-                Response.Redirect("Home.aspx");
+                Response.Redirect("VerTodosProductos.aspx");
             }
             else
             {
