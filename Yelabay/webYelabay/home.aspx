@@ -6,9 +6,7 @@
     <div id ="innerContainer">
         <div id ="title">
         </div>
-        <div id="content">
             <h1>Bienvenid@</h1>
-            </div>
             <h1>Esto es Yelabay, la tienda de electrónica por excelencia.</h1>
             <h1>Si tan solo deseas ver nuestro catálogo, pulsa <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/VerTodosProductos.aspx">aquí</asp:HyperLink> .</h1>
             <h1>Si, por otro lado, tu intención es comprar alguno de nuestros productos, primero deberás <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/Register.aspx">registrarte</asp:HyperLink> o, en el caso de que ya estés registrad@,
