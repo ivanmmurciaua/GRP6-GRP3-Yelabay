@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using library;
+using System.Windows.Forms;
 using library.ServiceLayer;
 
 namespace webYelabay
@@ -61,7 +62,7 @@ namespace webYelabay
                 LabelErrorLastname.Visible = true;
                 correcto = false;
             }
-            if (Validator.IsEmpty(TextBoxPhone.Text))
+            if (!Validator.IsEmpty(TextBoxPhone.Text))
             {
                 if (Validator.IsPhone(TextBoxPhone.Text))
                 {
@@ -74,8 +75,12 @@ namespace webYelabay
                     correcto = false;
                 }
             }
-           // u.actualizarUsuario();
-            Session["Usuarios"] = u;
+            if (correcto == true)
+            {
+                u.actualizarUsuario();
+                Session["Usuarios"] = u;
+                MessageBox.Show("Tu cuenta se ha actualizado");
+            }
         }
 
         protected void MenuLeftUsu_MenuItemClick(object sender, MenuEventArgs e)
@@ -90,10 +95,10 @@ namespace webYelabay
                     Response.Redirect("VerPedido.aspx");
                     break;
                 case "inc":
-                    Response.Redirect("VerIncidencia.aspx");
+                    Response.Redirect("VerTodasIncidencias.aspx");
                     break;
                 case "rec":
-                    Response.Redirect("VerReclamacion.aspx");
+                    Response.Redirect("CrearReclamacion.aspx");
                     break;
                 default:
                     Response.Redirect("Usuario.aspx");

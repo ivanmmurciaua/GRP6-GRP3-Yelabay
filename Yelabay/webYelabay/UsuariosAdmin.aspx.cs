@@ -64,16 +64,16 @@ namespace webYelabay
                     int stck = Int32.Parse((GridUsuariosAdmin.FooterRow.FindControl("textStockFooter") as TextBox).Text.Trim().ToString());
                     */
 
-                    UsuarioEN usuEN = new UsuarioEN(emal, nomb,"" ,contra, apelli, ni, 0, nicki, telef);
+                    UsuarioEN usuEN = new UsuarioEN(emal, nomb,"" ,contra, apelli, ni, 0, nicki, telef, tip);
 
                     
                     usuEN.createUsuario();
-                    LabelMensajeExito.Text = "¡Producto añadido correctamente!";
+                    LabelMensajeExito.Text = "¡Usuario añadido correctamente!";
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
-                    LabelMensajeError.Text = "¡ERROR al añadir el producto!";
+                    LabelMensajeError.Text = "¡ERROR al añadir el usuario!";
                 }
                 RellenarGridView();
                 
@@ -119,7 +119,7 @@ namespace webYelabay
 
             
 
-            UsuarioEN usuEN = new UsuarioEN(emal, nomb, "", contra, apelli, ni, identi, nicki, telef);
+            UsuarioEN usuEN = new UsuarioEN(emal, nomb, "", contra, apelli, ni, identi, nicki, telef,tip);
             
 
             bool actualizado = usuEN.actualizarUsuario();
@@ -149,11 +149,11 @@ namespace webYelabay
 
             if (borrado)
             {
-                LabelMensajeExito.Text = "¡Producto borrado correctamente!";
+                LabelMensajeExito.Text = "¡Usuario borrado correctamente!";
             }
             else
             {
-                LabelMensajeError.Text = "¡ERROR al borrar el producto!";
+                LabelMensajeError.Text = "¡ERROR al borrar el usuario!";
             }
 
         }

@@ -11,7 +11,7 @@
         <br />
         <br />
         <div class ="column-left">
-                    <asp:Menu ID="MenuLef" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" class= "center" style="text-align: center" RenderingMode="List">
+                    <asp:Menu ID="MenuLef" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" class= "center" style="text-align: center" RenderingMode="List" OnMenuItemClick="MenuLef_MenuItemClick">
                     <Items>
                         <asp:MenuItem Text="Usuarios" Value="usuarios"></asp:MenuItem>
                         <asp:MenuItem Text="Articulos" Value="articulos"></asp:MenuItem>

@@ -35,7 +35,7 @@
                         <b>Stock: </b>  <asp:Label ID="LabelStock" runat="server" Text="Label"></asp:Label>
                         <br /><br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="buttonAddCarrito" runat="server" Text="Añadir al carrito" Visible ="false" OnClick="addCarrito_Click" />
+                        <asp:Button ID="butAddCarrito" runat="server" Text="Añadir al carrito" Visible ="false" OnClick="addCarrito_Click" />
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:miconexion %>" SelectCommand="SELECT [foto] FROM [Productos] WHERE ([id] = @id)">
                             <SelectParameters>
                                 <asp:QueryStringParameter Name="id" QueryStringField="id" Type="Int32" />
