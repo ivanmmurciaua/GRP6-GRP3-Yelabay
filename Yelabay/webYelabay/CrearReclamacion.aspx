@@ -13,13 +13,6 @@
        
  <div id="content">
             <div class="invisibleRow">
-                <div class="invisibleCol"><b>Número de Pedido:</b></div>
-                <div class="invisibleCol">
-                    <asp:TextBox ID="TextBoxNumPedido" runat="server" OnTextChanged="TextBoxNumPedido_TextChanged"></asp:TextBox>
-                </div>             
-            </div>
-           
-            <div class="invisibleRow">
                 <div class="invisibleCol"><b>Motivo Devolución:</b></div>
                 <div class="invisibleCol">
                     <asp:TextBox ID="TextBoxMotivo" runat="server" Height="87px" Width="569px"></asp:TextBox>
@@ -31,5 +24,7 @@
                     <asp:Button ID="ButtonModify" style="background:#249cf4" runat="server" Text="Enviar Reclamación" OnClick="ButtonModify_Click" />
                 </div>
             </div>
+     </div>
+        </div>
 
 </asp:Content>
