@@ -77,5 +77,31 @@ namespace webYelabay
            // u.actualizarUsuario();
             Session["Usuarios"] = u;
         }
+
+        protected void MenuLeftUsu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = MenuLeftUsu.SelectedValue;
+            switch (itemClicked)
+            {
+                case "usu":
+                    Response.Redirect("Usuario.aspx");
+                    break;
+                case "ped":
+                    Response.Redirect("VerPedido.aspx");
+                    break;
+                case "inc":
+                    Response.Redirect("VerIncidencia.aspx");
+                    break;
+                case "rec":
+                    Response.Redirect("VerReclamacion.aspx");
+                    break;
+                case "cs":
+                    //Cerrar sesión del usuario
+                    break;
+                default:
+                    Response.Redirect("Usuario.aspx");
+                    break;
+            }
+        }
     }
 }
