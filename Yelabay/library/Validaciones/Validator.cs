@@ -43,7 +43,7 @@ namespace library.ServiceLayer
 
         public static bool IsPhone(string phone)
         {
-            return Regex.IsMatch(phone, @"^34\s?(?:6[0-9]|7[1-9])[0-9]\s?[0-9]{3}\s?[0-9]{3}$");
+            return Regex.Match(phone, "^34 ?(?:6[0-9]{2}|7[1-9][0-9])(?: ?[0-9]{3}){2}$").Success;
         }
     }
 }
