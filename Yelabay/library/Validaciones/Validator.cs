@@ -30,6 +30,17 @@ namespace library.ServiceLayer
             return Regex.IsMatch(s, @"^+$");
         }
 
+        public static bool noExiste(string field, string s)
+        {
+            UsuarioCAD cad = new UsuarioCAD();
+            if (cad.readBy(field, s) == null)
+            {
+                return true;
+            }
+            return false;
+        }
+
+
         public static bool IsPhone(string phone)
         {
             return Regex.IsMatch(phone, @"^34\s?(?:6[0-9]|7[1-9])[0-9]\s?[0-9]{3}\s?[0-9]{3}$");

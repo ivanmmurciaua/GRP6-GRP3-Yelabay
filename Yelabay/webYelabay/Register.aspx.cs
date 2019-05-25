@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using library;
 using System.Windows.Forms;
+using library.ServiceLayer;
 
 
 namespace webYelabay
@@ -21,6 +22,7 @@ namespace webYelabay
                 LabelErrorPassword.Visible = false;
                 LabelErrorPassworddiferente.Visible = false;
                 nocoinciden.Visible = false;
+                Label1.Visible = false;
 
             }
         }
@@ -42,7 +44,7 @@ namespace webYelabay
             else
             {
                 us.Nif = TextBoxNick.Text;
-                us.Nick= TextBoxNick.Text;
+                us.Nick = TextBoxNick.Text;
             }
             LabelErrorEmail.Visible = false;
             if (TextBoxEmail.Text == "")
@@ -55,39 +57,39 @@ namespace webYelabay
                 us.Email = TextBoxEmail.Text;
             }
             LabelErrorPassword.Visible = false;
-            if (TextBoxPassword.Text == "")
+
+            if (Validator.IsSecurePass(TextBoxPassword.Text))
+            {
+                LabelErrorPassword.Visible = false;
+                if (TextBoxPassword.Text == TextBoxRepassword.Text)
+                {
+                    nocoinciden.Visible = true;
+                    us.Contrasenya = TextBoxPassword.Text;
+                }
+                else
+                {
+                    LabelErrorPassword.Visible = true;
+                    todobien = true;
+                }
+            }
+            else
             {
                 LabelErrorPassword.Visible = true;
                 todobien = true;
             }
-            else
-            {
-                //us.Contrasenya = TextBoxPassword.Text;
-            }
-            LabelErrorPassworddiferente.Visible = false;
-            if (TextBoxRepassword.Text == "")
-            {
-                LabelErrorPassworddiferente.Visible = true;
-                todobien = true;
-            }
-            else
-            {
-                us.Contrasenya = TextBoxRepassword.Text;
-            }
 
-            if (TextBoxPassword.Text != TextBoxRepassword.Text)
-            {
-                  nocoinciden.Visible = true;
-                  todobien = true;
-            }
-            
 
-            if (!UsuarioEN.noexiste("Nick", TextBoxNick.Text))
+            if (!Validator.noExiste("nif", TextBoxNick.Text))
             {
                 nocoinciden.Visible = true;
                 todobien = true;
             }
-            
+            if (!Validator.noExiste("email", TextBoxEmail.Text))
+            {
+                Label1.Visible = true;
+                todobien = true;
+            }
+
             if (todobien == false)
             {
                 if (us != null)
