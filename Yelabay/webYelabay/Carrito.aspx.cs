@@ -14,35 +14,10 @@ namespace webYelabay
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            /*CarritoEN carro = new CarritoEN();
-            ProductoEN prod1 = new ProductoEN(3, "Disco Sólido Western Digital Green 3d Nand 240gb - Sata Iii - 2.5/6.35cm", "", 30);
-            ProductoEN prod2 = new ProductoEN(4, "Caja Minitorre Tacens Anima Ac4", "", 10);
-            ProductoEN prod3 = new ProductoEN(5, "Consola Nintendo Switch Grey + Juego Monopoly", "", 7);
-
-            carro.anyadirProducto(prod1, 2);
-            carro.anyadirProducto(prod2, 10);
-            carro.anyadirProducto(prod3, 3);
-            //carro.eliminarProducto(prod3);
-            mostrarDatosTabla(carro);
-            mostrarPrecioTotal(carro);*/
-
-            CarritoEN carro = new CarritoEN();
-            ProductoEN prod1 = new ProductoEN();
-            prod1.setCodigo(1);
-            prod1.setNombre("ProductoPrueba3");
-            prod1.setPrecio(30);
-            prod1.setStock(5);
-            prod1.setDescripcion("Producto para probar el carrito");
-
-            UsuarioEN user = new UsuarioEN("pruebaCarrito@user.com", "Andres", "Calle Preuba", "1234", "Tebar Moreno", "498765A", 22, "Andres96", "849595839");
-
-            carro.setProducto(prod1);
-            carro.setCantidad(1);
-            carro.setUsuario(user);
-
-            //if(carro.anyadirProducto(prod1, 1)) CompruebaBD.Text = "Añadido producto";
-            CosteTotal.Text= "Total: " + carro.getPrecioTotal().ToString() + "€";
-            
+            //Filtrado por usuario actual
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];
+            string userEmail = u.getEmail();
+            SqlDataCarrito.SelectCommand = "SELECT [nombreproducto], [precio], [cantidad], [precioxcantidad] FROM [Carrito] WHERE [emailusuario] LIKE '%" + userEmail + "%'";
 
             //COOKIES USER
             HttpCookie userCookie;
