@@ -75,24 +75,11 @@ namespace library
             return anyadido;
         }
 
-        public DataSet eliminarProducto(int i)
+        public bool eliminarProducto()
         {
+            
             CarritoCAD cad = new CarritoCAD();
-            DataSet a = cad.eliminarProducto(this, i);
-            return a;
-
-            /*for (int i = 0; i < productos.Count(); i++)
-            {
-                if (producto.getCodigo() == productos[i].getCodigo())
-                {
-                    //productos.Remove(producto);
-                    productos.RemoveAt(i);
-                    cantidad.RemoveAt(i);
-                    precioTotal -= precioProdxCant[i];
-                    precioProdxCant.Remove(i);
-                    eliminado = true;
-                }
-            }*/
+            return cad.eliminarProducto(this);
         }
 
         public bool alterarCantidadProducto(ProductoEN producto, int nuevaCantidad)
@@ -165,6 +152,13 @@ namespace library
         public void realizarCompra()
         {
 
+        }
+
+        public DataSet ListarCarrito()
+        {
+            CarritoCAD cadp = new CarritoCAD();
+
+            return cadp.ListarCarrito(this);
         }
 
     }

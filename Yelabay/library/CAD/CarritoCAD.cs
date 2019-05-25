@@ -131,22 +131,40 @@ namespace library
             return leido;
         }
 
-        public DataSet eliminarProducto(CarritoEN carrito, int i)
+        public bool eliminarProducto(CarritoEN carrito)
+        {
+            bool eliminado = false;
+            string email = carrito.getUsuario().getEmail();
+            string nombreProd = carrito.getProducto().getNombre();
+
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("DELETE FROM Carrito WHERE nombreproducto = " + nombreProd + " and emailusuario = " +email, c);
+
+
+                com.ExecuteNonQuery();
+                c.Close();
+                eliminado= true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+            }
+
+            return eliminado;
+        }
+
+        public DataSet ListarCarrito(CarritoEN en)
         {
             DataSet bdvirtual = new DataSet();
-            SqlConnection c = new SqlConnection(constring); SqlDataAdapter da = new
-            SqlDataAdapter("select * from Carrito", c);
+            SqlConnection c = new SqlConnection(constring);
+            SqlDataAdapter da = new SqlDataAdapter("select * from Carrito", c);
+
             da.Fill(bdvirtual, "Carrito");
-            DataTable t = new DataTable();
-            t = bdvirtual.Tables["Carrito"];
-            DataRow fila = t.Rows[i];
-            fila.Delete();
-            t.AcceptChanges();
-            //t.Rows[i].Delete();
-            //t.Rows[i]["usuario"] = cli.Usuario;
-            //t.Rows[i]["contraseña"] = cli.Contraseña;
-            SqlCommandBuilder cbuilder = new SqlCommandBuilder(da);
-            da.Update(bdvirtual, "Carrito");
+
             return bdvirtual;
         }
 
