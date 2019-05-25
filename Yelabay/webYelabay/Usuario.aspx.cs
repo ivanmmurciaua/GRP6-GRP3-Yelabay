@@ -61,7 +61,7 @@ namespace webYelabay
                 LabelErrorLastname.Visible = true;
                 correcto = false;
             }
-            if (!Validator.IsEmpty(TextBoxPhone.Text))
+            if (Validator.IsEmpty(TextBoxPhone.Text))
             {
                 if (Validator.IsPhone(TextBoxPhone.Text))
                 {
@@ -76,6 +76,29 @@ namespace webYelabay
             }
            // u.actualizarUsuario();
             Session["Usuarios"] = u;
+        }
+
+        protected void MenuLeftUsu_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = MenuLeftUsu.SelectedValue;
+            switch (itemClicked)
+            {
+                case "usu":
+                    Response.Redirect("Usuario.aspx");
+                    break;
+                case "ped":
+                    Response.Redirect("VerPedido.aspx");
+                    break;
+                case "inc":
+                    Response.Redirect("VerIncidencia.aspx");
+                    break;
+                case "rec":
+                    Response.Redirect("VerReclamacion.aspx");
+                    break;
+                default:
+                    Response.Redirect("Usuario.aspx");
+                    break;
+            }
         }
     }
 }

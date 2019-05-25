@@ -33,6 +33,7 @@ namespace library
         {
             bool res = false;
             UsuarioEN us = (UsuarioEN)en;
+            us.Tipo = "estándar";
             SqlConnection c = new SqlConnection(constring);
             try
             {

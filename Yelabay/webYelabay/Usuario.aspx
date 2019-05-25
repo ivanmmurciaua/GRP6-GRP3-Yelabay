@@ -4,6 +4,20 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer">
+        <br />
+        <br />
+        <br />
+        <div class =" column-left">
+                    <asp:Menu ID="MenuLeftUsu" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" class= "center" style="text-align: center" RenderingMode="List" OnMenuItemClick="MenuLeftUsu_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem Text="Mis datos" Value="usu"></asp:MenuItem>
+                        <asp:MenuItem Text="Mis pedidos" Value="ped"></asp:MenuItem>
+                        <asp:MenuItem Text="Incidencias" Value="inc"></asp:MenuItem>
+                        <asp:MenuItem Text="Reclamaciones" Value="rec"></asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle Font-Size="XX-Large" ForeColor="Black" />
+                </asp:Menu>
+                </div>
         <div id ="title">
             <h1>
                 Mis Datos<asp:Image ID="Image1" runat="server" ImageUrl="images/VectorPerfil.png" Height="50px" Width="84px" />
