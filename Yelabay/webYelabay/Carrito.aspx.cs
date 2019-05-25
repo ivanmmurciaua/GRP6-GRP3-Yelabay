@@ -62,7 +62,7 @@ namespace webYelabay
         }
 
 
-        /*protected void GridCarrito_RowCommand(object sender, GridViewCommandEventArgs e)
+        protected void GridCarrito_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
             if (e.CommandName.Equals("Añadir"))
@@ -82,27 +82,20 @@ namespace webYelabay
 
                     CarritoEN carrito = new CarritoEN();
 
-                    UsuarioEN usuEN = new UsuarioEN(emal, nomb, "", contra, apelli, ni, 0, nicki, telef, "estándar");
+                    //UsuarioEN usuEN = new UsuarioEN(emal, nomb, "", contra, apelli, ni, 0, nicki, telef, "estándar");
 
 
-                    usuEN.createUsuario();
-                    LabelMensajeExito.Text = "¡Producto añadido correctamente!";
+                    //usuEN.createUsuario();
+                    //LabelMensajeExito.Text = "¡Producto añadido correctamente!";
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
-                    LabelMensajeError.Text = "¡ERROR al añadir el producto!";
+                    //LabelMensajeError.Text = "¡ERROR al añadir el producto!";
                 }
                 RellenarGridView();
-
-
-
-
-
-
-
             }
-        }*/
+        }
 
 
 
@@ -120,36 +113,36 @@ namespace webYelabay
 
 
 
-        /*protected void GridUsuariosAdmin_RowUpdating(object sender, GridViewUpdateEventArgs e)
+        protected void GridCarrito_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            int identi = Int32.Parse(GridUsuariosAdmin.DataKeys[e.RowIndex].Value.ToString());
+            int identi = Int32.Parse(GridCarrito.DataKeys[e.RowIndex].Value.ToString());
 
-            String nomb = (GridUsuariosAdmin.Rows[e.RowIndex].FindControl("textNombre") as TextBox).Text.Trim().ToString();
+            String nomb = (GridCarrito.Rows[e.RowIndex].FindControl("textNombre") as TextBox).Text.Trim().ToString();
 
-            String apelli = (GridUsuariosAdmin.Rows[e.RowIndex].FindControl("textApellidos") as TextBox).Text.Trim().ToString();
-            String ni = (GridUsuariosAdmin.Rows[e.RowIndex].FindControl("textNif") as TextBox).Text.Trim().ToString();
-            String emal = (GridUsuariosAdmin.Rows[e.RowIndex].FindControl("textEmail") as TextBox).Text.Trim().ToString();
-            String contra = (GridUsuariosAdmin.Rows[e.RowIndex].FindControl("textContraseña") as TextBox).Text.Trim().ToString();
-            String tip = (GridUsuariosAdmin.Rows[e.RowIndex].FindControl("textDireccion") as TextBox).Text.Trim().ToString();
-            String nicki = (GridUsuariosAdmin.Rows[e.RowIndex].FindControl("textNick") as TextBox).Text.Trim().ToString();
-            String telef = (GridUsuariosAdmin.Rows[e.RowIndex].FindControl("textTelefono") as TextBox).Text.Trim().ToString();
+            String apelli = (GridCarrito.Rows[e.RowIndex].FindControl("textApellidos") as TextBox).Text.Trim().ToString();
+            String ni = (GridCarrito.Rows[e.RowIndex].FindControl("textNif") as TextBox).Text.Trim().ToString();
+            String emal = (GridCarrito.Rows[e.RowIndex].FindControl("textEmail") as TextBox).Text.Trim().ToString();
+            String contra = (GridCarrito.Rows[e.RowIndex].FindControl("textContraseña") as TextBox).Text.Trim().ToString();
+            String tip = (GridCarrito.Rows[e.RowIndex].FindControl("textDireccion") as TextBox).Text.Trim().ToString();
+            String nicki = (GridCarrito.Rows[e.RowIndex].FindControl("textNick") as TextBox).Text.Trim().ToString();
+            String telef = (GridCarrito.Rows[e.RowIndex].FindControl("textTelefono") as TextBox).Text.Trim().ToString();
 
             UsuarioEN usuEN = new UsuarioEN(emal, nomb, "", contra, apelli, ni, identi, nicki, telef, "estándar");
 
 
             bool actualizado = usuEN.actualizarUsuario();
-            GridUsuariosAdmin.EditIndex = -1;
+           GridCarrito.EditIndex = -1;
             RellenarGridView();
 
             if (actualizado)
             {
-                LabelMensajeExito.Text = "¡Usuario actualizado correctamente!";
+                //LabelMensajeExito.Text = "¡Usuario actualizado correctamente!";
             }
             else
             {
-                LabelMensajeError.Text = "¡ERROR al actualizar el usuario!";
+                //LabelMensajeError.Text = "¡ERROR al actualizar el usuario!";
             }
-        }*/
+        }
 
         protected void GridCarrito_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
@@ -176,6 +169,8 @@ namespace webYelabay
 
         }
 
+
+        ///OTROS
         protected void Comprar_Click(object sender, EventArgs e)//De prueba
         {
             SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);
