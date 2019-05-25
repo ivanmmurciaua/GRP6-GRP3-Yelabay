@@ -1,9 +1,11 @@
-﻿using System;
+﻿using library;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace webYelabay
 {
@@ -107,7 +109,16 @@ namespace webYelabay
         }
         protected void buttonProfile_Click(object sender, ImageClickEventArgs e)
         {
-            Response.Redirect("Usuario.aspx");
+            UsuarioEN user = new UsuarioEN();
+            user = (UsuarioEN)Session["Usuarios"];
+            if (user.getTipo() == "admin")
+            {
+                Response.Redirect("Administrador.aspx");
+            }
+            else
+            {
+                Response.Redirect("Usuario.aspx");
+            }
         }
         protected void buttonLogout_Click(object sender, ImageClickEventArgs e)
         {

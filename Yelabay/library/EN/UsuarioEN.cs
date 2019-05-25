@@ -24,7 +24,7 @@ namespace library
         public string Telefono { get; set; }
         public string Tipo { get; internal set; }
 
-        public UsuarioEN(string Email, string Nombre, string Direccion, string Contrasenya, string Apellidos1, string Nif, int Id, string Nick, string Telefono)
+        public UsuarioEN(string Email, string Nombre, string Direccion, string Contrasenya, string Apellidos1, string Nif, int Id, string Nick, string Telefono, string Tipo)
         {
             this.Email = Email;
             this.Nombre = Nombre;
@@ -35,6 +35,7 @@ namespace library
             this.Id = Id;
             this.Nick = Nick;
             this.Telefono = Telefono;
+            this.Tipo = Tipo;
         }
         public UsuarioEN()
         {
@@ -47,6 +48,12 @@ namespace library
             Nick = "";
             Id = 0;
             Telefono = "";
+            Tipo = "";
+        }
+
+        public string getTipo()
+        {
+            return Tipo;
         }
         public string getEmail()
         {
@@ -115,6 +122,7 @@ namespace library
                 Id = en.Id;
                 Nick = en.Nick;
                 Telefono = en.Telefono;
+                Tipo = en.Tipo;
 
                 return true;
             }
