@@ -42,6 +42,8 @@ body {
     margin-bottom: 5%;
     background-color: aliceblue;
     padding-bottom: 3%;
+    top: 17px;
+    left: 1px;
 }
 
 #content {
