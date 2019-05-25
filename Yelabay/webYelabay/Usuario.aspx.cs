@@ -61,7 +61,7 @@ namespace webYelabay
                 LabelErrorLastname.Visible = true;
                 correcto = false;
             }
-            if (!Validator.IsEmpty(TextBoxPhone.Text))
+            if (Validator.IsEmpty(TextBoxPhone.Text))
             {
                 if (Validator.IsPhone(TextBoxPhone.Text))
                 {
@@ -94,9 +94,6 @@ namespace webYelabay
                     break;
                 case "rec":
                     Response.Redirect("VerReclamacion.aspx");
-                    break;
-                case "cs":
-                    //Cerrar sesión del usuario
                     break;
                 default:
                     Response.Redirect("Usuario.aspx");

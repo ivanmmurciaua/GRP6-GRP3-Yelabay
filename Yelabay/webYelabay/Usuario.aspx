@@ -14,7 +14,6 @@
                         <asp:MenuItem Text="Mis pedidos" Value="ped"></asp:MenuItem>
                         <asp:MenuItem Text="Incidencias" Value="inc"></asp:MenuItem>
                         <asp:MenuItem Text="Reclamaciones" Value="rec"></asp:MenuItem>
-                        <asp:MenuItem Text="Cerrar sesión" Value="cs"></asp:MenuItem>
                     </Items>
                     <StaticMenuItemStyle Font-Size="XX-Large" ForeColor="Black" />
                 </asp:Menu>
