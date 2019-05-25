@@ -41,7 +41,8 @@ namespace webYelabay
             }
             else
             {
-                us.Nick = TextBoxNick.Text;
+                us.Nif = TextBoxNick.Text;
+                us.Nick= TextBoxNick.Text;
             }
             LabelErrorEmail.Visible = false;
             if (TextBoxEmail.Text == "")
