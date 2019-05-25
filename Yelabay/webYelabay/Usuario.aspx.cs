@@ -92,7 +92,7 @@ namespace webYelabay
                     Response.Redirect("Usuario.aspx");
                     break;
                 case "ped":
-                    Response.Redirect("VerPedido.aspx");
+                    Response.Redirect("VerTodosPedidos.aspx");
                     break;
                 case "inc":
                     Response.Redirect("VerTodasIncidencias.aspx");

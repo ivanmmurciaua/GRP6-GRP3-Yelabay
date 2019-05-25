@@ -202,5 +202,18 @@ namespace library
 
             return bdvirtual;
         }
+
+        public DataSet ListarPedidosUser(int idusu)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+            SqlDataAdapter da = new SqlDataAdapter("select * from Pedidos where fkusuario ="+idusu+"", c);
+
+            da.Fill(bdvirtual, "Pedidos");
+
+            return bdvirtual;
+        }
+
+
     }
 }

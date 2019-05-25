@@ -13,12 +13,30 @@ namespace webYelabay {
     public partial class Pedidos {
         
         /// <summary>
-        /// Control GridVerPedidos.
+        /// Control GridPedidosUser.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridVerPedidos;
+        protected global::System.Web.UI.WebControls.GridView GridPedidosUser;
+        
+        /// <summary>
+        /// Control LabelMensajeExito.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelMensajeExito;
+        
+        /// <summary>
+        /// Control LabelMensajeError.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LabelMensajeError;
     }
 }
