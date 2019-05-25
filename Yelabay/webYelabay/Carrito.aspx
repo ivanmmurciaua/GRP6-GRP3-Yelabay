@@ -13,8 +13,8 @@
                 
            
 
-                    <asp:GridView ID="GridCarrito" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="id"
-                OnRowCommand="GridCarrito_RowCommand" OnRowEditing="GridCarrito_RowEditing" OnRowCancelingEdit="GridCarrito_RowCancelingEdit" 
+                    <asp:GridView ID="GridCarrito" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="nombreproducto"
+                  
                 OnRowUpdating="GridCarrito_RowUpdating" OnRowDeleting="GridCarrito_RowDeleting"
                 
                 BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="90%">
@@ -25,8 +25,7 @@
                 <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
                 <SortedAscendingCellStyle BackColor="#F1F1F1" />
                 <SortedAscendingHeaderStyle BackColor="#007DBB" />
-                <SortedDescendingCellStyle BackColor="#CAC9C9" />
-                <SortedDescendingHeaderStyle BackColor="#00547E" />
+                
 
                 <Columns>
                     
@@ -35,9 +34,7 @@
                         <ItemTemplate>
                             <asp:Label Text='<%# Eval("nombreproducto") %>' runat="server"/>
                         </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:TextBox ID="textNombreProducto" Text='<%# Eval("nombreproducto") %>' runat="server" />
-                        </EditItemTemplate>
+                        
                         <FooterTemplate>
                             <asp:TextBox ID="textNombreProductoFooter"  runat="server" />
                         </FooterTemplate>
@@ -47,9 +44,7 @@
                         <ItemTemplate>
                             <asp:Label Text='<%# Eval("precio") %>' runat="server"/>
                         </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:TextBox ID="textPecio" Text='<%# Eval("precio") %>' runat="server" />
-                        </EditItemTemplate>
+                        
                         <FooterTemplate>
                             <asp:TextBox ID="textPrecioFooter"  runat="server" />
                         </FooterTemplate>
@@ -71,9 +66,7 @@
                         <ItemTemplate>
                             <asp:Label Text='<%# Eval("precioxcantidad") %>' runat="server"/>
                         </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:TextBox ID="textTotal" Text='<%# Eval("precioxcantidad") %>' runat="server" />
-                        </EditItemTemplate>
+                        
                         <FooterTemplate>
                             <asp:TextBox ID="textTotalFooter"  runat="server" />
                         </FooterTemplate>
@@ -81,13 +74,10 @@
 
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:ImageButton ImageUrl="images/EditarIcon.png" runat="server" CommandName="Edit" ToolTip="Edit" Height="20px" Width="20px" />
+                            <asp:ImageButton ImageUrl="images/AñadirIcon.png" runat="server" CommandName="Update" ToolTip="Update" Height="20px" Width="20px" />
                             <asp:ImageButton ImageUrl="images/BorrarIcon.png" runat="server" CommandName="Delete" ToolTip="Delete" Height="20px" Width="20px" />
                         </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:ImageButton ImageUrl="images/GuardarIcon.png" runat="server" CommandName="Update" ToolTip="Update" Height="20px" Width="20px" />
-                            <asp:ImageButton ImageUrl="images/CancelarIcon.png" runat="server" CommandName="Cancel" ToolTip="Cancel" Height="20px" Width="20px" />
-                        </EditItemTemplate>
+                        
                         <FooterTemplate>
                             <asp:ImageButton ImageUrl="images/AñadirIcon.png" runat="server" CommandName="Añadir" ToolTip="Añadir" Height="20px" Width="20px" />
                         </FooterTemplate>
@@ -97,6 +87,7 @@
 
 
             </asp:GridView>
+                <asp:Label ID="NombreProduct" runat="server"></asp:Label>
                 <asp:SqlDataSource ID="SqlDataCarrito" runat="server" ConnectionString="<%$ ConnectionStrings:miconexion %>" SelectCommand="SELECT [nombreproducto], [precio], [cantidad], [precioxcantidad] FROM [Carrito]"></asp:SqlDataSource>
            
 
