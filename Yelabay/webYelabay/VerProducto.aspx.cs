@@ -32,10 +32,14 @@ namespace webYelabay
             if (en.getStock() > 0) LabelStock.Text = en.getStock().ToString();
             else LabelStock.Text = "Sin existencias";
 
-
-
-
-
+            if (Session["Usuarios"] == null)
+            {
+                butAddCarrito.Visible = false;
+            }
+            else
+            {
+                butAddCarrito.Visible = true;
+            }
         }
         protected void addCarrito_Click(object sender, EventArgs e)
         {

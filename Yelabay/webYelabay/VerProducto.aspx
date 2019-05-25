@@ -6,11 +6,8 @@
     <div id ="innerContainer">
         <div id ="title">
             <h1>Producto</h1>
-
         </div>
-
         <div id="content">
-            
             <div>
                 <h1>
                 <asp:Label ID="LabelNombreProducto" runat="server" ></asp:Label></h1>
@@ -19,8 +16,6 @@
             <table>
                 <tr>
                     <td>
-
-                        
                         <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1">
                             <ItemTemplate>
                                 <asp:Image ID="Image1" runat="server" Height="500" ImageUrl='<%# Eval("foto") %>' />
@@ -40,7 +35,7 @@
                         <b>Stock: </b>  <asp:Label ID="LabelStock" runat="server" Text="Label"></asp:Label>
                         <br /><br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="Button1" runat="server" Text="Añadir al carrito" OnClick="addCarrito_Click" />
+                        <asp:Button ID="butAddCarrito" runat="server" Text="Añadir al carrito" Visible ="false" OnClick="addCarrito_Click" />
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:miconexion %>" SelectCommand="SELECT [foto] FROM [Productos] WHERE ([id] = @id)">
                             <SelectParameters>
                                 <asp:QueryStringParameter Name="id" QueryStringField="id" Type="Int32" />
@@ -49,8 +44,6 @@
                     </td>
                 </tr>
             </table>
-       
         </div>
-
     </div>
 </asp:Content>

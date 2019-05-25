@@ -77,6 +77,7 @@
     </Content>
     <Content Include="Carrito.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="CrearReclamacion.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="ProductosAdmin.aspx" />
@@ -122,6 +123,13 @@
     </Compile>
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CrearReclamacion.aspx.cs">
+      <DependentUpon>CrearReclamacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearReclamacion.aspx.designer.cs">
+      <DependentUpon>CrearReclamacion.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

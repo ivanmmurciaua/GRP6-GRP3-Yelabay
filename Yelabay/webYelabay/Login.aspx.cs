@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using library;
 using System.Windows.Forms;
+using System.Security.Cryptography;
 
 namespace webYelabay
 {
@@ -29,52 +30,35 @@ namespace webYelabay
 
         protected void Button1_Click1(object sender, EventArgs e)
         {
-
-           /* UsuarioEN us = new UsuarioEN();
-            UsuarioEN en =us.buscarUsuario(txtUsername.Text);
-            
-
-            if (en != null)
-            {
-
-
-                if (en.Contraseña == txtPassword.Text)
-                {
-                    Session["Usuarios"] = en;
-                    Response.Redirect("Home.aspx");
-                }
-                else
-                {
-                    MessageBox.Show("pringao");
-                    LabelError.Visible = true;
-                }
-
-            }
-            else
-            {
-                MessageBox.Show("tonto");
-                LabelError.Visible = true;
-            }*/
-
-
-
-
-
-
         
      UsuarioEN u = new UsuarioEN();
      u.Nif = txtUsername.Text;
 
-            if (u.login() && u.Contrasenya == txtPassword.Text)
+            if (u.login())
             {
-                Session["Usuarios"] = u;
-                //Session["user"] = u.Nif;
-                //Session["password"] = u.Contrasenya;
-                //Response.Write("bienvenido");
-                //Response.Write(Session["user"]);
                 
+                MD5 md5 = MD5.Create();
+                byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(txtPassword.Text);
+                byte[] hash = md5.ComputeHash(inputBytes);
+                txtPassword.Text = BitConverter.ToString(hash).Replace("-", "");
 
-                Response.Redirect("VerTodosProductos.aspx");
+
+                if (u.Contrasenya == txtPassword.Text)
+                {
+
+                    Session["Usuarios"] = u;
+                    //Session["user"] = u.Nif;
+                    //Session["password"] = u.Contrasenya;
+                    //Response.Write("bienvenido");
+                    //Response.Write(Session["user"]);
+
+
+                    Response.Redirect("VerTodosProductos.aspx");
+                }
+                else
+                {
+                    LabelError.Visible = true;
+                }
             }
             else
             {

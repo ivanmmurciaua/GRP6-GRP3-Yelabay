@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using library;
+using System.Windows.Forms;
 using library.ServiceLayer;
 
 namespace webYelabay
@@ -61,7 +62,7 @@ namespace webYelabay
                 LabelErrorLastname.Visible = true;
                 correcto = false;
             }
-            if (Validator.IsEmpty(TextBoxPhone.Text))
+            if (!Validator.IsEmpty(TextBoxPhone.Text))
             {
                 if (Validator.IsPhone(TextBoxPhone.Text))
                 {
@@ -74,31 +75,24 @@ namespace webYelabay
                     correcto = false;
                 }
             }
-           // u.actualizarUsuario();
-            Session["Usuarios"] = u;
-        }
-
-        protected void MenuLeftUsu_MenuItemClick(object sender, MenuEventArgs e)
-        {
-            string itemClicked = MenuLeftUsu.SelectedValue;
-            switch (itemClicked)
+            if (correcto == true)
             {
-                case "usu":
-                    Response.Redirect("Usuario.aspx");
-                    break;
-                case "ped":
-                    Response.Redirect("VerPedido.aspx");
-                    break;
-                case "inc":
-                    Response.Redirect("VerIncidencia.aspx");
-                    break;
-                case "rec":
-                    Response.Redirect("VerReclamacion.aspx");
-                    break;
-                default:
-                    Response.Redirect("Usuario.aspx");
-                    break;
+                u.actualizarUsuario();
+                Session["Usuarios"] = u;
+                MessageBox.Show("Tu cuenta se ha actualizado");
             }
+        }
+        protected void ButtonPedidos_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerTodosPedidos.aspx");
+        }
+        protected void ButtonReclamaciones_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("VerTodasIncidencias.aspx");
+        }
+        protected void ButtonNuevaReclamacion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CrearReclamacion.aspx");
         }
     }
 }
