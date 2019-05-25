@@ -87,18 +87,18 @@ namespace library
             cad.createUsuario(this);
         }
 
-        public void borrarUsuario()
+        public bool borrarUsuario()
         {
             UsuarioCAD cad = new UsuarioCAD();
-            UsuarioEN en = new UsuarioEN();
-            cad.borrarUsuario(en);
+            
+            return cad.borrarUsuario(this);
         }
 
-        public void actualizarUsuario()
+        public bool actualizarUsuario()
         {
             UsuarioCAD cad = new UsuarioCAD();
-            UsuarioEN en = new UsuarioEN();
-            cad.actualizarUsuario(en);
+            
+            return cad.actualizarUsuario(this);
         }
 
         public void leerUsuario()
@@ -154,5 +154,13 @@ namespace library
                 return true;
             //}
         }
+
+        public DataSet ListarUsuarios()
+        {
+            UsuarioCAD cadp = new UsuarioCAD();
+
+            return cadp.ListarUsuarios(this);
+        }
+
     }
 }
