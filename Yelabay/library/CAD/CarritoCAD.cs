@@ -42,7 +42,7 @@ namespace library
                 try
                 {
                     c.Open();
-                    decimal precioDecimal = decimal.Parse(carr.getProducto().getPrecio().ToString().Replace(',', '.'));
+                    decimal precioDecimal = decimal.Divide( decimal.Parse(carr.getProducto().getPrecio().ToString().Replace(',', '.')) , 100);
                     SqlCommand com = new SqlCommand("Insert Into Carrito (nombreproducto, precio, cantidad, precioxcantidad, emailusuario) VALUES ('"/* + carr.getProducto() + "','"*/ + carr.getProducto().getNombre() + "','" + precioDecimal + "','"+ carr.getCantidad() + "','" + precioDecimal * carr.getCantidad()  + "','" + carr.getUsuario().getEmail() + "')", c);
                     com.ExecuteNonQuery();
                     
