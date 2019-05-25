@@ -205,7 +205,9 @@ namespace webYelabay
         ///OTROS
         protected void Comprar_Click(object sender, EventArgs e)//De prueba
         {
-            SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);
+            RealizarPedido();
+            //Response.Redirect("VerPedido.aspx");
+            /*SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);
             MailMessage message = new MailMessage();
 
             try
@@ -225,7 +227,29 @@ namespace webYelabay
             catch (Exception ex)
             {
                 PruebaCompra.Text = "No se pudo enviar mensaje de confirmación";
-            }
+            }*/
+        }
+
+        protected void RealizarPedido()
+        {
+            string fechaActual= DateTime.Now.ToString("d/M/yyyy");//Guarda la fecha actual con ese formato
+            CarritoEN carrito = new CarritoEN();//Crea carrito
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
+
+            carrito.calcularPrecioTotal();//Actualiza el atributo del precio total
+
+            int precioSinIVA = (int)carrito.getPrecioTotal();
+            //float iv=1.21;///Esto no va aún
+            //int iva=precioSinIVA * iv;
+
+
+            PedidosEN pedido = new PedidosEN();//Crea Pedido
+            pedido.fechaCompra_pbl = fechaActual;//Guarda la fecha
+            pedido.precioSinIVA_pbl = precioSinIVA;//Guarda el precio
+
+            pedido.updatePedido();//Update a la BBDD
+            //pedido.precioConIVA_pbl= precioSinIVA ;
         }
 
         protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
