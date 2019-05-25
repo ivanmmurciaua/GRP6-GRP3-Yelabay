@@ -56,6 +56,8 @@ namespace webYelabay
         public void RellenarGridView()
         {
             CarritoEN carrito = new CarritoEN();
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
             DataSet da = new DataSet();
             da = carrito.ListarCarrito();
             if (da != null)
@@ -248,7 +250,7 @@ namespace webYelabay
             pedido.fechaCompra_pbl = fechaActual;//Guarda la fecha
             pedido.precioSinIVA_pbl = precioSinIVA;//Guarda el precio
 
-            pedido.updatePedido();//Update a la BBDD
+            //pedido.updatePedido();//Update a la BBDD
             //pedido.precioConIVA_pbl= precioSinIVA ;
         }
 

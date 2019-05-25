@@ -145,9 +145,10 @@ namespace library
 
         public DataSet ListarCarrito(CarritoEN en)
         {
+            string email = en.getUsuario().getEmail();
             DataSet bdvirtual = new DataSet();
             SqlConnection c = new SqlConnection(constring);
-            SqlDataAdapter da = new SqlDataAdapter("select * from Carrito", c);
+            SqlDataAdapter da = new SqlDataAdapter("select * from Carrito WHERE emailusuario LIKE '%" + email + "%'", c);
 
             da.Fill(bdvirtual, "Carrito");
 
