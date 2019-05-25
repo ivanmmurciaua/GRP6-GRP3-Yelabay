@@ -16,44 +16,80 @@ namespace webYelabay
                 buttonProfile.Visible = false;
                 buttonLogout.Visible = false;
                 buttonLogin.Visible = true;
+                buttonCarrito.Visible = false;
             }
             else
             {
                 buttonProfile.Visible = true;
                 buttonLogout.Visible = true;
                 buttonLogin.Visible = false;
+                buttonCarrito.Visible = true;
             }
             
 
         }
-        protected void MenuLeft_MenuItemClick(object sender, MenuEventArgs e)
+        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
         {
-            string itemClicked = MenuLeft.SelectedValue;
+            string itemClicked = Menu1.SelectedValue;
             switch (itemClicked)
             {
-                case "home":
-                    Response.Redirect("Home.aspx");
-                    break;
                 case "producto":
                     Response.Redirect("VerTodosProductos.aspx");
                     break;
                 case "componentes":
                     Response.Redirect("VerComponentes.aspx");
                     break;
+            }
+        }
+        protected void Menu2_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = Menu2.SelectedValue;
+            switch (itemClicked)
+            {
+                case "producto":
+                    Response.Redirect("VerTodosProductos.aspx");
+                    break;
                 case "ordenadores":
                     Response.Redirect("VerOrdenadores.aspx");
                     break;
-                case "sonido":
-                    Response.Redirect("VerSmartphones.aspx");
-                    break;
-                case "perifericos":
-                    Response.Redirect("VerPerifericos.aspx");
+            }
+        }
+        protected void Menu3_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = Menu3.SelectedValue;
+            switch (itemClicked)
+            {
+                case "producto":
+                    Response.Redirect("VerTodosProductos.aspx");
                     break;
                 case "consolas":
                     Response.Redirect("VerConsolas.aspx");
                     break;
-                default:
+            }
+        }
+        protected void Menu4_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = Menu4.SelectedValue;
+            switch (itemClicked)
+            {
+                case "producto":
                     Response.Redirect("VerTodosProductos.aspx");
+                    break;
+                case "perifericos":
+                    Response.Redirect("VerPerifericos.aspx");
+                    break;
+            }
+        }
+        protected void Menu5_MenuItemClick(object sender, MenuEventArgs e)
+        {
+            string itemClicked = Menu5.SelectedValue;
+            switch (itemClicked)
+            {
+                case "producto":
+                    Response.Redirect("VerTodosProductos.aspx");
+                    break;
+                case "smartphones":
+                    Response.Redirect("VerSmartphones.aspx");
                     break;
             }
         }
