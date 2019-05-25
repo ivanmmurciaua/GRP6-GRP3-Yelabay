@@ -20,17 +20,12 @@
         <div id ="title">
             <h1>Consolas/Gaming</h1>
         </div>
-        
-        <div id="content">
-
-
-
+        <div id="content3">
             <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="10">
                 <ItemTemplate>
                     <table class="tablaPedido">
                         <tr>
                             <td colspan="2">
-                                
                                 <asp:ImageButton ID="ImagenProduc"  runat="server" Height="180px" Width="200px" ImageUrl='<%# Eval("foto") %>' CommandArgument='<%# Eval("id") %>' OnCommand="ImagenProduc_Command" />
                             </td>
                         </tr>
@@ -53,12 +48,6 @@
                     <asp:Parameter DefaultValue="5" Name="fkcategoria" Type="Int32" />
                 </SelectParameters>
             </asp:SqlDataSource>
-
-
-
-
-
-
         </div>
     </div>
 </asp:Content>

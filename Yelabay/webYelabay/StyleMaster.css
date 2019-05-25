@@ -27,7 +27,7 @@ body {
     padding: 0;
     height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: white;
+    background-color: aliceblue;
 }
 
 #container {
@@ -47,8 +47,38 @@ body {
 }
 
 #content {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 18%;
+    padding-right: 18%;
+    width: 90%;
+}
+/*Smartphones*/
+#content1 {
+    padding-left: 17.5%;
+    padding-right: 17.5%;
+    width: 90%;
+}
+/*Perifericos*/
+#content2 {
+    padding-left: 14%;
+    padding-right: 14%;
+    width: 90%;
+}
+/*Consolas*/
+#content3 {
+    padding-left: 18%;
+    padding-right: 18%;
+    width: 90%;
+}
+/*Componentes*/
+#content4 {
+    padding-left: 12%;
+    padding-right: 12%;
+    width: 90%;
+}
+/*Ordenadores*/
+#content5 {
+    padding-left: 18.75%;
+    padding-right: 18.75%;
     width: 90%;
 }
 
