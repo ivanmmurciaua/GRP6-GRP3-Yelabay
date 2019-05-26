@@ -20,11 +20,11 @@ namespace webYelabay
             SqlDataCarrito.SelectCommand = "SELECT [nombreproducto], [precio], [cantidad], [precioxcantidad] FROM [Carrito] WHERE [emailusuario] LIKE '%" + userEmail + "%'";
             */
 
-            if (!IsPostBack)
-            {
+            //if (!IsPostBack)
+            //{
                 RellenarGridView();
                 CalcularTotal();
-            }
+            //}
 
             //COOKIES USER
             /*HttpCookie userCookie;
@@ -56,6 +56,8 @@ namespace webYelabay
         public void RellenarGridView()
         {
             CarritoEN carrito = new CarritoEN();
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
             DataSet da = new DataSet();
             da = carrito.ListarCarrito();
             if (da != null)
@@ -178,7 +180,7 @@ namespace webYelabay
             //(GridCarrito.Rows[e.RowIndex].FindControl("textNombreProducto") as TextBox).Text.Trim().ToString();
             //String nombreProd = GridCarrito.Rows[e.RowIndex].Cells[4].ToString();
             //NombreProduct.Text= GridCarrito.Rows[e.RowIndex].Cells["nombreproducto"].ToString();
-            String nombreProd = "Silla Spirit Of Gamer Racing White";
+            String nombreProd = "Consola Sony Ps4 Slim 1tb + Red Dead Redemption 2 + GTA";
             producto.setNombre(nombreProd);
 
 
@@ -205,7 +207,17 @@ namespace webYelabay
         ///OTROS
         protected void Comprar_Click(object sender, EventArgs e)//De prueba
         {
-            SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);
+            RealizarPedido();
+
+            CarritoEN carrito = new CarritoEN();//Crea carrito
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
+            carrito.deleteCarrito();
+            Response.Redirect(Request.RawUrl);
+
+
+            //Response.Redirect("VerPedido.aspx");
+            /*SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);
             MailMessage message = new MailMessage();
 
             try
@@ -225,16 +237,31 @@ namespace webYelabay
             catch (Exception ex)
             {
                 PruebaCompra.Text = "No se pudo enviar mensaje de confirmación";
-            }
+            }*/
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void RealizarPedido()
         {
-            //GridView1.DeleteRow(GridView1.SelectedIndex);
-            /*CarritoEN carro = new CarritoEN();
-            DataSet d = carro.eliminarProducto(GridView1.SelectedIndex);
-            GridView1.DataSource = d;
-            GridView1.DataBind();*/
+            string fechaActual= DateTime.Now.ToString("d/M/yyyy");//Guarda la fecha actual con ese formato
+            CarritoEN carrito = new CarritoEN();//Crea carrito
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
+
+            carrito.calcularPrecioTotal();//Actualiza el atributo del precio total
+
+            int precioSinIVA = (int)carrito.getPrecioTotal();
+            //float iv=1.21;///Esto no va aún
+            //int iva=precioSinIVA * iv;
+
+
+            PedidosEN pedido = new PedidosEN();//Crea Pedido
+            pedido.fechaCompra_pbl = fechaActual;//Guarda la fecha
+            pedido.precioSinIVA_pbl = precioSinIVA;//Guarda el precio
+
+            //pedido.updatePedido();//Update a la BBDD
+            //pedido.precioConIVA_pbl= precioSinIVA ;
         }
+
+        
     }
 }
