@@ -171,5 +171,59 @@ namespace library
             return bdvirtual;
         }
 
+        public bool incrementarProducto(CarritoEN carrito)
+        {
+            bool incrementado=false;
+            int cantidad=0;
+            decimal precio = 0;
+            string email = carrito.getUsuario().getEmail();
+            string nombreProd = carrito.getProducto().getNombre();
+
+            //Obtenemos cantidad actual
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("SELECT * FROM Carrito WHERE emailusuario LIKE '%" + email + "%'", c);
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    if(nombreProd == dr["nombreproducto"].ToString())
+                    {
+                        cantidad = int.Parse(dr["cantidad"].ToString());
+                        precio = decimal.ToInt32((decimal) dr["precio"]);
+                    }
+                }
+                c.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+            }
+            cantidad++;
+            decimal precioxcantidad = precio * cantidad; /*precio * cantidad;*/
+            //Actualizamos la cantidad
+            SqlConnection co = new SqlConnection(constring);
+            try
+            {
+                co.Open();
+                SqlCommand com = new SqlCommand("UPDATE Carrito SET cantidad = "+ cantidad + ", precioxcantidad = " + precioxcantidad + " WHERE emailusuario LIKE '%" + email + "%' AND nombreproducto LIKE '%" + nombreProd + "%'", co);
+
+
+                com.ExecuteNonQuery();
+                co.Close();
+                incrementado = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                co.Close();
+            }
+
+            return incrementado;
+        }
+
     }
 }

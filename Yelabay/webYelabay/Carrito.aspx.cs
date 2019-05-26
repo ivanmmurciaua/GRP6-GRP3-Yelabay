@@ -20,11 +20,11 @@ namespace webYelabay
             SqlDataCarrito.SelectCommand = "SELECT [nombreproducto], [precio], [cantidad], [precioxcantidad] FROM [Carrito] WHERE [emailusuario] LIKE '%" + userEmail + "%'";
             */
 
-            if (!IsPostBack)
-            {
+            //if (!IsPostBack)
+            //{
                 RellenarGridView();
                 CalcularTotal();
-            }
+            //}
 
             //COOKIES USER
             /*HttpCookie userCookie;

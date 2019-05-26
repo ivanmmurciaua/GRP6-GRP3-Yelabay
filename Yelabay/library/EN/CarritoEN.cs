@@ -155,5 +155,11 @@ namespace library
             precioTotal= cad.calcularPrecioTotal(this);
         }
 
+        public bool incrementarProducto()
+        {
+            CarritoCAD cad = new CarritoCAD();
+            return cad.incrementarProducto(this);
+        }
+
     }
 }

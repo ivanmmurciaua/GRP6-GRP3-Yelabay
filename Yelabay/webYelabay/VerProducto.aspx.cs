@@ -61,7 +61,8 @@ namespace webYelabay
                 }
                 else
                 {
-                    MessageBox.Show("Producto ya en carrito");
+                    carro.incrementarProducto();
+                    MessageBox.Show("Producto ya en carrito, se incrementará la cantidad");
                 }
             }
             else MessageBox.Show("Producto fuera de existencia");
