@@ -6,7 +6,6 @@
     <div id ="innerContainer">
         <br />
         <br />
-        <br />
         <div id ="title">
             <div class="center">
                 <h1><asp:Image ID="Image1" runat="server" ImageUrl="images/VectorPerfil.png" Height="50px" Width="84px" /></h1>
@@ -42,14 +41,14 @@
                 <div class="invisibleCol">
                     <asp:TextBox ID="TextBoxLastname" runat="server"></asp:TextBox>
                 </div>
-                <asp:Label ID="LabelErrorLastname" runat="server" CssClass="ErrorMessage" Text="¡Apellido Obligatorios! Solo deben contener letras."></asp:Label>
+                <asp:Label ID="LabelErrorLastname" runat="server" CssClass="ErrorMessage" Text="¡Apellidos Obligatorios! Solo deben contener letras, sin tildes!"></asp:Label>
             </div>
             <div class="invisibleRow">
                 <div class="invisibleCol"><b>Teléfono:</b></div>
                 <div class="invisibleCol">
                     <asp:TextBox ID="TextBoxPhone" runat="server"></asp:TextBox>
                 </div>
-                <asp:Label ID="LabelErrorPhone" runat="server" CssClass="ErrorMessage" Text="¡Teléfono NO válido!"></asp:Label>
+                <asp:Label ID="LabelErrorPhone" runat="server" CssClass="ErrorMessage" Text="¡Teléfono NO válido! No te olvides de poner el prefijo de tu país!"></asp:Label>
             </div>
             <div class="invisibleRow">
                 <div class="invisibleCol"><b>Correo electronico:</b></div>

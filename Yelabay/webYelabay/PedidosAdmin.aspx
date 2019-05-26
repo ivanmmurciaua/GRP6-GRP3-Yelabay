@@ -8,8 +8,7 @@
             <h1>Pedidos Administrador</h1>
         </div>
         <div id="content">
-            
-
+            <div class="pro-admin">
             <asp:GridView ID="GridPedidosAdmin" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="id"
                 OnRowCommand="GridPedidosAdmin_RowCommand" OnRowEditing="GridPedidosAdmin_RowEditing" OnRowCancelingEdit="GridPedidosAdmin_RowCancelingEdit" 
                 OnRowUpdating="GridPedidosAdmin_RowUpdating" OnRowDeleting="GridPedidosAdmin_RowDeleting"
@@ -217,5 +216,6 @@
             
 
         </div>
+            </div>
     </div>
 </asp:Content>

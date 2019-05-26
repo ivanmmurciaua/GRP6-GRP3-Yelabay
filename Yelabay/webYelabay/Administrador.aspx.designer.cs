@@ -13,12 +13,39 @@ namespace webYelabay {
     public partial class Administrador {
         
         /// <summary>
-        /// Control MenuLef.
+        /// Control ButtonUsuariosAdmin.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu MenuLef;
+        protected global::System.Web.UI.WebControls.Button ButtonUsuariosAdmin;
+        
+        /// <summary>
+        /// Control ButtonProductosAdmin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonProductosAdmin;
+        
+        /// <summary>
+        /// Control ButtonPedidosAdmin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonPedidosAdmin;
+        
+        /// <summary>
+        /// Control ButtonReclamacionesAdmin.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button ButtonReclamacionesAdmin;
     }
 }

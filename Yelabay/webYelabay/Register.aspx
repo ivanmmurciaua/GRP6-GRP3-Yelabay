@@ -41,6 +41,9 @@
             </div>
             <asp:Label ID="LabelErrorPassworddiferente" runat="server" CssClass="ErrorMessage" Text="Las contraseñas no coinciden"></asp:Label>
         </div>
-        <asp:Button ID="Button1" runat="server" OnClick="Button1_Click1" Text="Registrarse" />
+        <br />
+        <br />
+        <br />
+        <asp:Button ID="Button1" style="background:#249cf4" runat="server" OnClick="Button1_Click1" Text="Registrarse" ForeColor="White" BorderColor="Black"/>
     </div>
 </asp:Content>
