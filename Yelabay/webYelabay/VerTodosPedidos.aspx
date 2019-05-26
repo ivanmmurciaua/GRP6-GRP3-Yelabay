@@ -5,11 +5,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer">
         <div id ="title">
-            <h1>Mis Pedidosss</h1>
+            <h1>Mis pedidos</h1>
         </div>
         <div id="content">
-            <asp:GridView ID="GridVerPedidos" runat="server" AutoGenerateColumns="False"
-                BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="100%" >
+            
+
+            <asp:GridView ID="GridPedidosUser" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="id"
+                OnRowCommand="GridPedidosUser_RowCommand" OnRowEditing="GridPedidosUser_RowEditing" OnRowCancelingEdit="GridPedidosUser_RowCancelingEdit" 
+                OnRowUpdating="GridPedidosUser_RowUpdating" OnRowDeleting="GridPedidosUser_RowDeleting"
+                
+                BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="90%">
                 <FooterStyle BackColor="White" ForeColor="#000066" />
                 <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
                 <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
@@ -19,17 +24,16 @@
                 <SortedAscendingHeaderStyle BackColor="#007DBB" />
                 <SortedDescendingCellStyle BackColor="#CAC9C9" />
                 <SortedDescendingHeaderStyle BackColor="#00547E" />
+
                 <Columns>
-                    <asp:TemplateField HeaderText="Pedido ID" SortExpression="PedidoID">
+                    <asp:TemplateField HeaderText="id" SortExpression="id">
                         <ItemTemplate>
                             <asp:LinkButton ID="BotonVerPedidoDetalles" OnClick="BotonVerPedidoDetalles_Click" Text='<%# Eval("id") %>' runat="server">LinkButton</asp:LinkButton>
                         </ItemTemplate>
                         <EditItemTemplate>
                             <asp:TextBox ID="textID" Text='<%# Eval("id") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textIDFooter"  runat="server" />
-                        </FooterTemplate>
+                     
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Fecha de compra">
                         <ItemTemplate>
@@ -38,43 +42,38 @@
                         <EditItemTemplate>
                             <asp:TextBox ID="textFechaCompra" Text='<%# Eval("fechacompra") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textFechaCompraFooter"  runat="server" />
-                        </FooterTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Fecha de empaquetado">
+                     
+                    </asp:TemplateField>         
+                    <asp:TemplateField HeaderText="Direccion">
                         <ItemTemplate>
-                            <asp:Label Text='<%# Eval("fechaempaquetado") %>' runat="server"/>
+                            <asp:Label Text='<%# Eval("direccion") %>' runat="server"/>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textFechaEmpaquetado" Text='<%# Eval("fechaempaquetado") %>' runat="server" />
+                            <asp:TextBox ID="textDireccion" Text='<%# Eval("direccion") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textFechaEmpaquetadoFooter"  runat="server" />
-                        </FooterTemplate>
+                    
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Fecha de envio">
+
+                    <asp:TemplateField HeaderText="Ciudad">
                         <ItemTemplate>
-                            <asp:Label Text='<%# Eval("fechaenvio") %>' runat="server"/>
+                            <asp:Label Text='<%# Eval("ciudad") %>' runat="server"/>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textFechaEnvio" Text='<%# Eval("fechaenvio") %>' runat="server" />
+                            <asp:TextBox ID="textCiudad" Text='<%# Eval("ciudad") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textFechaEnvioFooter"  runat="server" />
-                        </FooterTemplate>
+                       
                     </asp:TemplateField>
-                    <asp:TemplateField HeaderText="Fecha de entrega">
+
+                    <asp:TemplateField HeaderText="Pais">
                         <ItemTemplate>
-                            <asp:Label Text='<%# Eval("fechaentrega") %>' runat="server"/>
+                            <asp:Label Text='<%# Eval("pais") %>' runat="server"/>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textFechaEntrega" Text='<%# Eval("fechaentrega") %>' runat="server" />
+                            <asp:TextBox ID="textPais" Text='<%# Eval("pais") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textFechaEntregaFooter"  runat="server" />
-                        </FooterTemplate>
+                        
                     </asp:TemplateField>
+
                     <asp:TemplateField HeaderText="Precio sin IVA">
                         <ItemTemplate>
                             <asp:Label Text='<%# Eval("preciosiniva") %>' runat="server"/>
@@ -82,9 +81,7 @@
                         <EditItemTemplate>
                             <asp:TextBox ID="textPrecioSinIva" Text='<%# Eval("preciosiniva") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textPrecioSinIvaFooter"  runat="server" />
-                        </FooterTemplate>
+                       
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="IVA">
                         <ItemTemplate>
@@ -93,9 +90,7 @@
                         <EditItemTemplate>
                             <asp:TextBox ID="textIva" Text='<%# Eval("iva") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textIvaFooter"  runat="server" />
-                        </FooterTemplate>
+                      
                     </asp:TemplateField>
                     <asp:TemplateField HeaderText="Precio con IVA">
                         <ItemTemplate>
@@ -104,23 +99,31 @@
                         <EditItemTemplate>
                             <asp:TextBox ID="textPrecioConIva" Text='<%# Eval("precioconiva") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textPrecioConIvaFooter"  runat="server" />
-                        </FooterTemplate>
+                       
                     </asp:TemplateField>
+
+                    
+
                     <asp:TemplateField HeaderText="Estado">
                         <ItemTemplate>
-                            <asp:Label Text='<%# Eval("precioconiva") %>' runat="server"/>
+                            <asp:Label Text='<%# Eval("estado") %>' runat="server"/>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="TextBox1" Text='<%# Eval("precioconiva") %>' runat="server" />
+                            <asp:TextBox ID="textEstado" Text='<%# Eval("estado") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="TextBox2"  runat="server" />
-                        </FooterTemplate>
+                     
                     </asp:TemplateField>
+
                 </Columns>
+
+
             </asp:GridView>
+            <br />
+            <asp:Label ID="LabelMensajeExito" Text="" runat="server" ForeColor="Green"></asp:Label>
+            <br />
+            <asp:Label ID="LabelMensajeError" Text="" runat="server" ForeColor="Red"></asp:Label>
+            
+
         </div>
     </div>
 </asp:Content>

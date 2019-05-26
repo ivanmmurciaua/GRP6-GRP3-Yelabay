@@ -120,12 +120,11 @@ namespace library
             this.precioSinIVA = precioSinIVA;
             this.precioConIVA = precioConIVA;
         }
-        public void createPedido()
+        public void createPedido(int idUsu)
         {
             PedidosCAD cad = new PedidosCAD();
-            PedidosEN en = new PedidosEN();
 
-            cad.createPedido(en);
+            cad.createPedido(this, idUsu);
         }
         public void readPedido()
         {
@@ -133,25 +132,38 @@ namespace library
 
             cad.readPedido(this);
         }
-        public void updatePedido()
+        public bool updatePedido(int idUsu)
         {
             PedidosCAD cadp = new PedidosCAD();
-            PedidosEN en = new PedidosEN();
 
-            cadp.updatePedido(en);
+
+            return cadp.updatePedido(this, idUsu);
         }
-        public void deletePedido()
+        public bool deletePedido()
         {
             PedidosCAD cadp = new PedidosCAD();
-            PedidosEN en = new PedidosEN();
 
-            cadp.deletePedido(en);
+
+            return cadp.deletePedido(this);
         }
         public DataSet ListarPedidos()
         {
             PedidosCAD cadp = new PedidosCAD();
 
             return cadp.ListarPedidos(this);
+        }
+        public DataSet ListarPedidoAdmin()
+        {
+            PedidosCAD cadp = new PedidosCAD();
+
+            return cadp.ListarPedidos(this);
+        }
+
+        public DataSet ListarPedidoUsu(int id)
+        {
+            PedidosCAD cadp = new PedidosCAD();
+
+            return cadp.ListarPedidosUser(id);
         }
     }
 }

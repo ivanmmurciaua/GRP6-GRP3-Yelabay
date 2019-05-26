@@ -29,13 +29,7 @@ namespace library
         public ProductoEN getProducto() { return producto; }
         public UsuarioEN getUsuario() { return usuario; }
 
-        public float getPrecioTotal()
-        {
-            float precioTot = 0;
-            CarritoCAD cad = new CarritoCAD();
-            precioTot = cad.calcularPrecioTotal(this);
-            return precioTot;
-        }
+        public float getPrecioTotal() { return precioTotal;}
 
 
         public void setProducto(ProductoEN prod) { producto = prod; }
@@ -159,6 +153,12 @@ namespace library
             CarritoCAD cadp = new CarritoCAD();
 
             return cadp.ListarCarrito(this);
+        }
+
+        public void calcularPrecioTotal()
+        {
+            CarritoCAD cad = new CarritoCAD();
+            precioTotal= cad.calcularPrecioTotal(this);
         }
 
     }

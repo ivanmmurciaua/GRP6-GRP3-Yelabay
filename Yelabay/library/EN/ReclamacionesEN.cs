@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace library
 {
-    class ReclamacionesEN
+    public class ReclamacionesEN
     {
         //atributos privados
         private UsuarioEN usuarioReclama;

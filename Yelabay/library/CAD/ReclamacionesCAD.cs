@@ -26,6 +26,7 @@ namespace library
             bool creado = false;
 
             ReclamacionesEN rec = reclamacion;
+            int idusu = rec.GetUsuarioReclama().getId();      
 
             if (!readReclamacion(rec))
             {
@@ -33,7 +34,7 @@ namespace library
                 try
                 {
                     c.Open();
-                    SqlCommand com = new SqlCommand("Insert Into Reclamaciones (reclamacion, fechareclamacion,fkusuario) VALUES ('" + rec.getReclamacion() + "','" + rec.getFecha() + "','" + rec.GetUsuarioReclama() + "')", c);
+                    SqlCommand com = new SqlCommand("Insert Into Reclamaciones (reclamacion, fechareclamacion,fkusuario) VALUES ('" + rec.getReclamacion() + "','"+ rec.getFecha() +"','" + idusu + "')", c);
 
                     com.ExecuteNonQuery();
                     creado = true;
