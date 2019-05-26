@@ -85,11 +85,48 @@ namespace library
             return leida;
         }
 
-        public bool deleteReclamacion(ReclamacionesEN reclamacion)
+        public bool borrarReclamacion(ReclamacionesEN en)
         {
-            bool borrada = false;
+            bool exito = false;
 
-            return borrada;
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("DELETE FROM Reclamacion WHERE id = " + en.Id , c);
+
+
+                com.ExecuteNonQuery();
+
+
+
+
+                c.Close();
+                exito = true;
+
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+
+            }
+
+
+            return exito;
+        }
+
+        public DataSet ListarReclamaciones(ReclamacionesEN en)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+            SqlDataAdapter da = new SqlDataAdapter("select * from Reclamaciones", c);
+
+            da.Fill(bdvirtual, "Reclamaciones");
+
+            return bdvirtual;
         }
 
     }

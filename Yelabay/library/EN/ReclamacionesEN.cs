@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace library
 {
@@ -13,6 +14,7 @@ namespace library
         private string reclamacion { get; set; }
         private string fecha { get; set; }
         private bool devolucion { get; set; }
+        public int Id { get; set; }
 
 
         //metodos publicos
@@ -28,6 +30,7 @@ namespace library
             usuarioReclama = new UsuarioEN();
             reclamacion = "";
             fecha = "";
+            Id = 0;
             devolucion = false;
         }
 
@@ -37,6 +40,7 @@ namespace library
             this.reclamacion = reclamacion;
             this.fecha = fecha;
             this.devolucion = devolucion;
+           // this.Id = Id;
         }
 
         public bool createReclamacion()
@@ -63,12 +67,18 @@ namespace library
             return leida;
         }
 
-        public bool deleteReclamacion()
+        public bool borrarReclamacion()
         {
-            bool borrada = false;
             ReclamacionesCAD cad = new ReclamacionesCAD();
-            if (cad.createReclamacion(this)) borrada = true;
-            return borrada;
+
+            return cad.borrarReclamacion(this);
+        }
+
+        public DataSet ListarReclamaciones()
+        {
+            ReclamacionesCAD cadp = new ReclamacionesCAD();
+
+            return cadp.ListarReclamaciones(this);
         }
 
     }
