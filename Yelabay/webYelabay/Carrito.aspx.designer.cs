@@ -49,15 +49,6 @@ namespace webYelabay {
         protected global::System.Web.UI.WebControls.Label NombreProduct;
         
         /// <summary>
-        /// Control Comprar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Comprar;
-        
-        /// <summary>
         /// Control PruebaCompra.
         /// </summary>
         /// <remarks>
@@ -74,5 +65,23 @@ namespace webYelabay {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label CosteTotal;
+        
+        /// <summary>
+        /// Control Borrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Borrar;
+        
+        /// <summary>
+        /// Control Comprar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Comprar;
     }
 }

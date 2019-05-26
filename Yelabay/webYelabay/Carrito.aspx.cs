@@ -242,6 +242,40 @@ namespace webYelabay
             }*/
         }
 
+        protected void Borrar_Click(object sender, EventArgs e)
+        {
+            RealizarPedido();
+
+            CarritoEN carrito = new CarritoEN();//Crea carrito
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
+            carrito.deleteCarrito();//Borra el carrito del Usuario actual
+            Response.Redirect("Carrito.aspx");//Recarga la pagina
+
+
+            //Response.Redirect("VerPedido.aspx");
+            /*SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);
+            MailMessage message = new MailMessage();
+
+            try
+            {
+                MailAddress fromAddress = new MailAddress("@s", "Alias remitente");
+                MailAddress toAddress = new MailAddress("@", "Alias destinatario");
+
+                message.From = fromAddress;
+                message.To.Add(toAddress);
+                message.Subject = "Provando envío de mensajes";
+                message.Body = "Ha realizado una compra en Yelabay";
+                smtClient.EnableSsl = true;
+                smtClient.Credentials = new System.Net.NetworkCredential("user", "password");
+                smtClient.Send(message);
+                PruebaCompra.Text = "Mensaje de confirmacion enviado";
+            }
+            catch (Exception ex)
+            {
+                PruebaCompra.Text = "No se pudo enviar mensaje de confirmación";
+            }*/
+        }
         protected void RealizarPedido()
         {
             string fechaActual= DateTime.Now.ToString("d/M/yyyy");//Guarda la fecha actual con ese formato

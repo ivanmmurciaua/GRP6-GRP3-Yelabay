@@ -9,6 +9,7 @@
             <h1>Carrito</h1>
         </div>
         <div id="content">
+            <div class="carrito">
             <h1>Artículos actualmente en el carrito:</h1><asp:Label ID="CompruebaBD" runat="server"></asp:Label>
                 
            
@@ -45,22 +46,23 @@
 
 
             </asp:GridView>
-               
-            
             
             <asp:Label ID="NombreProduct" runat="server"></asp:Label>
-           
-
-            
-            
-            
-            
-            
-            <asp:Button ID="Comprar" runat="server" Text="Confirmar Compra" OnClick="Comprar_Click"/>
             <asp:Label ID="PruebaCompra" runat="server"></asp:Label>
+            <br />
+            <div class ="precio">
+                <asp:Label ID="CosteTotal" runat="server" Text="Total: "></asp:Label>
+            </div>
+            <br />
+            <br />
+            <div class ="compra1">
+                <asp:Button ID="Borrar"  style="background:#249cf4" runat="server" Text="Borrar Carrito" OnClick="Borrar_Click" ForeColor="White" BorderColor="Black"/>
+            </div>
+            <div class ="compra">
+                <asp:Button ID="Comprar"  style="background:#249cf4" runat="server" Text="Confirmar Compra" OnClick="Comprar_Click" ForeColor="White" BorderColor="Black"/>
+            </div>
             
-            <asp:Label ID="CosteTotal" runat="server" Text="Total: "></asp:Label>
-            
+            </div>
         </div>
     </div>
 </asp:Content>
