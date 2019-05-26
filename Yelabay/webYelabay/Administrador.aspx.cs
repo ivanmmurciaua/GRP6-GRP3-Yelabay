@@ -13,28 +13,21 @@ namespace webYelabay
         {
 
         }
-
-        protected void MenuLef_MenuItemClick(object sender, MenuEventArgs e)
+        protected void ButtonUsuariosAdmin_Click(object sender, EventArgs e)
         {
-            string itemClicked = MenuLef.SelectedValue;
-            switch (itemClicked)
-            {
-                case "usuarios":
-                    Response.Redirect("UsuariosAdmin.aspx");
-                    break;
-                case "articulos":
-                    Response.Redirect("ProductosAdmin.aspx");
-                    break;
-                case "pedidos":
-                    Response.Redirect("PedidosAdmin.aspx");
-                    break;
-                case "reclamaciones":
-                    Response.Redirect("ReclamacionesAdmin.aspx");
-                    break;
-                default:
-                    Response.Redirect("Administrador.aspx");
-                    break;
-            }
+            Response.Redirect("UsuariosAdmin.aspx");
+        }
+        protected void ButtonProductosAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProductosAdmin.aspx");
+        }
+        protected void ButtonPedidosAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PedidosAdmin.aspx");
+        }
+        protected void ButtonReclamacionesAdmin_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ReclamacionesAdmin.aspx");
         }
     }
 }
