@@ -93,14 +93,8 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("DELETE FROM Reclamacion WHERE id = " + en.Id , c);
-
-
+                SqlCommand com = new SqlCommand("DELETE FROM Reclamaciones WHERE id = " + en.Id.ToString(), c);
                 com.ExecuteNonQuery();
-
-
-
-
                 c.Close();
                 exito = true;
 
