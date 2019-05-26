@@ -8,7 +8,7 @@
             <h1>Mis Reclamaciones:</h1>
         </div>
         <div id="content">
-
+            <div class="reclamacion">
 
             <asp:GridView ID="GridIncidenciasUser" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="id"
 
@@ -49,6 +49,7 @@
             </asp:GridView>
 
             <br />
+                </div>
         </div>
     </div>
 </asp:Content>

@@ -274,6 +274,34 @@ body {
     margin-top: 2.5%;
     margin-left: -10%;
 }
+/*Mis reclamaciones*/
+.reclamacion {
+    float: left;
+    width: 90%;
+    margin-top: 2.5%;
+    margin-left: -2.5%;
+}
+/*Mis pedidos*/
+.verpedido {
+    float: left;
+    width: 90%;
+    margin-top: 2.5%;
+    margin-left: -5%;
+}
+/*Login*/
+.login{
+    float: left;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+/*Register*/
+.register {
+    float: left;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 35%;
+}
 .center {
     display: flex;
     flex-wrap: wrap; /* Optional. only if you want the items to wrap */
