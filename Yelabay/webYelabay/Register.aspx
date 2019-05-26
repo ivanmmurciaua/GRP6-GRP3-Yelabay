@@ -7,6 +7,7 @@
         <div id ="title">
             <h1>Regístrate</h1>
         </div>
+        <div class="register">
         <div class="invisibleRow">
             <div class="invisibleCol">
                 Nombre de usuario</div>
@@ -46,4 +47,5 @@
         <br />
         <asp:Button ID="Button1" style="background:#249cf4" runat="server" OnClick="Button1_Click1" Text="Registrarse" ForeColor="White" BorderColor="Black"/>
     </div>
+        </div>
 </asp:Content>
