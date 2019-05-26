@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using System.Data;
 using library;
 using System.Windows.Forms;
+using System.Net.Mail;
 
 namespace webYelabay
 {
@@ -102,7 +103,9 @@ namespace webYelabay
                 pedEn.createPedidoNuevo(idUsu);
                 carrito.deleteCarrito();
                 MessageBox.Show("Pedido realizado. Gracias por su compra");
-                
+                CorreoConfirmacion();
+
+
                 Response.Redirect("VerTodosProductos.aspx");
                 
             }
@@ -112,6 +115,35 @@ namespace webYelabay
             }
 
 
+        }
+
+        protected void CorreoConfirmacion()
+        {
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];
+            string mailNuevoUser = u.getEmail();
+            string nickNuevoUser = u.getNombre();
+            DateTime thisDay = DateTime.Today;
+
+            SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);
+            MailMessage message = new MailMessage();
+
+            try
+            {
+                MailAddress fromAddress = new MailAddress("yelabaytienda@gmail.com", "Tienda Yelabay");
+                MailAddress toAddress = new MailAddress(mailNuevoUser, nickNuevoUser);
+
+                message.From = fromAddress;
+                message.To.Add(toAddress);
+                message.Subject = "Gracias por su compra";
+                message.Body = "Gracias por confiar en nosotros " + nickNuevoUser + ", ha realizado una compra hoy día: " + thisDay.ToString("d") + " con Dirección: " + TextBoxDireccion.Text.ToString() + " y un coste de " + LabelPrecioTotal.Text.ToString() + "€";
+                smtClient.EnableSsl = true;
+                smtClient.Credentials = new System.Net.NetworkCredential("yelabaytienda@gmail.com", "YelabayTienda-1");
+                smtClient.Send(message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+            }
         }
     }
 }

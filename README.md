@@ -163,17 +163,17 @@ Los clientes **registrados** podrán:
   
   Para nuestra aplicación en concreto, como tenemos sistema de **inicio de sesión** y de **registro** aportamos dos _cuentas_ para pruebas en la correccion, una de administrador y otra de usuario:
 
-### Administrador
+### Cliente estándar
   
   - Usuario : **raul**
-  - Contraseña: **revision1**
+  - Contraseña: **Revision1**
   
-### Cliente estándar
+### Profesor
 
   - Usuario: **profesor**
-  - Contraseña: **revision2**
+  - Contraseña: **Revision2**
 
-## <a name="presentation"></a> Presentación realizada en clase se encuentra en la carpeta Yelabay/Presentation/Presentation.pdf
+## <a name="presentation"></a> La presentación realizada en clase se encuentra en la carpeta Yelabay/Presentation/Presentation.pdf
 
 ## <a name="Team-Work"></a> Trabajo realizado por cada miembro del grupo:
 

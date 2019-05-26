@@ -13,7 +13,7 @@
        
  <div id="content">
             <div class="invisibleRow">
-                <div class="invisibleCol"><b>Motivo Devolución:</b></div>
+                <div class="invisibleCol"><b>Motivo Reclamación:</b></div>
                 <div class="invisibleCol">
                     <asp:TextBox ID="TextBoxMotivo" runat="server" Height="87px" Width="569px"></asp:TextBox>
                 </div>
