@@ -37,7 +37,7 @@
                         <tr>
                             <td class="auto-style2">Precio:</td>
                             <td class="auto-style3">
-                                <asp:Label ID="LabelPrecioProducto" runat="server" Text='<%# Eval("precio", "{0:C}") %>'></asp:Label>
+                                <asp:Label ID="LabelPrecioProducto" runat="server" Text='<%#  float.Parse(Eval("precio").ToString())*float.Parse(Eval("oferta").ToString())+" €"%>'></asp:Label>  
                             </td>
                         </tr>
                     </table>
