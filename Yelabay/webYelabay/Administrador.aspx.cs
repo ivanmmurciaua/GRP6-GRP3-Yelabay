@@ -25,6 +25,9 @@ namespace webYelabay
                 case "articulos":
                     Response.Redirect("ProductosAdmin.aspx");
                     break;
+                case "pedidos":
+                    Response.Redirect("PedidosAdmin.aspx");
+                    break;
                 default:
                     Response.Redirect("Administrador.aspx");
                     break;
