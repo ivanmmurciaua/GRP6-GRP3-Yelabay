@@ -24,6 +24,16 @@ namespace library
             return nombre;
         }
 
+        public void setIdMarca(int marc)
+        {
+            idMarca = marc;
+        }
+
+        public void setNombre(string nomb)
+        {
+            nombre = nomb;
+        }
+
 
         //Constructores
         public MarcaEN() 

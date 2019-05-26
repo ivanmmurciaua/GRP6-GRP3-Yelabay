@@ -76,12 +76,14 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Carrito.aspx" />
+    <Content Include="ConfirmacionPedido.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="CrearReclamacion.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="PedidosAdmin.aspx" />
     <Content Include="ProductosAdmin.aspx" />
+    <Content Include="ReclamacionesAdmin.aspx" />
     <Content Include="UsuariosAdmin.aspx" />
     <Content Include="VerComponentes.aspx" />
     <Content Include="VerConsolas.aspx" />
@@ -118,6 +120,13 @@
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ConfirmacionPedido.aspx.cs">
+      <DependentUpon>ConfirmacionPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionPedido.aspx.designer.cs">
+      <DependentUpon>ConfirmacionPedido.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -152,6 +161,13 @@
     </Compile>
     <Compile Include="ProductosAdmin.aspx.designer.cs">
       <DependentUpon>ProductosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReclamacionesAdmin.aspx.cs">
+      <DependentUpon>ReclamacionesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReclamacionesAdmin.aspx.designer.cs">
+      <DependentUpon>ReclamacionesAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsuariosAdmin.aspx.cs">
       <DependentUpon>UsuariosAdmin.aspx</DependentUpon>

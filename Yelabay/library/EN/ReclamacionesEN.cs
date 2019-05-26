@@ -17,6 +17,7 @@ namespace library
         private string reclamacion { get; set; }
         private string fecha { get; set; }
         private bool devolucion { get; set; }
+        public int Id { get; set; }
 
 
         //metodos publicos
@@ -86,6 +87,17 @@ namespace library
 
             return cad.ListarReclamacionUser(id);
         }
+        public DataSet ListarReclamaciones()
+        {
+            ReclamacionesCAD cadp = new ReclamacionesCAD();
 
+            return cadp.ListarReclamaciones(this);
+        }
+        public bool borrarReclamacion()
+        {
+            ReclamacionesCAD cad = new ReclamacionesCAD();
+
+            return cad.borrarReclamacion(this);
+        }
     }
 }
