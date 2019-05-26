@@ -76,6 +76,7 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Carrito.aspx" />
+    <Content Include="ConfirmacionPedido.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="CrearReclamacion.aspx" />
     <Content Include="Home.aspx" />
@@ -118,6 +119,13 @@
     </Compile>
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmacionPedido.aspx.cs">
+      <DependentUpon>ConfirmacionPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionPedido.aspx.designer.cs">
+      <DependentUpon>ConfirmacionPedido.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
