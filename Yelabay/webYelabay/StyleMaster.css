@@ -204,7 +204,24 @@ body {
     margin-top: 3%;
     margin-left: -25%;
 }
-
+.usu-admin {
+    float: left;
+    width: 23%;
+    margin-top: 3%;
+    margin-left: -22%;
+}
+.rec-admin {
+    float: left;
+    width: 23%;
+    margin-top: 3%;
+    margin-left: 35%;
+}
+.pro-admin {
+    float: left;
+    width: 23%;
+    margin-top: 3%;
+    margin-left: -25%;
+}
 .mensaje-admin {
     float: left;
     width: 60%;

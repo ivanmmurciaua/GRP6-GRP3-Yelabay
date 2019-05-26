@@ -12,20 +12,14 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer" class="auto-style1">
-        
-
-            <div id ="title">
-            <h1>Reclamaciones</h1>
-        </div>
-
-           
-            
-           
-           
-            
+        <div id ="title">
+                <h1>Reclamaciones</h1>
+            </div>
+        <div class="rec-admin">
             <br />
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
+            
             <asp:GridView ID="GridReclamacionesAdmin" runat="server" OnRowDeleting="GridUsuariosAdmin_RowDeleting" OnRowCancelingEdit="GridUsuariosAdmin_RowCancelingEdit" DataKeyNames="id"
                 BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" AutoGenerateColumns="False" Width="522px" CssClass="auto-style2">
                 <FooterStyle BackColor="White" ForeColor="#000066" />
@@ -111,7 +105,7 @@
             <br />
             <br />
             <br />
-
+            </div>
            
             
            
