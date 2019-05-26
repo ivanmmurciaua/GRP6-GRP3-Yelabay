@@ -212,8 +212,10 @@ namespace webYelabay
             CarritoEN carrito = new CarritoEN();//Crea carrito
             UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
             carrito.setUsuario(u);//En Carrito
+            carrito.calcularPrecioTotal();
+            float total = carrito.getPrecioTotal();
             carrito.deleteCarrito();
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect("ConfirmacionPedido.aspx?Total=" + total.ToString());
 
 
             //Response.Redirect("VerPedido.aspx");
