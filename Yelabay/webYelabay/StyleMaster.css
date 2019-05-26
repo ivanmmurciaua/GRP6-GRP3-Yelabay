@@ -267,6 +267,13 @@ body {
     margin-top: 27.5%;
     margin-left: -38.5%;
 }
+/*Vista producto*/
+.producto {
+    float: left;
+    width: 90%;
+    margin-top: 2.5%;
+    margin-left: -10%;
+}
 .center {
     display: flex;
     flex-wrap: wrap; /* Optional. only if you want the items to wrap */

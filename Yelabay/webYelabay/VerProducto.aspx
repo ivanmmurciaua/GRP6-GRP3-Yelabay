@@ -8,6 +8,7 @@
             <h1>Producto</h1>
         </div>
         <div id="content">
+            <div class ="producto">
             <div>
                 <h1>
                 <asp:Label ID="LabelNombreProducto" runat="server" ></asp:Label></h1>
@@ -35,7 +36,7 @@
                         <b>Stock: </b>  <asp:Label ID="LabelStock" runat="server" Text="Label"></asp:Label>
                         <br /><br />
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:Button ID="butAddCarrito" runat="server" Text="Añadir al carrito" Visible ="false" OnClick="addCarrito_Click" />
+                        <asp:Button ID="butAddCarrito" style="background:#249cf4" runat="server" Text="Añadir al carrito" Visible ="false" OnClick="addCarrito_Click" ForeColor="White" BorderColor="Black"/>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:miconexion %>" SelectCommand="SELECT [foto] FROM [Productos] WHERE ([id] = @id)">
                             <SelectParameters>
                                 <asp:QueryStringParameter Name="id" QueryStringField="id" Type="Int32" />
@@ -44,6 +45,7 @@
                     </td>
                 </tr>
             </table>
+        </div>
         </div>
     </div>
 </asp:Content>
