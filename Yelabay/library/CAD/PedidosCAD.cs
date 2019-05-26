@@ -72,6 +72,51 @@ namespace library
             }
             return exito;
         }
+        public bool createPedidoNuevo(PedidosEN en, int idUsuario)
+        {
+
+            bool exito = false;
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+
+                c.Open();
+                SqlCommand com = new SqlCommand("insert into Pedidos (fechacompra, direccion, pais, preciosiniva, iva, precioconiva, fkusuario, fkagtrans, estado, ciudad) VALUES (@fechacompra, @direccion, @pais, @preciosiniva, @iva, @precioconiva, @fkusuario, @fkagtrans, @estado, @ciudad)", c);
+
+                com.Parameters.AddWithValue("@fechacompra", en.fechaCompra_pbl.ToString());
+
+                
+
+                com.Parameters.AddWithValue("@direccion", en.direccion_pbl.ToString());
+
+                com.Parameters.AddWithValue("@pais", en.pais_pbl.ToString());
+                com.Parameters.AddWithValue("@preciosiniva", en.precioSinIVA_pbl.ToString());
+                com.Parameters.AddWithValue("@iva", en.IVA_pbl.ToString());
+                com.Parameters.AddWithValue("@precioconiva", en.precioConIVA_pbl.ToString());
+                com.Parameters.AddWithValue("@fkusuario", idUsuario.ToString());
+                com.Parameters.AddWithValue("@fkagtrans", en.agenciaDeTransporte_pbl.ToString());
+                com.Parameters.AddWithValue("@estado", en.estado_pbl.ToString());
+                com.Parameters.AddWithValue("@ciudad", en.ciudad_pbl.ToString());
+
+                com.ExecuteNonQuery();
+
+
+
+
+                c.Close();
+                exito = true;
+
+
+            }
+            catch (Exception ex)
+            {
+                exito = false;
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+
+            }
+            return exito;
+        }
         public void readPedido(PedidosEN en)
         {
             SqlConnection c = new SqlConnection(constring);

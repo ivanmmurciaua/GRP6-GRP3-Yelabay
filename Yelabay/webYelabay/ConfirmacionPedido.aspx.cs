@@ -6,23 +6,27 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using library;
+using System.Windows.Forms;
 
 namespace webYelabay
 {
     public partial class ConfirmacionPedido : System.Web.UI.Page
     {
+        private float TotalCarrito;
+        private float TotalSinIVA;
         protected void Page_Load(object sender, EventArgs e)
         {
+            TotalCarrito = (float) Convert.ToSingle(Request.QueryString["Total"].ToString());
+            TotalSinIVA = TotalCarrito /(float) 1.21;
             if (!IsPostBack)
             {
-
+                
                 IniciarLlenadoDropDown();
                 LabelEuro.Visible = false;
                 LabelPrecioEnvio.Text = 0.ToString();
                 LabelPrecioEnvio.Visible = false;
-                LabelPrecioTotalSinIVA.Text = PrecioCompraSINIVA().ToString();
-                double iva = 1.21;
-                LabelPrecioTotal.Text = (PrecioCompraSINIVA() * iva).ToString();
+                LabelPrecioTotalSinIVA.Text =TotalSinIVA.ToString();
+                LabelPrecioTotal.Text = TotalCarrito.ToString();
             }
         }
 
@@ -43,12 +47,14 @@ namespace webYelabay
             agtEn.codigo_pbl = id;
             agtEn.leerAgenciaT();
             LabelPais.Text = agtEn.pais_pbl;
-            LabelPrecioTotalSinIVA.Text = PrecioCompraSINIVA().ToString();
-            double iva = 1.21;
-            LabelPrecioTotal.Text = (PrecioCompraSINIVA() * iva).ToString();
+            double auxdouble = TotalSinIVA + agtEn.precioEnvio_pbl;
+            double AUX=Math.Truncate(auxdouble);
+            float auxSinIVA = (float)AUX;
+            float auxConIVA = TotalCarrito + agtEn.precioEnvio_pbl;
+            //rellenar con precios carrito
             LabelPrecioEnvio.Text = agtEn.precioEnvio_pbl.ToString();
-            LabelPrecioTotalSinIVA.Text = (agtEn.precioEnvio_pbl).ToString();
-            LabelPrecioTotal.Text = (agtEn.precioEnvio_pbl).ToString();
+            LabelPrecioTotalSinIVA.Text = auxSinIVA.ToString();
+            LabelPrecioTotal.Text = auxConIVA.ToString();
             
             if (id != 0)
             {
@@ -72,24 +78,6 @@ namespace webYelabay
             return agtEN.ListarAgenciaT();
         }
 
-        protected int PrecioCompraSINIVA()
-        {
-            CarritoEN carrito = new CarritoEN();//Crea carrito
-            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
-            carrito.setUsuario(u);//En Carrito
-            carrito.calcularPrecioTotal();//Actualiza el atributo del precio total
-
-            return (int) carrito.getPrecioTotal();
-        }
-
-        protected void EliminarCarrito()
-        {
-            CarritoEN carrito = new CarritoEN();//Crea carrito
-            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
-            carrito.setUsuario(u);//En Carrito
-            carrito.deleteCarrito();
-        }
-
         protected void ButtonConfirmarPedido_Click(object sender, EventArgs e)
         {
             if ((Convert.ToInt32(DropListAgTrans.SelectedValue) != 0) && TextBoxDireccion.Text != "" && TextBoxCiudad.Text != "" && TextBoxPais.Text != "")
@@ -107,10 +95,13 @@ namespace webYelabay
                 pedEn.precioSinIVA_pbl = Convert.ToSingle(LabelPrecioTotalSinIVA.Text.ToString());
                 pedEn.precioConIVA_pbl = Convert.ToSingle(LabelPrecioTotal.Text.ToString());
                 pedEn.fechaCompra_pbl = thisDay.ToString("d");
-                pedEn.estado_pbl = "Recibido";
-                EliminarCarrito();
-                pedEn.createPedido(idUsu);
-                Response.Redirect("VerTodosPedidos.aspx");
+                pedEn.estado_pbl = "Comprado";
+                pedEn.id_pbl = 21;
+                pedEn.createPedidoNuevo(idUsu);
+                MessageBox.Show("Pedido realizado. Gracias por su compra");
+                
+                Response.Redirect("VerTodosProductos.aspx");
+                
             }
             else
             {
