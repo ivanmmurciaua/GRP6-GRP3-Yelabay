@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 namespace library{
     public class AdminCAD{
 
-        private string constring;
+        //private string constring;
 
         public AdminCAD(){
             //constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
-            constring="";
+            //constring="";
         }
 
         public bool createAdmin(AdminEN admin){

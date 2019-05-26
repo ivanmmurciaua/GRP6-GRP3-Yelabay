@@ -136,6 +136,8 @@ namespace webYelabay
             }
             catch (Exception ex)
             {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+
             }
         }
 
