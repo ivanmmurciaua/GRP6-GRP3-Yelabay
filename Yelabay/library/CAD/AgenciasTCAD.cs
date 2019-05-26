@@ -1,40 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Configuration;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+
 namespace library
 {
-    public class OfertasCAD
+    class AgenciasTCAD
     {
 
-        private String constring;
+        private string constring;
 
-        public OfertasCAD()
+        public AgenciasTCAD()
         {
             constring = ConfigurationManager.ConnectionStrings["miconexion"].ToString();
-            
         }
 
-        public bool createOferta(OfertasEN oferEn)
+        public bool crearAgenciaT(AgenciaTEN en)
         {
-
             bool exito = false;
             SqlConnection c = new SqlConnection(constring);
             try
             {
 
                 c.Open();
-                SqlCommand com = new SqlCommand("insert into Ofertas (diainicio, diafin, porcentaje, diferencia) VALUES (@diainicio, @diafin, @porcentaje, @diferencia)", c);
+                SqlCommand com = new SqlCommand("insert into AgenciasT (nombre, pais, precioenvio) VALUES (@nombre, @pais, @precioenvio)", c);
 
 
-                com.Parameters.AddWithValue("@diainicio", oferEn.getFechaInicio().ToString());
-                com.Parameters.AddWithValue("@diafin", oferEn.getFechaFin().ToString());
-                com.Parameters.AddWithValue("@porcentaje", oferEn.getDescuentoPorcen().ToString());
-                com.Parameters.AddWithValue("@diferencia", oferEn.getDiferencia().ToString());
+                com.Parameters.AddWithValue("@nombre", en.nombre_pbl.ToString());
+
+                com.Parameters.AddWithValue("@pais", en.pais_pbl.ToString());
+                com.Parameters.AddWithValue("@precioenvio", en.precioEnvio_pbl.ToString());
 
                 com.ExecuteNonQuery();
 
@@ -53,7 +55,7 @@ namespace library
             return exito;
         }
 
-        public bool updateOferta(OfertasEN oferEn)
+        public bool actualizarAgenciaT(AgenciaTEN en)
         {
             bool exito = false;
 
@@ -61,14 +63,12 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("UPDATE Ofertas SET diainicio=@diainicio, diafin=@diafin, porcentaje=@porcentaje, diferencia=@diferencia where id=@id", c);
+                SqlCommand com = new SqlCommand("UPDATE AgenciasT SET nombre=@nombre, pais=@pais, precioenvio=@precioenvio where id=@id", c);
 
-                com.Parameters.AddWithValue("@id", oferEn.getCodigoOferta().ToString());
-                com.Parameters.AddWithValue("@diainicio", oferEn.getFechaInicio().ToString());
-                com.Parameters.AddWithValue("@diafin", oferEn.getFechaFin().ToString());
-                com.Parameters.AddWithValue("@porcentaje", oferEn.getDescuentoPorcen().ToString());
-                com.Parameters.AddWithValue("@diferencia", oferEn.getDiferencia().ToString());
-                
+                com.Parameters.AddWithValue("@nombre", en.nombre_pbl.ToString());
+                com.Parameters.AddWithValue("@pais", en.pais_pbl.ToString());
+                com.Parameters.AddWithValue("@precioenvio", en.precioEnvio_pbl.ToString());
+                com.Parameters.AddWithValue("@id", en.codigo_pbl.ToString());
 
                 com.ExecuteNonQuery();
 
@@ -88,8 +88,7 @@ namespace library
 
             return exito;
         }
-
-        public bool deleteOferta(OfertasEN oferEn)
+        public bool borrarAgenciaT(AgenciaTEN en)
         {
             bool exito = false;
 
@@ -97,7 +96,7 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("DELETE FROM Ofertas WHERE id = " + oferEn.getCodigoOferta().ToString(), c);
+                SqlCommand com = new SqlCommand("DELETE FROM AgenciasT WHERE id = " + en.codigo_pbl.ToString(), c);
 
                 com.ExecuteNonQuery();
 
@@ -117,7 +116,7 @@ namespace library
             return exito;
         }
 
-        public bool readOferta(OfertasEN oferEn)
+        public bool leerAgenciaT(AgenciaTEN agtEn)
         {
             bool exito = false;
 
@@ -125,19 +124,18 @@ namespace library
             try
             {
                 c.Open();
-                SqlCommand com = new SqlCommand("Select * from Ofertas where id=@id", c);
+                SqlCommand com = new SqlCommand("Select * from AgenciasT where id=@id", c);
 
-                com.Parameters.AddWithValue("@id", oferEn.getCodigoOferta().ToString());
+                com.Parameters.AddWithValue("@id", agtEn.codigo_pbl.ToString());
 
                 com.ExecuteNonQuery();
                 SqlDataReader dr = com.ExecuteReader();
 
                 if (dr.Read() == true)
                 {
-                    oferEn.setFechaInicio(dr["diainicio"].ToString());
-                    oferEn.setFechaFin(dr["diafin"].ToString());
-                    oferEn.setDescuentoPorcen(Int32.Parse(dr["diafin"].ToString()));
-                    oferEn.setDiferencia((float)Convert.ToSingle(dr["precioenvio"].ToString()));
+                    agtEn.nombre_pbl = dr["nombre"].ToString();
+                    agtEn.pais_pbl = dr["pais"].ToString();
+                    agtEn.precioEnvio_pbl = (float)Convert.ToSingle(dr["precioenvio"].ToString());
                     exito = true;
 
 
@@ -158,6 +156,19 @@ namespace library
 
             return exito;
         }
+
+
+        public DataSet ListarAgenciaT(AgenciaTEN en)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+            SqlDataAdapter da = new SqlDataAdapter("select * from AgenciasT", c);
+
+            da.Fill(bdvirtual, "AgenciasT");
+
+            return bdvirtual;
+        }
+
 
     }
 }
