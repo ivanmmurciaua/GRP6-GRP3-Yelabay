@@ -22,9 +22,11 @@ namespace webYelabay
 
         public void RellenarGridView()
         {
+            UsuarioEN usu = new UsuarioEN();
+            usu = (UsuarioEN)Session["Usuarios"];
             ReclamacionesEN recEN = new ReclamacionesEN();
             DataSet da = new DataSet();
-            da = recEN.ListarReclamacion();
+            da = recEN.ListarReclamacionUsu(usu.getId());
             if(da != null)
             {
                 if(da.Tables[0].Rows.Count != 0)

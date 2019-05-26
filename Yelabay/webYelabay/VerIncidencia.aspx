@@ -31,9 +31,7 @@
                         <EditItemTemplate>
                             <asp:TextBox ID="textFecha" Text='<%# Eval("fechareclamacion") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textFechaFooter" runat="server" />
-                        </FooterTemplate>
+                       
                     </asp:TemplateField> 
 
                     <asp:TemplateField HeaderText="Motivo de la Reclamación">
@@ -43,9 +41,7 @@
                         <EditItemTemplate>
                                 <asp:TextBox ID="textMotivo" Text='<%# Eval("reclamacion") %>' runat="server" />
                         </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textReclamacionFooter" runat="server" />
-                        </FooterTemplate>
+                     
                         
                     </asp:TemplateField>
                 </Columns>
