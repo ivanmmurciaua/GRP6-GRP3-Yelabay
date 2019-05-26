@@ -168,7 +168,7 @@ Los clientes **registrados** podrán:
   - Usuario : **raul**
   - Contraseña: **Revision1**
   
-### Profesor
+### Administrador
 
   - Usuario: **profesor**
   - Contraseña: **Revision2**
