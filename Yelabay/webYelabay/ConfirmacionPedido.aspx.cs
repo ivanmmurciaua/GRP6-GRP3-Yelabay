@@ -83,7 +83,9 @@ namespace webYelabay
             if ((Convert.ToInt32(DropListAgTrans.SelectedValue) != 0) && TextBoxDireccion.Text != "" && TextBoxCiudad.Text != "" && TextBoxPais.Text != "")
             {
                 DateTime thisDay = DateTime.Today;
-
+                CarritoEN carrito = new CarritoEN();//Crea carrito
+                UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+                carrito.setUsuario(u);//En Carrito
 
                 int id = Convert.ToInt32(DropListAgTrans.SelectedValue);
                 PedidosEN pedEn = new PedidosEN();
@@ -98,6 +100,7 @@ namespace webYelabay
                 pedEn.estado_pbl = "Comprado";
                 pedEn.id_pbl = 21;
                 pedEn.createPedidoNuevo(idUsu);
+                carrito.deleteCarrito();
                 MessageBox.Show("Pedido realizado. Gracias por su compra");
                 
                 Response.Redirect("VerTodosProductos.aspx");

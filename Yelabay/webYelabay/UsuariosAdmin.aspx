@@ -8,8 +8,7 @@
             <h1>Usuarios Administrador</h1>
         </div>
         <div id="content">
-            
-
+            <div class="usu-admin">
             <asp:GridView ID="GridUsuariosAdmin" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="id"
                 OnRowCommand="GridUsuariosAdmin_RowCommand" OnRowEditing="GridUsuariosAdmin_RowEditing" OnRowCancelingEdit="GridUsuariosAdmin_RowCancelingEdit" 
                 OnRowUpdating="GridUsuariosAdmin_RowUpdating" OnRowDeleting="GridUsuariosAdmin_RowDeleting"
@@ -160,5 +159,6 @@
             
 
         </div>
+            </div>
     </div>
 </asp:Content>
