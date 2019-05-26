@@ -82,6 +82,7 @@
     <Content Include="Login.aspx" />
     <Content Include="PedidosAdmin.aspx" />
     <Content Include="ProductosAdmin.aspx" />
+    <Content Include="ReclamacionesAdmin.aspx" />
     <Content Include="UsuariosAdmin.aspx" />
     <Content Include="VerComponentes.aspx" />
     <Content Include="VerConsolas.aspx" />
@@ -152,6 +153,13 @@
     </Compile>
     <Compile Include="ProductosAdmin.aspx.designer.cs">
       <DependentUpon>ProductosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReclamacionesAdmin.aspx.cs">
+      <DependentUpon>ReclamacionesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReclamacionesAdmin.aspx.designer.cs">
+      <DependentUpon>ReclamacionesAdmin.aspx</DependentUpon>
     </Compile>
     <Compile Include="UsuariosAdmin.aspx.cs">
       <DependentUpon>UsuariosAdmin.aspx</DependentUpon>

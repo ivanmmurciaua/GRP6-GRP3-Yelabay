@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace library
 {
@@ -13,6 +17,7 @@ namespace library
         private string reclamacion { get; set; }
         private string fecha { get; set; }
         private bool devolucion { get; set; }
+        public int Id { get; set; }
 
 
         //metodos publicos
@@ -70,6 +75,29 @@ namespace library
             if (cad.createReclamacion(this)) borrada = true;
             return borrada;
         }
+        public DataSet ListarReclamacion()
+        {
+           ReclamacionesCAD cad = new ReclamacionesCAD();
 
+            return cad.ListarReclamacion(this);
+        }
+        public DataSet ListarReclamacionUsu(int id)
+        {
+            ReclamacionesCAD cad = new ReclamacionesCAD();
+
+            return cad.ListarReclamacionUser(id);
+        }
+        public DataSet ListarReclamaciones()
+        {
+            ReclamacionesCAD cadp = new ReclamacionesCAD();
+
+            return cadp.ListarReclamaciones(this);
+        }
+        public bool borrarReclamacion()
+        {
+            ReclamacionesCAD cad = new ReclamacionesCAD();
+
+            return cad.borrarReclamacion(this);
+        }
     }
 }
