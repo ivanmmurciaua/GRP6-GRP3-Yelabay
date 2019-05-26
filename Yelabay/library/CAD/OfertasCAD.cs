@@ -11,7 +11,7 @@ namespace library
     public class OfertasCAD
     {
 
-        private String constring;
+        private string constring;
 
         public OfertasCAD()
         {
