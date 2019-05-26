@@ -8,7 +8,7 @@
             <h1>Mis pedidos</h1>
         </div>
         <div id="content">
-            
+            <div class ="verpedido">
 
             <asp:GridView ID="GridPedidosUser" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="id"
                 OnRowCommand="GridPedidosUser_RowCommand" OnRowEditing="GridPedidosUser_RowEditing" OnRowCancelingEdit="GridPedidosUser_RowCancelingEdit" 
@@ -123,7 +123,7 @@
             <br />
             <asp:Label ID="LabelMensajeError" Text="" runat="server" ForeColor="Red"></asp:Label>
             
-
+        </div>
         </div>
     </div>
 </asp:Content>
