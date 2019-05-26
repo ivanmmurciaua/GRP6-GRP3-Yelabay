@@ -9,12 +9,17 @@ namespace library
     public class OfertasEN
     {
         //Atributos privados
+        private int codigoOferta{get; set;}//codigo de la oferta
         private string fechaInicio {get; set;}//fecha de inicio de la oferta
         private string fechaFin{get; set;}//fecha de fin de la oferta
-        private int codigoOferta{get; set;}//codigo de la oferta
-        private float descuento{get; set;}//descuento de la oferta
+        private int descuentoPorcen{get; set;}//porcentaje de descuento de la oferta
+        private float diferencia { get; set; }
 
         //Getters
+        public int getCodigoOferta()
+        {
+            return codigoOferta;
+        }
         public string getFechaInicio()
         {
             return fechaInicio;
@@ -25,15 +30,42 @@ namespace library
             return fechaFin;
         }
 
-        public int getCodigoOferta()
+        public int getDescuentoPorcen()
         {
-            return codigoOferta;
+            return descuentoPorcen;
         }
 
-        public float getDescuento()
+        public float getDiferencia()
         {
-            return descuento;
+            return diferencia;
         }
+
+
+
+        public void setCodigoOferta(int cod)
+        {
+            codigoOferta = cod;
+        }
+        public void setFechaInicio(string fech)
+        {
+            fechaInicio=fech;
+        }
+
+        public void setFechaFin(string fecha)
+        {
+            fechaFin=fecha;
+        }
+
+        public void setDescuentoPorcen(int porcen)
+        {
+            descuentoPorcen=porcen;
+        }
+
+        public void setDiferencia(float dife)
+        {
+            diferencia = dife;
+        }
+
 
 
         //Constructores
@@ -42,15 +74,16 @@ namespace library
             fechaInicio="";
             fechaFin="";
             codigoOferta=0;
-            descuento=0;
+            descuentoPorcen=0;
         }
 
-        public OfertasEN(int codigoOferta, string fechaInicio, string fechaFin, float descuento)
+        public OfertasEN(int codigoOferta, string fechaInicio, string fechaFin, int descuento, float diferencia)
         {
             this.fechaInicio=fechaInicio;
             this.fechaFin=fechaFin;
             this.codigoOferta=codigoOferta;
-            this.descuento=descuento;
+            this.descuentoPorcen=descuento;
+            this.diferencia = diferencia;
         }
 
         //Funciones publicas
