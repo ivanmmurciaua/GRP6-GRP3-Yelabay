@@ -9,7 +9,7 @@ namespace library
     class ServicioTecnicoEN
     {
         private int idST;
-        private UsuarioEN usuario;
+        //private UsuarioEN usuario;
         private int fkusuario;
         private string fechaConsulta { get; set; }
         private string consulta { get; set; }

@@ -50,7 +50,8 @@ namespace library
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("Problemas en la conexion Sql");
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                Console.WriteLine("Problemas en la conexion Sql");
                 }
                 finally
                 {

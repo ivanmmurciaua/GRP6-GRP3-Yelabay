@@ -13,8 +13,8 @@ namespace library
 {
     public class PedidosEN
     {
-        private UsuarioEN usuario;
-        private ProductoEN producto;
+        //private UsuarioEN usuario;
+        //private ProductoEN producto;
         
         private int id { get; set; }
         private string fechaCompra { get; set; }
