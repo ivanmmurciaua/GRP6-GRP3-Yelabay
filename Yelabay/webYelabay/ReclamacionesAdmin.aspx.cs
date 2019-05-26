@@ -59,11 +59,11 @@ namespace webYelabay
 
             if (borrado)
             {
-                Label1.Text = "¡Usuario borrado correctamente!";
+                Label1.Text = "¡Reclamacion borrado correctamente!";
             }
             else
             {
-                Label2.Text = "¡ERROR al borrar el usuario!";
+                Label2.Text = "¡ERROR al borrar la reclamacion!";
             }
 
         }
