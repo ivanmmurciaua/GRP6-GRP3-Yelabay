@@ -37,7 +37,7 @@
             <h1>Confirmacion Pedido</h1>
         </div>
         <div id="content" class="auto-style9">
-            
+            <div class="conf-pedido">
             
             
             
@@ -90,8 +90,8 @@
                 </tr>
             </table>
             <br />           
-            
-            
+            </div>
+            <div class="conf-pedido2">
             <table class="auto-style1">
                 <tr>
                     <td class="auto-style4" colspan="2"><h3><b>Rellena los datos de envio:</b></h3></td>
@@ -115,15 +115,15 @@
                     </td>
                 </tr>
                 </table>
-
-
+            </div>
+            <div class="conf-pedido3">
             
-            <asp:Button ID="Button1" runat="server" Text="Confirmar Pedido" OnClick="ButtonConfirmarPedido_Click" />
+            <asp:Button ID="Button1" style="background:#249cf4" runat="server" Text="Confirmar Pedido" OnClick="ButtonConfirmarPedido_Click" ForeColor="White" BorderColor="Black" />
                         
             <asp:Label ID="LabelMensajeError" Text="" runat="server" ForeColor="Red"></asp:Label>
 
             
-                 
+            </div>
         </div>
     </div>
 </asp:Content>

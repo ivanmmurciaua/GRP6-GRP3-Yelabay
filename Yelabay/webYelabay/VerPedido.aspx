@@ -37,12 +37,15 @@
             <h1>Detalles del Pedido</h1>
         </div>
         <div id="content">
+            <div class="pedido">
             <table class="tablaPedido">
+                
                 <tr>
                     <td class="auto-style1" colspan="2"><h3><b>Direccion de envío</b></h3></td>
                     <td class="auto-style2"><h3><b>Resumen de pedido</b></h3></td>
                     <td>&nbsp;</td>
                 </tr>
+
                 <tr>
                     <td class="auto-style1" colspan="2">
                         <asp:Label ID="LabelDireccion" runat="server"></asp:Label>
@@ -53,56 +56,50 @@
                         <asp:Label ID="LabelPrecioSinIva" runat="server"></asp:Label>
                     </td>
                 </tr>
+
                 <tr>
                     <td class="auto-style3" colspan="2">
                         <asp:Label ID="LabelCiudad" runat="server" Width="167px"></asp:Label>
-                        <asp:Label ID="LabelPais" runat="server" Width="116px"></asp:Label>
                     </td>
                     <td class="auto-style4"><b>IVA:</b></td>
                     <td class="auto-style5">
                         <asp:Label ID="LabelIVA" runat="server"></asp:Label>
                     </td>
                 </tr>
+
                 <tr>
-                    <td class="auto-style6" colspan="2"></td>
+                    <td class="auto-style3" colspan="2">
+                    <asp:Label ID="LabelPais" runat="server" Width="116px"></asp:Label>
                     <td class="auto-style7"><b>TOTAL:</b></td>
                     <td class="auto-style8">
                         <asp:Label ID="LabelPrecioConIVA" runat="server"></asp:Label>
                     </td>
                 </tr>
+
                 <tr>
-                    <td class="auto-style3">Fecha de compra:</td>
-                    <td class="auto-style3">
+                    <td class="auto-style3" colspan="2">Fecha de compra:</td>
+                    <td class="auto-style3" colspan="2">
                         <asp:Label ID="LabelFechaCompra" runat="server" Text="Label"></asp:Label>
-                    </td>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style5"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">Fecha de empaquetado:</td>
-                    <td class="auto-style3">
+                    <td class="auto-style3" colspan="2">Fecha de empaquetado:</td>
+                    <td class="auto-style3" colspan="2">
                         <asp:Label ID="LabelFechaEmpaquetado" runat="server" Text="Label"></asp:Label>
-                    </td>
-                    <td class="auto-style4"></td>
-                    <td class="auto-style5"></td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">Fecha de enviado:</td>
-                    <td class="auto-style1">
+                    <td class="auto-style3" colspan="2">Fecha de envío:</td>
+                    <td class="auto-style3" colspan="2">
                         <asp:Label ID="LabelFechaEnvio" runat="server" Text="Label"></asp:Label>
                     </td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style1">Fecha de entrega:</td>
-                    <td class="auto-style1">
+                    <td class="auto-style3" colspan="2">Fecha de entrega:</td>
+                    <td class="auto-style3" colspan="2">
                         <asp:Label ID="LabelFechaEntrega" runat="server" Text="Label"></asp:Label>
                     </td>
-                    <td class="auto-style2">&nbsp;</td>
-                    <td>&nbsp;</td>
                 </tr>
             </table>
         </div>
+            </div>
     </div>
 </asp:Content>
