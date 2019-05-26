@@ -177,7 +177,7 @@ Los clientes **registrados** podrán:
 
 ## <a name="Team-Work"></a> Trabajo realizado por cada miembro del grupo:
 
-#### Sergio Cortés Espinosa
+### Sergio Cortés Espinosa
 
 - ServicioTecnico CAD y EN
 - Pedidos CAD y EN
