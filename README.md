@@ -244,14 +244,15 @@ Los clientes **registrados** podrán:
 - Explendida coordinación del grupo
 
 
-## <a name="director"></a> 
+## <a name="director"></a> Comentarios del director
 
-* Iván Mañús Murcia: 
--Bueno, como coordinador, director, líder de este proyecto, he decir varias cosas...
--Son unos compañeros fantásticos, unos trabajadores increibles y hemos logrado hacer una aplicación funcional a
+##### Iván Mañús Murcia: 
+
+Bueno, como coordinador, director, líder de este proyecto, he decir varias cosas...
+Son unos compañeros fantásticos, unos trabajadores increibles y hemos logrado hacer una aplicación funcional a
 pesar de dificultades, ya fuera por otras asignaturas o por el IDE ya mencionado.
--Al final hemos sabido aprovechar nuestras ventajas personales, e individuales y aprovecharlas al máximo para
+Al final hemos sabido aprovechar nuestras ventajas personales, e individuales y aprovecharlas al máximo para
 trabajar lo más rápido posible, comunicandonos en todo momento, y sin perder la cabeza(a veces si pero no se nota).
--Hemos mantenido un ambiente perfecto para trabajar conjuntamente, sin malos rollos o recriminaciones hacia otras personas
+Hemos mantenido un ambiente perfecto para trabajar conjuntamente, sin malos rollos o recriminaciones hacia otras personas
 del grupo, todo lo contrario, siempre ayudandonos entre todos.
--Y por mi parte no tengo más que decir, bueno si, el 10 quizá no...pero esto es un gran **TEAM-WORK**
+Y por mi parte no tengo más que decir, bueno si, el 10 quizá no...pero esto es un gran **TEAM-WORK**
