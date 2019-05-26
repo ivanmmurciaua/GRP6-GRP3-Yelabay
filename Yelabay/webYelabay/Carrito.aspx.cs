@@ -6,6 +6,7 @@ using System.Net.Mail;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 using library;
 
 namespace webYelabay
@@ -84,7 +85,7 @@ namespace webYelabay
                 try
                 {
 
-                    String nombreProd = (GridCarrito.FooterRow.FindControl("textNombreProductoFooter") as TextBox).Text.Trim().ToString();
+                    /*String nombreProd = (GridCarrito.FooterRow.FindControl("textNombreProductoFooter") as TextBox).Text.Trim().ToString();
 
                     String apelli = (GridCarrito.FooterRow.FindControl("textApellidosFooter") as TextBox).Text.Trim().ToString();
                     String ni = (GridCarrito.FooterRow.FindControl("textNifFooter") as TextBox).Text.Trim().ToString();
@@ -92,7 +93,7 @@ namespace webYelabay
                     String contra = (GridCarrito.FooterRow.FindControl("textContraseñaFooter") as TextBox).Text.Trim().ToString();
                     String tip = (GridCarrito.FooterRow.FindControl("textDireccionFooter") as TextBox).Text.Trim().ToString();
                     String nicki = (GridCarrito.FooterRow.FindControl("textNickFooter") as TextBox).Text.Trim().ToString();
-                    String telef = (GridCarrito.FooterRow.FindControl("textTelefonoFooter") as TextBox).Text.Trim().ToString();
+                    String telef = (GridCarrito.FooterRow.FindControl("textTelefonoFooter") as TextBox).Text.Trim().ToString();*/
 
                     CarritoEN carrito = new CarritoEN();
 
@@ -215,8 +216,8 @@ namespace webYelabay
             carrito.calcularPrecioTotal();
             float total = carrito.getPrecioTotal();
             //carrito.deleteCarrito();
-            Response.Redirect("ConfirmacionPedido.aspx?Total=" + total.ToString());
-
+            if (total != 0) Response.Redirect("ConfirmacionPedido.aspx?Total=" + total.ToString());
+            else MessageBox.Show("El Carrito se encuentra vacío actualmente");
 
             //Response.Redirect("VerPedido.aspx");
             /*SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);

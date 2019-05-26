@@ -8,7 +8,7 @@ using library;
 using System.Windows.Forms;
 using library.ServiceLayer;
 using System.Security.Cryptography;
-
+using System.Net.Mail;
 
 namespace webYelabay
 {
@@ -104,6 +104,7 @@ namespace webYelabay
 
                     us.createUsuario();
                     Session["Usuarios"] = us;
+                    CorreoConfirmacion();
                     MessageBox.Show("Bienvenido , tu cuenta ha sido creada con exito");
                     Response.Redirect("Usuario.aspx");
 
@@ -111,5 +112,32 @@ namespace webYelabay
 
             }
         }
+
+        protected void CorreoConfirmacion()
+        {
+            string mailNuevoUser = TextBoxEmail.Text;
+            string nickNuevoUser = TextBoxNick.Text;
+
+            SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);
+            MailMessage message = new MailMessage();
+
+            try
+            {
+                MailAddress fromAddress = new MailAddress("yelabaytienda@gmail.com", "Tienda Yelabay");
+                MailAddress toAddress = new MailAddress(mailNuevoUser, nickNuevoUser);
+
+                message.From = fromAddress;
+                message.To.Add(toAddress);
+                message.Subject = "Bienvenido a Yelabay";
+                message.Body = "Bienvenido " + nickNuevoUser + ", tu usuario en Yelabay ha sido creado con éxito, recuerda visitarnos para encontrar la mejor calidad y servicio en productos informáticos";
+                smtClient.EnableSsl = true;
+                smtClient.Credentials = new System.Net.NetworkCredential("yelabaytienda@gmail.com", "YelabayTienda-1");
+                smtClient.Send(message);
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
     }
 }
