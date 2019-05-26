@@ -52,19 +52,28 @@ namespace webYelabay
                 carro.setProducto(prod);
                 carro.setCantidad(1);
                 carro.setUsuario(u);
-                if (carro.anyadirProducto(carro.getCantidad()))
+                if (!carro.readCarrito())
                 {
-                    MessageBox.Show("Producto añadido al carrito");
+                    if (carro.anyadirProducto(carro.getCantidad()))
+                    {
+                        MessageBox.Show("Producto añadido al carrito");
+                        ProductoEN pro = new ProductoEN(Int32.Parse(Request.QueryString["id"]), "", "", 0, "");
+                        pro.disminuirStock(carro.getCantidad());
+                    }
+                }
+                else
+                {
+                    carro.incrementarProducto();
                     ProductoEN pro = new ProductoEN(Int32.Parse(Request.QueryString["id"]), "", "", 0, "");
                     pro.disminuirStock(carro.getCantidad());
+                    MessageBox.Show("Producto ya en carrito, se incrementará la cantidad");
                 }
+
+
+
             }
-            else MessageBox.Show("Producto fuera de existencia");
-            
-
-
-            //Response.Redirect("Carrito.aspx?id=" + numPro.ToString());
-        }
+        }       //Response.Redirect("Carrito.aspx?id=" + numPro.ToString());
+                
 
         protected void DataList1_ItemCommand(object source, DataListCommandEventArgs e)
         {

@@ -129,5 +129,26 @@ namespace library
             return bdvirtual;
         }
 
+        public DataSet ListarReclamacion(ReclamacionesEN en)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+            SqlDataAdapter da = new SqlDataAdapter("select * from Reclamaciones", c);
+
+            da.Fill(bdvirtual, "Reclamaciones");
+
+            return bdvirtual;
+        }
+        public DataSet ListarReclamacionUser(int idusu)
+        {
+            DataSet bdvirtual = new DataSet();
+            SqlConnection c = new SqlConnection(constring);
+            SqlDataAdapter da = new SqlDataAdapter("select * from Reclamaciones where fkusuario =" + idusu + "", c);
+
+            da.Fill(bdvirtual, "Reclamaciones");
+
+            return bdvirtual;
+        }
+
     }
 }

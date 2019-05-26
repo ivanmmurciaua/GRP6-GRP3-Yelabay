@@ -36,8 +36,6 @@ namespace library
 
             CarritoEN carr = carrito;
 
-            if (!readCarrito(carr))
-            {
                 SqlConnection c = new SqlConnection(constring);
                 try
                 {
@@ -58,7 +56,6 @@ namespace library
                 {
                     c.Close();
                 }
-            }
 
             return anyadidio;
         }
@@ -75,7 +72,23 @@ namespace library
 
         public bool deleteCarrito(CarritoEN carrito)
         {
-            bool deleted = true;
+            bool deleted = false;
+            string email = carrito.getUsuario().getEmail();
+
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("DELETE FROM Carrito WHERE emailusuario LIKE '%" + email + "%'", c);
+                com.ExecuteNonQuery();
+                c.Close();
+                deleted = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+            }
 
             return deleted;
         }
@@ -94,9 +107,7 @@ namespace library
                 while (dr.Read())
                 {
                     precio += float.Parse (dr["precioxcantidad"].ToString());
-                    //label1.Text += " ";
                 }
-                //precio = (float) com.ExecuteScalar();
                 c.Close();
                 
             }
@@ -113,6 +124,27 @@ namespace library
         public bool readCarrito(CarritoEN carrito)
         {
             bool leido = false;
+            string email = carrito.getUsuario().getEmail();
+            string nombreProd = carrito.getProducto().getNombre();
+
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("SELECT * FROM Carrito WHERE emailusuario LIKE '%" + email + "%'", c);
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read() && !leido)
+                {
+                    leido = (nombreProd == dr["nombreproducto"].ToString());
+                }
+                c.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+            }
 
             return leido;
         }
@@ -145,13 +177,68 @@ namespace library
 
         public DataSet ListarCarrito(CarritoEN en)
         {
+            string email = en.getUsuario().getEmail();
             DataSet bdvirtual = new DataSet();
             SqlConnection c = new SqlConnection(constring);
-            SqlDataAdapter da = new SqlDataAdapter("select * from Carrito", c);
+            SqlDataAdapter da = new SqlDataAdapter("select * from Carrito WHERE emailusuario LIKE '%" + email + "%'", c);
 
             da.Fill(bdvirtual, "Carrito");
 
             return bdvirtual;
+        }
+
+        public bool incrementarProducto(CarritoEN carrito)
+        {
+            bool incrementado=false;
+            int cantidad=0;
+            decimal precio = 0;
+            string email = carrito.getUsuario().getEmail();
+            string nombreProd = carrito.getProducto().getNombre();
+
+            //Obtenemos cantidad actual
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("SELECT * FROM Carrito WHERE emailusuario LIKE '%" + email + "%'", c);
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read())
+                {
+                    if(nombreProd == dr["nombreproducto"].ToString())
+                    {
+                        cantidad = int.Parse(dr["cantidad"].ToString());
+                        precio = decimal.ToInt32((decimal) dr["precio"]);
+                    }
+                }
+                c.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+            }
+            cantidad++;
+            decimal precioxcantidad = precio * cantidad; /*precio * cantidad;*/
+            //Actualizamos la cantidad
+            SqlConnection co = new SqlConnection(constring);
+            try
+            {
+                co.Open();
+                SqlCommand com = new SqlCommand("UPDATE Carrito SET cantidad = "+ cantidad + ", precioxcantidad = " + precioxcantidad + " WHERE emailusuario LIKE '%" + email + "%' AND nombreproducto LIKE '%" + nombreProd + "%'", co);
+
+
+                com.ExecuteNonQuery();
+                co.Close();
+                incrementado = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                co.Close();
+            }
+
+            return incrementado;
         }
 
     }

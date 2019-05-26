@@ -76,30 +76,6 @@ namespace library
             return cad.eliminarProducto(this);
         }
 
-        public bool alterarCantidadProducto(ProductoEN producto, int nuevaCantidad)
-        {
-            bool alterado = false;
-
-            if (nuevaCantidad > 0)
-            {
-                cant = nuevaCantidad;
-                alterado = true;
-                /*for (int i = 0; i < productos.Count(); i++)
-                {
-                    if (producto.getCodigo() == productos[i].getCodigo())
-                    {
-                        cantidad[i] = nuevaCantidad;
-                        precioTotal -= precioProdxCant[i];
-                        precioProdxCant[i] = nuevaCantidad * productos[i].getPrecio();
-                        precioTotal += precioProdxCant[i];
-                        alterado = true;
-                    }
-                }*/
-            }
-
-            return alterado;
-        }
-
         public bool createCarrito()
         {
             bool creado = false;
@@ -122,25 +98,16 @@ namespace library
 
         public bool deleteCarrito()
         {
-            bool deleted = true;
             CarritoCAD cad = new CarritoCAD();
 
-            if (cad.deleteCarrito(this)) deleted = true;
-
-            return deleted;
+            return cad.deleteCarrito(this);
         }
 
         public bool readCarrito()
         {
-            bool leido = false;
             CarritoCAD cad = new CarritoCAD();
 
-            if (cad.readCarrito(this))
-            {
-                leido = true;
-            }
-
-            return leido;
+            return cad.readCarrito(this);
         }
 
         public void realizarCompra()
@@ -159,6 +126,12 @@ namespace library
         {
             CarritoCAD cad = new CarritoCAD();
             precioTotal= cad.calcularPrecioTotal(this);
+        }
+
+        public bool incrementarProducto()
+        {
+            CarritoCAD cad = new CarritoCAD();
+            return cad.incrementarProducto(this);
         }
 
     }
