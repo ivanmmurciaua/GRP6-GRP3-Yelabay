@@ -29,12 +29,13 @@ Voy a dejar: Nombre, Precio(en$) Stock, Campo Oferta.
             DataSet da = new DataSet();
             da = prodEN.ListarProductos();
             //FORMA PARA QUE CUALQUIER COLUMNA DEL GRID LA HAGAMOS DESAPARECER, SU DESTINO A NUESTRA MERCED.
+            
             this.GridProductosAdmin.Columns[0].Visible = false; //COLUMNA DE LA ID EN FALSE.
             this.GridProductosAdmin.Columns[3].Visible = false; //COLUMNA DE LA ID MARCA.
             this.GridProductosAdmin.Columns[4].Visible = false; //COLUMNA DE LA ID MARCA.
             this.GridProductosAdmin.Columns[7].Visible = false; //COLUMNA DE LA DESCRIPCION EN FALSE.
             this.GridProductosAdmin.Columns[8].Visible = false; //COLUMNA DE LA FOTITO EN FALSE.
-
+            
             if (da != null)
             {
                 ;
@@ -64,18 +65,19 @@ Voy a dejar: Nombre, Precio(en$) Stock, Campo Oferta.
                     float prec = (float)Convert.ToSingle((GridProductosAdmin.FooterRow.FindControl("textPrecioFooter") as TextBox).Text);
                     int stck = Int32.Parse((GridProductosAdmin.FooterRow.FindControl("textStockFooter") as TextBox).Text.Trim().ToString());
                     float ofert = (float)Convert.ToSingle((GridProductosAdmin.FooterRow.FindControl("textOfertaFooter") as TextBox).Text);
+                    /*
                     String descr = (GridProductosAdmin.FooterRow.FindControl("textDescripcionFooter") as TextBox).Text.Trim().ToString();
                     String fot = (GridProductosAdmin.FooterRow.FindControl("textFotoFooter") as TextBox).Text.Trim().ToString();
 
                     int fkMarc = Int32.Parse((GridProductosAdmin.FooterRow.FindControl("textFKMarcaFooter") as TextBox).Text.Trim().ToString());
                     //int fkOfert = Int32.Parse((GridProductosAdmin.FooterRow.FindControl("textFKOfertaFooter") as TextBox).Text.Trim().ToString());
                     int fkCate = Int32.Parse((GridProductosAdmin.FooterRow.FindControl("textFKCategoriaFooter") as TextBox).Text.Trim().ToString());
+                    */
 
-
-                    ProductoEN prodEN = new ProductoEN(0, nomb,descr,stck,fot);
+                    ProductoEN prodEN = new ProductoEN(0, nomb,"",stck,"");
 
                     prodEN.setPrecio(prec);
-                    añadido = prodEN.crearProductos(fkMarc, 0, fkCate);
+                    añadido = prodEN.crearProductos(1, 0, 1);
 
                 }
                 catch (Exception ex)
@@ -115,18 +117,19 @@ Voy a dejar: Nombre, Precio(en$) Stock, Campo Oferta.
             float prec = (float)Convert.ToSingle((GridProductosAdmin.Rows[e.RowIndex].FindControl("textPrecio") as TextBox).Text.ToString());
             int stck = Int32.Parse((GridProductosAdmin.Rows[e.RowIndex].FindControl("textStock") as TextBox).Text.Trim().ToString());
             float ofert = (float)Convert.ToSingle((GridProductosAdmin.Rows[e.RowIndex].FindControl("textOferta") as TextBox).Text.ToString());
+            /*
             String descr = (GridProductosAdmin.Rows[e.RowIndex].FindControl("textDescripcion") as TextBox).Text.Trim().ToString();
             String fot = (GridProductosAdmin.Rows[e.RowIndex].FindControl("textFoto") as TextBox).Text.Trim().ToString();
 
             int fkMarc = Int32.Parse((GridProductosAdmin.Rows[e.RowIndex].FindControl("textFKMarca") as TextBox).Text.Trim().ToString());
             //int fkOfert = Int32.Parse((GridProductosAdmin.Rows[e.RowIndex].FindControl("textFKOferta") as TextBox).Text.Trim().ToString());
             int fkCate = Int32.Parse((GridProductosAdmin.Rows[e.RowIndex].FindControl("textFKCategoria") as TextBox).Text.Trim().ToString());
+            */
 
-
-            ProductoEN prodEN = new ProductoEN(identi, nomb,descr, stck,fot);
+            ProductoEN prodEN = new ProductoEN(identi, nomb,"", stck,"");
             prodEN.setPrecio(prec);
 
-            bool actualizado = prodEN.actualizarProductos(fkMarc, 0, fkCate);
+            bool actualizado = prodEN.actualizarProductos(1, 0, 1);
             GridProductosAdmin.EditIndex = -1;
             RellenarGridView();
 
