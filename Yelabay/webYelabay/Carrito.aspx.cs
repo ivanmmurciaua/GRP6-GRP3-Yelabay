@@ -214,7 +214,7 @@ namespace webYelabay
             carrito.setUsuario(u);//En Carrito
             carrito.calcularPrecioTotal();
             float total = carrito.getPrecioTotal();
-            carrito.deleteCarrito();
+            //carrito.deleteCarrito();
             Response.Redirect("ConfirmacionPedido.aspx?Total=" + total.ToString());
 
 
