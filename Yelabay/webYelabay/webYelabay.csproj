@@ -101,8 +101,6 @@
     <Content Include="ServicioTecnico.aspx" />
     <Content Include="StyleMaster.css" />
     <Content Include="Usuario.aspx" />
-    <Content Include="VerTodosUsuarios.aspx" />
-    <Content Include="VerUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -295,20 +293,6 @@
     </Compile>
     <Compile Include="Usuario.aspx.designer.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VerTodosUsuarios.aspx.cs">
-      <DependentUpon>VerTodosUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VerTodosUsuarios.aspx.designer.cs">
-      <DependentUpon>VerTodosUsuarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VerUsuario.aspx.cs">
-      <DependentUpon>VerUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VerUsuario.aspx.designer.cs">
-      <DependentUpon>VerUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
