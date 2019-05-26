@@ -55,9 +55,13 @@
             </div>
             <br />
             <br />
-            <div class ="compra">
-            <asp:Button ID="Comprar"  style="background:#249cf4" runat="server" Text="Confirmar Compra" OnClick="Comprar_Click" ForeColor="White" BorderColor="Black"/>
+            <div class ="compra1">
+                <asp:Button ID="Borrar"  style="background:#249cf4" runat="server" Text="Borrar Carrito" OnClick="Borrar_Click" ForeColor="White" BorderColor="Black"/>
             </div>
+            <div class ="compra">
+                <asp:Button ID="Comprar"  style="background:#249cf4" runat="server" Text="Confirmar Compra" OnClick="Comprar_Click" ForeColor="White" BorderColor="Black"/>
+            </div>
+            
             </div>
         </div>
     </div>
