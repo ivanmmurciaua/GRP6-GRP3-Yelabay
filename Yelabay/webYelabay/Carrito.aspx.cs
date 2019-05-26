@@ -275,6 +275,13 @@ namespace webYelabay
             //pedido.precioConIVA_pbl= precioSinIVA ;
         }
 
-        
+        protected void EliminarCarrito_Click(object sender, EventArgs e)
+        {
+            CarritoEN carrito = new CarritoEN();//Crea carrito
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
+            carrito.deleteCarrito();
+            Response.Redirect(Request.RawUrl);
+        }
     }
 }

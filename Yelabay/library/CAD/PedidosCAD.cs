@@ -45,7 +45,8 @@ namespace library
 
                 com.Parameters.AddWithValue("@pais", en.pais_pbl.ToString());
                 com.Parameters.AddWithValue("@preciosiniva", en.precioSinIVA_pbl.ToString());
-                com.Parameters.AddWithValue("@iva", en.IVA_pbl.ToString());
+                //com.Parameters.AddWithValue("@iva", en.IVA_pbl.ToString());
+                com.Parameters.AddWithValue("@iva", "21");
                 com.Parameters.AddWithValue("@precioconiva", en.precioConIVA_pbl.ToString());
                 com.Parameters.AddWithValue("@fkusuario", idUsuario.ToString());
                 com.Parameters.AddWithValue("@fkagtrans", en.agenciaDeTransporte_pbl.ToString());

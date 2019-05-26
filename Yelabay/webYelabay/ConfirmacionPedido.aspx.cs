@@ -15,12 +15,14 @@ namespace webYelabay
         {
             if (!IsPostBack)
             {
+
                 IniciarLlenadoDropDown();
                 LabelEuro.Visible = false;
                 LabelPrecioEnvio.Text = 0.ToString();
                 LabelPrecioEnvio.Visible = false;
-                //LabelPrecioTotalSinIVA.Text =.Text.toString();
-                //LabelPrecioTotal.Text =.Text.toString();
+                LabelPrecioTotalSinIVA.Text = PrecioCompraSINIVA().ToString();
+                double iva = 1.21;
+                LabelPrecioTotal.Text = (PrecioCompraSINIVA() * iva).ToString();
             }
         }
 
@@ -41,7 +43,9 @@ namespace webYelabay
             agtEn.codigo_pbl = id;
             agtEn.leerAgenciaT();
             LabelPais.Text = agtEn.pais_pbl;
-            //rellenar con precios carrito
+            LabelPrecioTotalSinIVA.Text = PrecioCompraSINIVA().ToString();
+            double iva = 1.21;
+            LabelPrecioTotal.Text = (PrecioCompraSINIVA() * iva).ToString();
             LabelPrecioEnvio.Text = agtEn.precioEnvio_pbl.ToString();
             LabelPrecioTotalSinIVA.Text = (agtEn.precioEnvio_pbl).ToString();
             LabelPrecioTotal.Text = (agtEn.precioEnvio_pbl).ToString();
@@ -68,6 +72,24 @@ namespace webYelabay
             return agtEN.ListarAgenciaT();
         }
 
+        protected int PrecioCompraSINIVA()
+        {
+            CarritoEN carrito = new CarritoEN();//Crea carrito
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
+            carrito.calcularPrecioTotal();//Actualiza el atributo del precio total
+
+            return (int) carrito.getPrecioTotal();
+        }
+
+        protected void EliminarCarrito()
+        {
+            CarritoEN carrito = new CarritoEN();//Crea carrito
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
+            carrito.deleteCarrito();
+        }
+
         protected void ButtonConfirmarPedido_Click(object sender, EventArgs e)
         {
             if ((Convert.ToInt32(DropListAgTrans.SelectedValue) != 0) && TextBoxDireccion.Text != "" && TextBoxCiudad.Text != "" && TextBoxPais.Text != "")
@@ -86,8 +108,9 @@ namespace webYelabay
                 pedEn.precioConIVA_pbl = Convert.ToSingle(LabelPrecioTotal.Text.ToString());
                 pedEn.fechaCompra_pbl = thisDay.ToString("d");
                 pedEn.estado_pbl = "Recibido";
-                //pedEn.createPedido(idUsu);
-                //Response.Redirect("VerTodosProductos.aspx");
+                EliminarCarrito();
+                pedEn.createPedido(idUsu);
+                Response.Redirect("VerTodosPedidos.aspx");
             }
             else
             {

@@ -61,6 +61,8 @@
             
             <asp:Label ID="CosteTotal" runat="server" Text="Total: "></asp:Label>
             
+            <asp:Button ID="EliminarCarrito" runat="server" OnClick="EliminarCarrito_Click" Text="Eliminar Carrito" />
+            
         </div>
     </div>
 </asp:Content>
