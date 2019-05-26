@@ -6,21 +6,27 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using library;
+using System.Windows.Forms;
 
 namespace webYelabay
 {
     public partial class ConfirmacionPedido : System.Web.UI.Page
     {
+        private float TotalCarrito;
+        private float TotalSinIVA;
         protected void Page_Load(object sender, EventArgs e)
         {
+            TotalCarrito = (float) Convert.ToSingle(Request.QueryString["Total"].ToString());
+            TotalSinIVA = TotalCarrito /(float) 1.21;
             if (!IsPostBack)
             {
+                
                 IniciarLlenadoDropDown();
                 LabelEuro.Visible = false;
                 LabelPrecioEnvio.Text = 0.ToString();
                 LabelPrecioEnvio.Visible = false;
-                //LabelPrecioTotalSinIVA.Text =.Text.toString();
-                //LabelPrecioTotal.Text =.Text.toString();
+                LabelPrecioTotalSinIVA.Text =TotalSinIVA.ToString();
+                LabelPrecioTotal.Text = TotalCarrito.ToString();
             }
         }
 
@@ -41,10 +47,14 @@ namespace webYelabay
             agtEn.codigo_pbl = id;
             agtEn.leerAgenciaT();
             LabelPais.Text = agtEn.pais_pbl;
+            double auxdouble = TotalSinIVA + agtEn.precioEnvio_pbl;
+            double AUX=Math.Truncate(auxdouble);
+            float auxSinIVA = (float)AUX;
+            float auxConIVA = TotalCarrito + agtEn.precioEnvio_pbl;
             //rellenar con precios carrito
             LabelPrecioEnvio.Text = agtEn.precioEnvio_pbl.ToString();
-            LabelPrecioTotalSinIVA.Text = (agtEn.precioEnvio_pbl).ToString();
-            LabelPrecioTotal.Text = (agtEn.precioEnvio_pbl).ToString();
+            LabelPrecioTotalSinIVA.Text = auxSinIVA.ToString();
+            LabelPrecioTotal.Text = auxConIVA.ToString();
             
             if (id != 0)
             {
@@ -85,9 +95,13 @@ namespace webYelabay
                 pedEn.precioSinIVA_pbl = Convert.ToSingle(LabelPrecioTotalSinIVA.Text.ToString());
                 pedEn.precioConIVA_pbl = Convert.ToSingle(LabelPrecioTotal.Text.ToString());
                 pedEn.fechaCompra_pbl = thisDay.ToString("d");
-                pedEn.estado_pbl = "Recibido";
-                //pedEn.createPedido(idUsu);
-                //Response.Redirect("VerTodosProductos.aspx");
+                pedEn.estado_pbl = "Comprado";
+                pedEn.id_pbl = 21;
+                pedEn.createPedidoNuevo(idUsu);
+                MessageBox.Show("Pedido realizado. Gracias por su compra");
+                
+                Response.Redirect("VerTodosProductos.aspx");
+                
             }
             else
             {

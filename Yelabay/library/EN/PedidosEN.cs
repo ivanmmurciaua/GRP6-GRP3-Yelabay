@@ -126,6 +126,12 @@ namespace library
 
             cad.createPedido(this, idUsu);
         }
+        public void createPedidoNuevo(int idUsu)
+        {
+            PedidosCAD cad = new PedidosCAD();
+
+            cad.createPedidoNuevo(this, idUsu);
+        }
         public void readPedido()
         {
             PedidosCAD cad = new PedidosCAD();
