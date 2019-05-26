@@ -52,17 +52,11 @@ namespace webYelabay
                 carro.setProducto(prod);
                 carro.setCantidad(1);
                 carro.setUsuario(u);
-                if (!carro.readCarrito())
+                if (carro.anyadirProducto(carro.getCantidad()))
                 {
-                    if (carro.anyadirProducto(carro.getCantidad()))
-                    {
-                        MessageBox.Show("Producto añadido al carrito");
-                    }
-                }
-                else
-                {
-                    carro.incrementarProducto();
-                    MessageBox.Show("Producto ya en carrito, se incrementará la cantidad");
+                    MessageBox.Show("Producto añadido al carrito");
+                    ProductoEN pro = new ProductoEN(Int32.Parse(Request.QueryString["id"]), "", "", 0, "");
+                    pro.disminuirStock(carro.getCantidad());
                 }
             }
             else MessageBox.Show("Producto fuera de existencia");
