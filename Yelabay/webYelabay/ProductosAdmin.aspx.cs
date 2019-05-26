@@ -19,17 +19,31 @@ namespace webYelabay
             }
         }
 
+        /*
+Voy a dejar: Nombre, Precio(en$) Stock, Campo Oferta.
+*/
+
         public void RellenarGridView()
         {
             ProductoEN prodEN = new ProductoEN();
             DataSet da = new DataSet();
             da = prodEN.ListarProductos();
+            //FORMA PARA QUE CUALQUIER COLUMNA DEL GRID LA HAGAMOS DESAPARECER, SU DESTINO A NUESTRA MERCED.
+            this.GridProductosAdmin.Columns[0].Visible = false; //COLUMNA DE LA ID EN FALSE.
+            this.GridProductosAdmin.Columns[3].Visible = false; //COLUMNA DE LA ID MARCA.
+            this.GridProductosAdmin.Columns[4].Visible = false; //COLUMNA DE LA ID MARCA.
+            this.GridProductosAdmin.Columns[7].Visible = false; //COLUMNA DE LA DESCRIPCION EN FALSE.
+            this.GridProductosAdmin.Columns[8].Visible = false; //COLUMNA DE LA FOTITO EN FALSE.
+
             if (da != null)
             {
+                ;
                 if (da.Tables[0].Rows.Count != 0)
                 {
+                    
                     GridProductosAdmin.DataSource = da;
                     GridProductosAdmin.DataBind();
+                    
                 }
                 else
                 {
@@ -46,10 +60,10 @@ namespace webYelabay
             {
                 try
                 {
-
                     String nomb = (GridProductosAdmin.FooterRow.FindControl("textNombreFooter") as TextBox).Text.Trim().ToString();
                     float prec = (float)Convert.ToSingle((GridProductosAdmin.FooterRow.FindControl("textPrecioFooter") as TextBox).Text);
                     int stck = Int32.Parse((GridProductosAdmin.FooterRow.FindControl("textStockFooter") as TextBox).Text.Trim().ToString());
+                    float ofert = (float)Convert.ToSingle((GridProductosAdmin.FooterRow.FindControl("textOfertaFooter") as TextBox).Text);
                     String descr = (GridProductosAdmin.FooterRow.FindControl("textDescripcionFooter") as TextBox).Text.Trim().ToString();
                     String fot = (GridProductosAdmin.FooterRow.FindControl("textFotoFooter") as TextBox).Text.Trim().ToString();
 
@@ -58,7 +72,7 @@ namespace webYelabay
                     int fkCate = Int32.Parse((GridProductosAdmin.FooterRow.FindControl("textFKCategoriaFooter") as TextBox).Text.Trim().ToString());
 
 
-                    ProductoEN prodEN = new ProductoEN(0, nomb, descr, stck, fot);
+                    ProductoEN prodEN = new ProductoEN(0, nomb,descr,stck,fot);
 
                     prodEN.setPrecio(prec);
                     añadido = prodEN.crearProductos(fkMarc, 0, fkCate);
@@ -100,6 +114,7 @@ namespace webYelabay
             String nomb = (GridProductosAdmin.Rows[e.RowIndex].FindControl("textNombre") as TextBox).Text.Trim().ToString();
             float prec = (float)Convert.ToSingle((GridProductosAdmin.Rows[e.RowIndex].FindControl("textPrecio") as TextBox).Text.ToString());
             int stck = Int32.Parse((GridProductosAdmin.Rows[e.RowIndex].FindControl("textStock") as TextBox).Text.Trim().ToString());
+            float ofert = (float)Convert.ToSingle((GridProductosAdmin.Rows[e.RowIndex].FindControl("textOferta") as TextBox).Text.ToString());
             String descr = (GridProductosAdmin.Rows[e.RowIndex].FindControl("textDescripcion") as TextBox).Text.Trim().ToString();
             String fot = (GridProductosAdmin.Rows[e.RowIndex].FindControl("textFoto") as TextBox).Text.Trim().ToString();
 
@@ -108,7 +123,7 @@ namespace webYelabay
             int fkCate = Int32.Parse((GridProductosAdmin.Rows[e.RowIndex].FindControl("textFKCategoria") as TextBox).Text.Trim().ToString());
 
 
-            ProductoEN prodEN = new ProductoEN(identi, nomb, descr, stck, fot);
+            ProductoEN prodEN = new ProductoEN(identi, nomb,descr, stck,fot);
             prodEN.setPrecio(prec);
 
             bool actualizado = prodEN.actualizarProductos(fkMarc, 0, fkCate);
@@ -148,3 +163,4 @@ namespace webYelabay
         }
     }
 }
+ 

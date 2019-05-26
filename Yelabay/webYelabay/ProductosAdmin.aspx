@@ -25,7 +25,7 @@
                 <SortedDescendingHeaderStyle BackColor="#00547E" />
 
                 <Columns>
-                    
+
                     <asp:TemplateField HeaderText="id">
                         <ItemTemplate>
                             <asp:Label Text='<%# Eval("id") %>' runat="server"/>
@@ -50,7 +50,7 @@
                         </FooterTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Precio(en €)">
+                    <asp:TemplateField HeaderText="Precio (€)">
                         <ItemTemplate>
                             <asp:Label Text='<%# Eval("precio") %>' runat="server"/>
                         </ItemTemplate>
@@ -59,6 +59,33 @@
                         </EditItemTemplate>
                         <FooterTemplate>
                             <asp:TextBox ID="textPrecioFooter"  runat="server" />
+                        </FooterTemplate>
+                    </asp:TemplateField>
+
+
+                    <asp:TemplateField HeaderText="Id Marca">
+                        <ItemTemplate>
+                            <asp:Label Text='<%# Eval("fkmarca") %>' runat="server"/>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="textFKMarca" Text='<%# Eval("fkmarca") %>' runat="server" />
+                        </EditItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="textFKMarcaFooter"  runat="server" />
+                        </FooterTemplate>
+                    </asp:TemplateField>
+
+                    
+
+                    <asp:TemplateField HeaderText="Id Categoria">
+                        <ItemTemplate>
+                            <asp:Label Text='<%# Eval("fkcategoria") %>' runat="server"/>
+                        </ItemTemplate>
+                        <EditItemTemplate>
+                            <asp:TextBox ID="textFKCategoria" Text='<%# Eval("fkcategoria") %>' runat="server" />
+                        </EditItemTemplate>
+                        <FooterTemplate>
+                            <asp:TextBox ID="textFKCategoriaFooter"  runat="server" />
                         </FooterTemplate>
                     </asp:TemplateField>
 
@@ -74,39 +101,15 @@
                         </FooterTemplate>
                     </asp:TemplateField>
 
-                    <asp:TemplateField HeaderText="Id de la marca">
+                    <asp:TemplateField HeaderText="Oferta">
                         <ItemTemplate>
-                            <asp:Label Text='<%# Eval("fkmarca") %>' runat="server"/>
+                            <asp:Label Text='<%# Eval("oferta") %>' runat="server"/>
                         </ItemTemplate>
                         <EditItemTemplate>
-                            <asp:TextBox ID="textFKMarca" Text='<%# Eval("fkmarca") %>' runat="server" />
+                            <asp:TextBox ID="textOferta" Text='<%# Eval("oferta") %>' runat="server" />
                         </EditItemTemplate>
                         <FooterTemplate>
-                            <asp:TextBox ID="textFKMarcaFooter"  runat="server" />
-                        </FooterTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="Id de la oferta">
-                        <ItemTemplate>
-                            <asp:Label Text='<%# Eval("fkoferta") %>' runat="server"/>
-                        </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:TextBox ID="textFKOferta" Text='<%# Eval("fkoferta") %>' runat="server" />
-                        </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textFKOfertaFooter"  runat="server" />
-                        </FooterTemplate>
-                    </asp:TemplateField>
-
-                    <asp:TemplateField HeaderText="Id de la categoria">
-                        <ItemTemplate>
-                            <asp:Label Text='<%# Eval("fkcategoria") %>' runat="server"/>
-                        </ItemTemplate>
-                        <EditItemTemplate>
-                            <asp:TextBox ID="textFKCategoria" Text='<%# Eval("fkcategoria") %>' runat="server" />
-                        </EditItemTemplate>
-                        <FooterTemplate>
-                            <asp:TextBox ID="textFKCategoriaFooter"  runat="server" />
+                            <asp:TextBox ID="textOfertaFooter"  runat="server" />
                         </FooterTemplate>
                     </asp:TemplateField>
 
@@ -133,8 +136,10 @@
                             <asp:TextBox ID="textFotoFooter"  runat="server" />
                         </FooterTemplate>
                     </asp:TemplateField>
-                    <asp:TemplateField>
+                   
 
+
+                    <asp:TemplateField>
                         <ItemTemplate>
                             <asp:ImageButton ImageUrl="images/EditarIcon.png" runat="server" CommandName="Edit" ToolTip="Edit" Height="20px" Width="20px" />
                             <asp:ImageButton ImageUrl="images/BorrarIcon.png" runat="server" CommandName="Delete" ToolTip="Delete" Height="20px" Width="20px" />
