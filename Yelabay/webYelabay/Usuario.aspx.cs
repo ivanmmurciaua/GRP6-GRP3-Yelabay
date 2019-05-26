@@ -88,7 +88,7 @@ namespace webYelabay
         }
         protected void ButtonReclamaciones_Click(object sender, EventArgs e)
         {
-            Response.Redirect("VerTodasIncidencias.aspx");
+            Response.Redirect("VerIncidencia.aspx");
         }
         protected void ButtonNuevaReclamacion_Click(object sender, EventArgs e)
         {
