@@ -72,7 +72,23 @@ namespace library
 
         public bool deleteCarrito(CarritoEN carrito)
         {
-            bool deleted = true;
+            bool deleted = false;
+            string email = carrito.getUsuario().getEmail();
+
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("DELETE FROM Carrito WHERE emailusuario LIKE '%" + email + "%'", c);
+                com.ExecuteNonQuery();
+                c.Close();
+                deleted = true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+            }
 
             return deleted;
         }

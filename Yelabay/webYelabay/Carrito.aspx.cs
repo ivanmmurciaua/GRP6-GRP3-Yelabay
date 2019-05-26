@@ -180,7 +180,7 @@ namespace webYelabay
             //(GridCarrito.Rows[e.RowIndex].FindControl("textNombreProducto") as TextBox).Text.Trim().ToString();
             //String nombreProd = GridCarrito.Rows[e.RowIndex].Cells[4].ToString();
             //NombreProduct.Text= GridCarrito.Rows[e.RowIndex].Cells["nombreproducto"].ToString();
-            String nombreProd = "Silla Spirit Of Gamer Racing White";
+            String nombreProd = "Consola Sony Ps4 Slim 1tb + Red Dead Redemption 2 + GTA";
             producto.setNombre(nombreProd);
 
 
@@ -208,6 +208,14 @@ namespace webYelabay
         protected void Comprar_Click(object sender, EventArgs e)//De prueba
         {
             RealizarPedido();
+
+            CarritoEN carrito = new CarritoEN();//Crea carrito
+            UsuarioEN u = (UsuarioEN)Session["Usuarios"];//Guardamos usuario actual
+            carrito.setUsuario(u);//En Carrito
+            carrito.deleteCarrito();
+            Response.Redirect(Request.RawUrl);
+
+
             //Response.Redirect("VerPedido.aspx");
             /*SmtpClient smtClient = new SmtpClient("smtp.gmail.com", 587);
             MailMessage message = new MailMessage();
