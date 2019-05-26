@@ -31,12 +31,7 @@
                         <asp:BoundField DataField="precio" HeaderText="Precio" SortExpression="precio" />
                         <asp:BoundField DataField="cantidad" HeaderText="Cantidad" SortExpression="cantidad" />
                         <asp:BoundField DataField="precioxcantidad" HeaderText="Total" SortExpression="precioxcantidad" />
-                        <asp:TemplateField>
-                            <ItemTemplate>
-                            <asp:ImageButton ImageUrl="images/AñadirIcon.png" runat="server" CommandName="Update" ToolTip="Update" Height="20px" Width="20px" />
-                            <asp:ImageButton ImageUrl="images/BorrarIcon.png" runat="server" CommandName="Delete" ToolTip="Delete" Height="20px" Width="20px" />
-                        </ItemTemplate>
-                        </asp:TemplateField>
+                        
                     </Columns>
                     <FooterStyle BackColor="White" ForeColor="#000066" />
                     <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />

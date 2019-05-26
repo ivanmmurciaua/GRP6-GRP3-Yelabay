@@ -59,6 +59,7 @@ namespace webYelabay
                         MessageBox.Show("Producto añadido al carrito");
                         ProductoEN pro = new ProductoEN(Int32.Parse(Request.QueryString["id"]), "", "", 0, "");
                         pro.disminuirStock(carro.getCantidad());
+                        Response.Redirect(Request.RawUrl);
                     }
                 }
                 else
@@ -67,6 +68,7 @@ namespace webYelabay
                     ProductoEN pro = new ProductoEN(Int32.Parse(Request.QueryString["id"]), "", "", 0, "");
                     pro.disminuirStock(carro.getCantidad());
                     MessageBox.Show("Producto ya en carrito, se incrementará la cantidad");
+                    Response.Redirect(Request.RawUrl);
                 }
 
 
