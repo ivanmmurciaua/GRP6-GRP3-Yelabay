@@ -132,15 +132,9 @@ namespace library
 
         public bool readCarrito()
         {
-            bool leido = false;
             CarritoCAD cad = new CarritoCAD();
 
-            if (cad.readCarrito(this))
-            {
-                leido = true;
-            }
-
-            return leido;
+            return cad.readCarrito(this);
         }
 
         public void realizarCompra()

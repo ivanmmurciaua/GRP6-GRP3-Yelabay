@@ -52,9 +52,16 @@ namespace webYelabay
                 carro.setProducto(prod);
                 carro.setCantidad(1);
                 carro.setUsuario(u);
-                if (carro.anyadirProducto(carro.getCantidad()))
+                if (!carro.readCarrito())
                 {
-                    MessageBox.Show("Producto añadido al carrito");
+                    if (carro.anyadirProducto(carro.getCantidad()))
+                    {
+                        MessageBox.Show("Producto añadido al carrito");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Producto ya en carrito");
                 }
             }
             else MessageBox.Show("Producto fuera de existencia");

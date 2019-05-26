@@ -36,8 +36,6 @@ namespace library
 
             CarritoEN carr = carrito;
 
-            if (!readCarrito(carr))
-            {
                 SqlConnection c = new SqlConnection(constring);
                 try
                 {
@@ -58,7 +56,6 @@ namespace library
                 {
                     c.Close();
                 }
-            }
 
             return anyadidio;
         }
@@ -94,9 +91,7 @@ namespace library
                 while (dr.Read())
                 {
                     precio += float.Parse (dr["precioxcantidad"].ToString());
-                    //label1.Text += " ";
                 }
-                //precio = (float) com.ExecuteScalar();
                 c.Close();
                 
             }
@@ -113,6 +108,27 @@ namespace library
         public bool readCarrito(CarritoEN carrito)
         {
             bool leido = false;
+            string email = carrito.getUsuario().getEmail();
+            string nombreProd = carrito.getProducto().getNombre();
+
+            SqlConnection c = new SqlConnection(constring);
+            try
+            {
+                c.Open();
+                SqlCommand com = new SqlCommand("SELECT * FROM Carrito WHERE emailusuario LIKE '%" + email + "%'", c);
+                SqlDataReader dr = com.ExecuteReader();
+                while (dr.Read() && !leido)
+                {
+                    leido = (nombreProd == dr["nombreproducto"].ToString());
+                }
+                c.Close();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("User operation has failed.Error: { 0} ", ex.Message);
+                c.Close();
+            }
 
             return leido;
         }
