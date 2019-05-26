@@ -179,35 +179,35 @@ Los clientes **registrados** podrán:
 
 #### Sergio Cortés Espinosa
 
--ServicioTecnico CAD y EN
--Pedidos CAD y EN
--Creación página de inicio
--Creación menú
--Creación varios aspx
--Creación interfaz Master, Home, Usuario, Admin
--Actualización y corrección de errores de varios aspx
--Estilo de la web
+- ServicioTecnico CAD y EN
+- Pedidos CAD y EN
+- Creación página de inicio
+- Creación menú
+- Creación varios aspx
+- Creación interfaz Master, Home, Usuario, Admin
+- Actualización y corrección de errores de varios aspx
+- Estilo de la web
 
 ### Wilson Monta Vargas
 
--Creación pedidos admim
--creación productos admin
--creacion de ver producto
--usuarios admin 
--confirmarpedido.aspx
--ver todos los productos
--los aspx de ver los productos por categoría
--Modificación de varios en y CAD
--Correcciones de algunos aspx
+- Creación pedidos admim
+- creación productos admin
+- creacion de ver producto
+- usuarios admin 
+- confirmarpedido.aspx
+- ver todos los productos
+- los aspx de ver los productos por categoría
+- Modificación de varios en y CAD
+- Correcciones de algunos aspx
 
 ### Andrés Tebar Moreno
 
--Crear Entidad y Cad carrito
--Crear Entidad y Cad VerIncidencia
--Boceto diagrama de clases inicial
--Ayuda exposición
--Proceso desde comprar un producto hasta gestionar pedido, evitando incongruencias en carrito
--Actualización y corrección errores en algunos aspx
+- Crear Entidad y Cad carrito
+- Crear Entidad y Cad VerIncidencia
+- Boceto diagrama de clases inicial
+- Ayuda exposición
+- Proceso desde comprar un producto hasta gestionar pedido, evitando incongruencias en carrito
+- Actualización y corrección errores en algunos aspx
 
 ### Samuel García López
 
@@ -223,34 +223,35 @@ Los clientes **registrados** podrán:
 
 ### Qiqi Zhou
 
--Creacion Reclamaciones Admin
--Creacion Register
--Login
--Encriptacion md5
--Ver reclamaciones
--Actualizacion de Usuarios
--Interfaces de login , reclamacionadmin y register.
--Usuario EN/ CAD y otras modificaciones como en reclamaciones EN /CAD
--Actualizacion y modificacion de errores en algunos apsx , EN y CAD.
+- Creacion Reclamaciones Admin
+- Creacion Register
+- Login
+- Encriptacion md5
+- Ver reclamaciones
+- Actualizacion de Usuarios
+- Interfaces de login , reclamacionadmin y register.
+- Usuario EN/ CAD y otras modificaciones como en reclamaciones EN /CAD
+- Actualizacion y modificacion de errores en algunos apsx , EN y CAD.
 
 
 ### Iván Mañús Murcia
 
--Creación AdminEN
--Creación AdminCAD
--Ayuda con varios aspx
--Control de sesión en iconos v1
--Visualización de pedidos y reclamaciones por usuario
--Explendida coordinación del grupo
+- Creación AdminEN
+- Creación AdminCAD
+- Ayuda con varios aspx
+- Control de sesión en iconos v1
+- Visualización de pedidos y reclamaciones por usuario
+- Explendida coordinación del grupo
 
 
 ## <a name="director"></a> 
 
-* Iván Mañús Murcia: Bueno, como coordinador, director, líder de este proyecto, he decir varias cosas...
-- Son unos compañeros fantásticos, unos trabajadores increibles y hemos logrado hacer una aplicación funcional a
+* Iván Mañús Murcia: 
+-Bueno, como coordinador, director, líder de este proyecto, he decir varias cosas...
+-Son unos compañeros fantásticos, unos trabajadores increibles y hemos logrado hacer una aplicación funcional a
 pesar de dificultades, ya fuera por otras asignaturas o por el IDE ya mencionado.
-- Al final hemos sabido aprovechar nuestras ventajas personales, e individuales y aprovecharlas al máximo para
+-Al final hemos sabido aprovechar nuestras ventajas personales, e individuales y aprovecharlas al máximo para
 trabajar lo más rápido posible, comunicandonos en todo momento, y sin perder la cabeza(a veces si pero no se nota).
-- Hemos mantenido un ambiente perfecto para trabajar conjuntamente, sin malos rollos o recriminaciones hacia otras personas
+-Hemos mantenido un ambiente perfecto para trabajar conjuntamente, sin malos rollos o recriminaciones hacia otras personas
 del grupo, todo lo contrario, siempre ayudandonos entre todos.
-- Y por mi parte no tengo más que decir, bueno si, el 10 quizá no...pero esto es un gran **TEAM-WORK**
+-Y por mi parte no tengo más que decir, bueno si, el 10 quizá no...pero esto es un gran **TEAM-WORK**
