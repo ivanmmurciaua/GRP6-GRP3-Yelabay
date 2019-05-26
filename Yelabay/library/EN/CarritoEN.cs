@@ -1,32 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace library
 {
-    class CarritoEN
+    public class CarritoEN
     {
         //Atributos privados
-        private List<ProductoEN> productos;// = new List<ProductoEN>();
-        private List<int> cantidad;// { get; set; }//Numero de unidades de articulos
-        private List<float> precioProdxCant;// { get; set; }//Precio de los articulos por cantidad de este
+        public List<ProductoEN> productos;// = new List<ProductoEN>();
+        public List<int> cantidad;// { get; set; }//Numero de unidades de articulos
+        public List<float> precioProdxCant;// { get; set; }//Precio de los articulos por cantidad de este
+        public ProductoEN producto;
+        public UsuarioEN usuario;
+        private int cant;
         private float precioTotal;// { get; set; }//Suma total de todos los productos del carrito
 
 
 
-        //Metodos publicos
-        public int getCantidad() { return 1; }//Obtendremos la cantidad del producto elegido en el carrito
-        public float getPreciProdxCant() { return 1; }//Obtendremos la cantidad del producto elegido en el carrito por el precio
-        public float getPrecioTotal() { return precioTotal; }
 
+        //Metodos publicos
+        public int getCantidad() { return cant; }//Obtendremos la cantidad del producto elegido en el carrito
+        public float getPreciProdxCant() { return 1; }//Obtendremos la cantidad del producto elegido en el carrito por el precio
+        
+        public void setCantidad(int canti) { cant = canti; }
+        public ProductoEN getProducto() { return producto; }
+        public UsuarioEN getUsuario() { return usuario; }
+
+        public float getPrecioTotal() { return precioTotal;}
+
+
+        public void setProducto(ProductoEN prod) { producto = prod; }
+        public void setUsuario(UsuarioEN user) { usuario = user; }
 
         public CarritoEN()
         {
             productos = new List<ProductoEN>();
             cantidad = new List<int>();
             precioProdxCant = new List<float>();
+            producto = new ProductoEN();
+            usuario = new UsuarioEN();
+            cant = 0;
             precioTotal = 0;
         }
 
@@ -37,56 +53,27 @@ namespace library
             this.precioProdxCant = precioProdxCant;
             this.precioTotal = precioTotal;
         }
-        
-        public bool anyadirProducto(ProductoEN producto, int cantidad)
+
+        public bool anyadirProducto(int cantidad)
         {
             bool anyadido = false;
-            
-            //Lo de abajo quiza va en CarritoCAD
+
             productos.Add(producto);
             this.cantidad.Add(cantidad);
-            precioProdxCant.Add(producto.getPrecio()*cantidad);
+            precioProdxCant.Add(producto.getPrecio() * cantidad);
             precioTotal += producto.getPrecio() * cantidad;
-            anyadido = true;
+
+            CarritoCAD cad = new CarritoCAD();
+            anyadido=cad.anyadirProducto(this);
 
             return anyadido;
         }
 
-        public bool eliminarProducto(ProductoEN producto)
+        public bool eliminarProducto()
         {
-            bool eliminado=true;
-
-            for(int i=0; i < productos.Count(); i++)
-            {
-                if (producto.getCodigo()==productos[i].getCodigo())
-                {
-                    productos.Remove(producto);
-                    cantidad.Remove(i);
-                    precioTotal -= precioProdxCant[i];
-                    precioProdxCant.Remove(i);
-                    eliminado = true;
-                }
-            }
-
-            return eliminado;
-        }
-
-        public bool alterarCantidadProducto(ProductoEN producto, int nuevaCantidad)
-        {
-            bool alterado=false;
-
-            for (int i = 0; i < productos.Count(); i++)
-            {
-                if (producto.getCodigo() == productos[i].getCodigo())
-                { 
-                    cantidad[i]=nuevaCantidad;
-                    precioProdxCant[i] = nuevaCantidad * productos[i].getPrecio();
-                    precioTotal -= precioProdxCant[i];
-                    alterado=true;
-                }
-            }
-
-            return alterado;
+            
+            CarritoCAD cad = new CarritoCAD();
+            return cad.eliminarProducto(this);
         }
 
         public bool createCarrito()
@@ -101,7 +88,7 @@ namespace library
 
         public bool updateCarrito()
         {
-            bool actualizado=false;
+            bool actualizado = false;
 
             CarritoCAD cad = new CarritoCAD();
             if (cad.updateCarrito(this)) actualizado = true;
@@ -111,30 +98,40 @@ namespace library
 
         public bool deleteCarrito()
         {
-            bool deleted=true;
             CarritoCAD cad = new CarritoCAD();
 
-            if (cad.deleteCarrito(this)) deleted = true;
-
-            return deleted;
+            return cad.deleteCarrito(this);
         }
-        
+
         public bool readCarrito()
         {
-            bool leido = false;
             CarritoCAD cad = new CarritoCAD();
 
-            if (cad.readCarrito(this))
-            {
-                leido = true;
-            }
-
-            return leido;
+            return cad.readCarrito(this);
         }
 
         public void realizarCompra()
         {
 
+        }
+
+        public DataSet ListarCarrito()
+        {
+            CarritoCAD cadp = new CarritoCAD();
+
+            return cadp.ListarCarrito(this);
+        }
+
+        public void calcularPrecioTotal()
+        {
+            CarritoCAD cad = new CarritoCAD();
+            precioTotal= cad.calcularPrecioTotal(this);
+        }
+
+        public bool incrementarProducto()
+        {
+            CarritoCAD cad = new CarritoCAD();
+            return cad.incrementarProducto(this);
         }
 
     }

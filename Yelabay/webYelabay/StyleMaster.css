@@ -27,7 +27,7 @@ body {
     padding: 0;
     height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-    background-color: white;
+    background-color: aliceblue;
 }
 
 #container {
@@ -42,35 +42,61 @@ body {
     margin-bottom: 5%;
     background-color: aliceblue;
     padding-bottom: 3%;
+    top: 17px;
+    left: 1px;
 }
 
 #content {
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 18%;
+    padding-right: 18%;
+    width: 90%;
+}
+/*Smartphones*/
+#content1 {
+    padding-left: 17.5%;
+    padding-right: 17.5%;
+    width: 90%;
+}
+/*Perifericos*/
+#content2 {
+    padding-left: 14%;
+    padding-right: 14%;
+    width: 90%;
+}
+/*Consolas*/
+#content3 {
+    padding-left: 18%;
+    padding-right: 18%;
+    width: 90%;
+}
+/*Componentes*/
+#content4 {
+    padding-left: 12%;
+    padding-right: 12%;
+    width: 90%;
+}
+/*Ordenadores*/
+#content5 {
+    padding-left: 18.75%;
+    padding-right: 18.75%;
+    width: 90%;
+}
+/*Todos los productos*/
+#content6 {
+    padding-left: 10%;
+    padding-right: 10%;
     width: 90%;
 }
 
 #header {
     position: fixed;
     width: 100%;
-    height: 1%;
+    height: 0.5%;
     padding-bottom: 0.5%;
-    padding-top: 2%;
-    /*background-color: darkorange;*/
+    padding-top: 3%;
+    background-color: black;
     z-index: 1;
 }
-
-#header {
-    background: rgba(255,136,0,1);
-    background: -moz-linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(255,136,0,1)), color-stop(19%, rgba(255,174,52,1)), color-stop(50%, rgba(255,188,106,1)), color-stop(81%, rgba(255,174,52,1)), color-stop(100%, rgba(255,136,0,1)));
-    background: -webkit-linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    background: -o-linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    background: -ms-linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    background: linear-gradient(45deg, rgba(255,136,0,1) 0%, rgba(255,174,52,1) 19%, rgba(255,188,106,1) 50%, rgba(255,174,52,1) 81%, rgba(255,136,0,1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff8800', endColorstr='#ff8800', GradientType=1 );
-}
-
 #body {
     padding-top: 2%;
 }
@@ -82,27 +108,200 @@ body {
     bottom: 0;
     background-color: #249cf4;
 }
-
+/*Logo*/
 .column-left {
     float: left;
+    width: 95%;
+    margin-top: -2.75%;
+    margin-left: 2%;
+}
+/*Productos*/
+.column-c1 {
+    float: none;
     width: 33%;
-    padding-left: 5%;
-    padding-bottom: 0.3%;
-    margin-top: -2%;
+    margin-top: -9%;
+    margin-left: 15%;
 }
 
-.column-right {
-    float: right;
-    width: 23%;
-    margin-top: -1.8%;
-    margin-right: -10%;
+.column-c2 {
+    float: none;
+    width: 33%;
+    margin-top: -9%;
+    margin-left: 26%;
+}
+
+.column-c3 {
+    float: none;
+    width: 33%;
+    margin-top: -9%;
+    margin-left: 40%;
+}
+
+.column-c4 {
+    float: none;
+    width: 33%;
+    margin-top: -9%;
+    margin-left: 50%;
+}
+
+.column-c5 {
+    float: none;
+    width: 33%;
+    margin-top: -9%;
+    margin-left: 62%;
 }
 
 .column-center {
-    display: inline-block;
-    width: 850%;
+    float: none;
+    width: 33%;
+    margin-top: -9%;
+    margin-left: 34%;
 }
-
+/*Icono perfil*/
+.column-r1 {
+    float: right;
+    width: 23%;
+    margin-top: -3%;
+    margin-right: -12%;
+}
+/*Icono login*/
+.column-r2 {
+    float: right;
+    width: 23%;
+    margin-top: -3%;
+    margin-right: -17%;
+}
+/*Icono carrito*/
+.column-r3 {
+    float: right;
+    width: 23%;
+    margin-top: -3%;
+    margin-right: -15%;
+}
+/*Icono logout*/
+.column-r4 {
+    float: right;
+    width: 23%;
+    margin-top: -3%;
+    margin-right: -18%;
+}
+/*Grids admin*/
+.ped-admin {
+    float: left;
+    width: 23%;
+    margin-top: 3%;
+    margin-left: 10.5%;
+}
+.usu-admin {
+    float: left;
+    width: 23%;
+    margin-top: 3%;
+    margin-left: -22%;
+}
+.rec-admin {
+    float: left;
+    width: 23%;
+    margin-top: 3%;
+    margin-left: 35%;
+}
+.pro-admin {
+    float: left;
+    width: 23%;
+    margin-top: 3%;
+    margin-left: -25%;
+}
+.mensaje-admin {
+    float: left;
+    width: 60%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+/*Carrito*/
+.carrito {
+    float: left;
+    width: 50%;
+    margin-top: 3%;
+    margin-left: 12.5%;
+}
+.precio {
+    float: left;
+    width: 50%;
+    margin-top: 3%;
+    margin-left: 38%;
+}
+.compra {
+    float: left;
+    width: 50%;
+    margin-top: -3%;
+    margin-left: 47.5%;
+}
+.compra1{
+    float: left;
+    width: 50%;
+    margin-top: 3%;
+    margin-left: 27.5%;
+}
+/*Pedido*/
+.pedido {
+    float: left;
+    width: 30%;
+    margin-top: 3%;
+    margin-left: 21%;
+}
+/*Confirmación pedido*/
+.conf-pedido {
+    float: left;
+    width: 50%;
+    margin-top: 3%;
+    margin-left: 19%;
+}
+.conf-pedido2 {
+    float: left;
+    width: 10%;
+    margin-top: 15%;
+    margin-left: -50%;
+}
+.conf-pedido3 {
+    float: left;
+    width: 10%;
+    margin-top: 27.5%;
+    margin-left: -38.5%;
+}
+/*Vista producto*/
+.producto {
+    float: left;
+    width: 90%;
+    margin-top: 2.5%;
+    margin-left: -10%;
+}
+/*Mis reclamaciones*/
+.reclamacion {
+    float: left;
+    width: 90%;
+    margin-top: 2.5%;
+    margin-left: -2.5%;
+}
+/*Mis pedidos*/
+.verpedido {
+    float: left;
+    width: 90%;
+    margin-top: 2.5%;
+    margin-left: -5%;
+}
+/*Login*/
+.login{
+    float: left;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+/*Register*/
+.register {
+    float: left;
+    width: 90%;
+    margin-top: 5%;
+    margin-left: 35%;
+}
 .center {
     display: flex;
     flex-wrap: wrap; /* Optional. only if you want the items to wrap */
@@ -128,7 +327,7 @@ th, td {
 }
 
 tr:nth-child(even) {
-    background-color: #f5f5f5;
+    background-color: white;
 }
 
 td {
@@ -157,6 +356,11 @@ td {
     width: 20%;
 }
 
+.invisibleCol2 {
+    float: left;
+    width: 20%;
+}
+
 .invisibleCol10 {
     float: left;
     width: 10%;
@@ -166,27 +370,13 @@ html {
     min-height: 100%;
 }
 
-#MenuLeft ul.dynamic {
-    z-index: 1;
-    background: rgba(255,175,75,1);
-    background: -moz-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(246,143,33,1) 34%, rgba(238,118,0,0.93) 61%, rgba(238,118,0,0.9) 72%, rgba(238,118,0,0.84) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,175,75,1)), color-stop(34%, rgba(246,143,33,1)), color-stop(61%, rgba(238,118,0,0.93)), color-stop(72%, rgba(238,118,0,0.9)), color-stop(100%, rgba(238,118,0,0.84)));
-    background: -webkit-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(246,143,33,1) 34%, rgba(238,118,0,0.93) 61%, rgba(238,118,0,0.9) 72%, rgba(238,118,0,0.84) 100%);
-    background: -o-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(246,143,33,1) 34%, rgba(238,118,0,0.93) 61%, rgba(238,118,0,0.9) 72%, rgba(238,118,0,0.84) 100%);
-    background: -ms-linear-gradient(top, rgba(255,175,75,1) 0%, rgba(246,143,33,1) 34%, rgba(238,118,0,0.93) 61%, rgba(238,118,0,0.9) 72%, rgba(238,118,0,0.84) 100%);
-    background: linear-gradient(to bottom, rgba(255,175,75,1) 0%, rgba(246,143,33,1) 34%, rgba(238,118,0,0.93) 61%, rgba(238,118,0,0.9) 72%, rgba(238,118,0,0.84) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffaf4b', endColorstr='#ee7600', GradientType=0 );
-}
-
-
 .Product {
     width: 100%;
     overflow: hidden;
 }
 
-
 .commentButtonProduct {
-    float left;
+    float: left;
 }
 
 .invisibleRowProduct {
@@ -196,9 +386,42 @@ html {
     padding-bottom: 3%;
 }
 
-#MenuLeft a.static {
+#Menu1 a.static {
     font-size: 2vw;
-    color: darkblue;
+    color: lightskyblue;
+    background-color: black;
+    font-weight: bold;
+    padding-bottom: 4%;
+}
+
+#Menu2 a.static {
+    font-size: 2vw;
+    color: lightskyblue;
+    background-color: black;
+    font-weight: bold;
+    padding-bottom: 4%;
+}
+
+#Menu3 a.static {
+    font-size: 2vw;
+    color: lightskyblue;
+    background-color: black;
+    font-weight: bold;
+    padding-bottom: 4%;
+}
+
+#Menu4 a.static {
+    font-size: 2vw;
+    color: lightskyblue;
+    background-color: black;
+    font-weight: bold;
+    padding-bottom: 4%;
+}
+
+#Menu5 a.static {
+    font-size: 2vw;
+    color: lightskyblue;
+    background-color: black;
     font-weight: bold;
     padding-bottom: 4%;
 }
@@ -228,10 +451,6 @@ h1 {
     font-size: 2vw;
     text-align: center;
     padding-top: 1%;
-}
-
-
-.Img1 {
 }
 
 .Img2 {
@@ -299,3 +518,67 @@ input#ContentPlaceHolder1_SearchModelButton {
 .comentariosProducto {
     width: 50%;
 }
+/*
+    AQUI COMIENZA EL ESTILO DEL SLIDER.
+*/
+.slider {
+    width: 70%; /*Desde aquí controlamos el ancho de las imágenes.*/
+    margin: auto;
+    overflow: hidden; /* Los elementos(imagenes) ya no se quedan fuera.*/
+}
+
+    .slider ul {
+        display: flex;
+        padding: 0;
+        width: 400%;
+        animation: cambio 20s infinite alternate;
+        animation-timing-function: ease-in; /*empieza rapido y termina lento(paso de la img)
+                                            Hay más tipos de transiccion entre imagenes.
+                                            */
+    }
+
+    .slider li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .slider img {
+        width: 100%;
+    }
+
+@keyframes cambio {
+    0% {
+        margin-left: 0;
+    }
+
+    20% {
+        margin-left: 0;
+    }
+    /*TIEMPO QUE TARDA EN PASAR LA IMAGEN, 20*0,5= 1s*/
+    25% {
+        margin-left: -100%;
+    }
+
+    45% {
+        margin-left: -100%;
+    }
+
+    50% {
+        margin-left: -200%;
+    }
+
+    70% {
+        margin-left: -200%;
+    }
+
+    75% {
+        margin-left: -300%;
+    }
+
+    100% {
+        margin-left: -300%;
+    }
+}
+/* 
+    AQUÍ FINALIZA.
+*/

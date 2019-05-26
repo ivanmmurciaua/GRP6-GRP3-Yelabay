@@ -13,13 +13,13 @@ namespace webYelabay {
     public partial class Register {
         
         /// <summary>
-        /// Control TextBoxLastname.
+        /// Control TextBoxNick.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxLastname;
+        protected global::System.Web.UI.WebControls.TextBox TextBoxNick;
         
         /// <summary>
         /// Control LabelUsuario.
@@ -29,6 +29,15 @@ namespace webYelabay {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelUsuario;
+        
+        /// <summary>
+        /// Control nocoinciden.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label nocoinciden;
         
         /// <summary>
         /// Control TextBoxEmail.
@@ -47,6 +56,15 @@ namespace webYelabay {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelErrorEmail;
+        
+        /// <summary>
+        /// Control Label1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
         /// Control TextBoxPassword.

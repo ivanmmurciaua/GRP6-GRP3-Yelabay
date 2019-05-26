@@ -1,16 +1,49 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="VerTodosProductos.aspx.cs" Inherits="webYelabay.Productos" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .auto-style1 {
+            height: 23px;
+        }
+        .auto-style2 {
+            text-align: right;
+            height: 23px;
+        }
+        .auto-style3 {
+            height: 23px;
+            text-align: left;
+        }
+    </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer">
         <div id ="title">
             <h1>Catálogo</h1>
         </div>
-        <b>HyperX Predator DDR4 RGB HX432C16PB3A/8</b>
-        <br />
-        <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonRam" ImageUrl="images/ram.png" Visible="true" OnClick="buttonRam_Click"></asp:ImageButton>
-
-
+        <div id="content6">
+            <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource1" RepeatColumns="3" RepeatDirection="Horizontal" CellPadding="10">
+                <ItemTemplate>
+                    <table class="tablaPedido">
+                        <tr>
+                            <td colspan="2">
+                                <asp:ImageButton ID="ImagenProduc"  runat="server" Height="180px" Width="200px" ImageUrl='<%# Eval("foto") %>' CommandArgument='<%# Eval("id") %>' OnCommand="ImagenProduc_Command" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style1" colspan="2">
+                                <asp:Label ID="LabelNombreProducto" runat="server" Text='<%# Eval("nombre") %>'></asp:Label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="auto-style2">Precio:</td>
+                            <td class="auto-style3">
+                                <asp:Label ID="LabelPrecioProducto" runat="server" Text='<%# Eval("precio", "{0:C}") %>'></asp:Label>
+                            </td>
+                        </tr>
+                    </table>
+                </ItemTemplate>
+            </asp:DataList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:miconexion %>" SelectCommand="SELECT * FROM [Productos]"></asp:SqlDataSource>
+        </div>
     </div>
 </asp:Content>

@@ -13,28 +13,61 @@
     <form id="form1" runat="server">
         <div id="container">
            <div id="header">
-
                <div class =" column-left">
-                    <asp:Menu ID="MenuLeft" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" class= "center" style="text-align: center" RenderingMode="List" OnMenuItemClick="MenuLeft_MenuItemClick">
+                    <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonHome" ImageUrl="images/Home.png" OnClick="buttonHome_Click"  Height="60px" Width="250px" ></asp:ImageButton>
+                </div>
+               <div class =" column-c1">
+                    <asp:Menu ID="Menu1" runat="server" Orientation="Horizontal" class= "column-c1" style="text-align: center" RenderingMode="List" OnMenuItemClick="Menu1_MenuItemClick">
                     <Items>
-                        <asp:MenuItem Text="Inicio" Value="home"></asp:MenuItem>
-                        <asp:MenuItem Text="Catálogo" Value="producto">
                             <asp:MenuItem Text="Componentes" Value="componentes"></asp:MenuItem>
-                            <asp:MenuItem Text="Ordenadores" Value="ordenadores"></asp:MenuItem>
-                            <asp:MenuItem Text="Audio / Foto / Vídeo" Value="sonido"></asp:MenuItem>
-                            <asp:MenuItem Text="Periféricos" Value="perifericos"></asp:MenuItem>
-                            <asp:MenuItem Text="Consolas / Gaming" Value="consolas"></asp:MenuItem>
-                        </asp:MenuItem>
                     </Items>
-                    <StaticMenuItemStyle Font-Size="XX-Large" ForeColor="Black" />
+                    <StaticMenuItemStyle Font-Size="XX-Small" ForeColor="Blue" />
+                </asp:Menu>
+                </div>
+               <div class =" column-c2">
+                    <asp:Menu ID="Menu2" runat="server"  Orientation="Horizontal" class= "column-c2" style="text-align: center" RenderingMode="List" OnMenuItemClick="Menu2_MenuItemClick">
+                    <Items>
+                            <asp:MenuItem Text="Ordenadores" Value="ordenadores"></asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle Font-Size="XX-Small" ForeColor="Blue" />
+                </asp:Menu>
+                </div>
+               <div class =" column-c3">
+                    <asp:Menu ID="Menu3" runat="server" Orientation="Horizontal" class= "column-c2" style="text-align: center" RenderingMode="List" OnMenuItemClick="Menu3_MenuItemClick">
+                    <Items>
+                            <asp:MenuItem Text="Consolas" Value="consolas"></asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle Font-Size="XX-Small" ForeColor="Blue" />
+                </asp:Menu>
+                </div>
+               <div class =" column-c4">
+                    <asp:Menu ID="Menu4" runat="server" Orientation="Horizontal" class= "column-c2" style="text-align: center" RenderingMode="List" OnMenuItemClick="Menu4_MenuItemClick">
+                    <Items>
+                            <asp:MenuItem Text="Periféricos" Value="perifericos"></asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle Font-Size="XX-Small" ForeColor="Blue" />
+                </asp:Menu>
+                </div>
+               <div class =" column-c5">
+                    <asp:Menu ID="Menu5" runat="server" Orientation="Horizontal" class= "column-c2" style="text-align: center" RenderingMode="List" OnMenuItemClick="Menu5_MenuItemClick">
+                    <Items>
+                            <asp:MenuItem Text="Smartphones" Value="smartphones"></asp:MenuItem>
+                    </Items>
+                    <StaticMenuItemStyle Font-Size="XX-Small" ForeColor="Blue" />
                 </asp:Menu>
                 </div>
 
-                <div class =" column-right">
-                    <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonProfile" ImageUrl="images/perfil.png" Visible="false" OnClick="buttonProfile_Click"  Height="21px" Width="22px" ></asp:ImageButton>
-                    <asp:ImageButton CssClass ="Img1" runat="server" ID="buttonLogin" ImageUrl="images/login.png" OnClick="buttonLogin_Click" Height="21px" Width="22px" ></asp:ImageButton>
-                    <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonCarrito" ImageUrl="images/carrito.png" OnClick="buttonCarrito_Click"  Height="21px" Width="22px"></asp:ImageButton>
-                    <asp:ImageButton CssClass ="Img2" runat="server" ID="buttonLogout" ImageUrl="images/cerrarSesion.png" Visible="false" OnClick="buttonLogout_Click"  Height="21px" Width="22px"></asp:ImageButton>
+                <div class =" column-r1">
+                    <asp:ImageButton runat="server" ID="buttonProfile" ImageUrl="images/perfil.png" Visible="true" OnClick="buttonProfile_Click"  Height="50px" Width="50px" ></asp:ImageButton>
+                </div>
+                <div class =" column-r2">    
+                    <asp:ImageButton runat="server" ID="buttonLogin" ImageUrl="images/login.png" OnClick="buttonLogin_Click" Height="50px" Width="50px" ></asp:ImageButton>
+                </div>
+                <div class =" column-r3">    
+                    <asp:ImageButton runat="server" ID="buttonCarrito" ImageUrl="images/carrito.png" OnClick="buttonCarrito_Click"  Height="50px" Width="50px"></asp:ImageButton>
+                </div>
+                <div class =" column-r4">   
+                    <asp:ImageButton runat="server" ID="buttonLogout" ImageUrl="images/cerrarSesion.png" Visible="true" OnClick="buttonLogout_Click"  Height="50px" Width="50px"></asp:ImageButton>
                 </div>
 
            </div>
@@ -44,10 +77,7 @@
            </div>
            <div id="footer">
                <div class ="center">
-                    <asp:Menu ID="MenuContact" runat="server" StaticSubMenuIndent="16px" Orientation="Horizontal" RenderingMode="List" OnMenuItemClick="MenuContact_MenuItemClick">
-                        <Items><asp:MenuItem Text="" Value="contact"></asp:MenuItem></items>
-                    </asp:Menu>
-                    © Yelabay.com Tu Tienda De Tecnología.
+                   <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Contact.aspx">Contacta con nosotros.</asp:HyperLink>
                 </div>
            </div>
         </div>

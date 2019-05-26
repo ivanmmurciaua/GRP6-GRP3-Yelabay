@@ -13,66 +13,75 @@ namespace webYelabay {
     public partial class Carrito {
         
         /// <summary>
-        /// Control tablaCarrito.
+        /// Control ScriptManager1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table tablaCarrito;
+        protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
-        /// Control DecrementarCantidad.
+        /// Control CompruebaBD.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DecrementarCantidad;
+        protected global::System.Web.UI.WebControls.Label CompruebaBD;
         
         /// <summary>
-        /// Control EliminarProducto1.
+        /// Control GridCarrito.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EliminarProducto1;
+        protected global::System.Web.UI.WebControls.GridView GridCarrito;
         
         /// <summary>
-        /// Control DropDownList1.
+        /// Control NombreProduct.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        protected global::System.Web.UI.WebControls.Label NombreProduct;
         
         /// <summary>
-        /// Control EliminarProducto2.
+        /// Control PruebaCompra.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EliminarProducto2;
+        protected global::System.Web.UI.WebControls.Label PruebaCompra;
         
         /// <summary>
-        /// Control DropDownList2.
+        /// Control CosteTotal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.Label CosteTotal;
         
         /// <summary>
-        /// Control EliminarProducto3.
+        /// Control Borrar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button EliminarProducto3;
+        protected global::System.Web.UI.WebControls.Button Borrar;
+        
+        /// <summary>
+        /// Control Comprar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Comprar;
     }
 }

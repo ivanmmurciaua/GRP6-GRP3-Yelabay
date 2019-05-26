@@ -53,6 +53,9 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6.1\System.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -67,17 +70,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Administrador.aspx" />
     <Content Include="App_Data\Database.mdf" />
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="Carrito.aspx" />
+    <Content Include="ConfirmacionPedido.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="CrearReclamacion.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="PedidosAdmin.aspx" />
+    <Content Include="ProductosAdmin.aspx" />
+    <Content Include="ReclamacionesAdmin.aspx" />
+    <Content Include="UsuariosAdmin.aspx" />
+    <Content Include="VerComponentes.aspx" />
+    <Content Include="VerConsolas.aspx" />
     <Content Include="VerIncidencia.aspx" />
+    <Content Include="VerOrdenadores.aspx" />
     <Content Include="VerPedido.aspx" />
+    <Content Include="VerPerifericos.aspx" />
     <Content Include="VerProducto.aspx" />
+    <Content Include="VerSmartphones.aspx" />
     <Content Include="VerTodasIncidencias.aspx" />
     <Content Include="VerTodosPedidos.aspx" />
     <Content Include="VerTodosProductos.aspx" />
@@ -86,17 +101,29 @@
     <Content Include="ServicioTecnico.aspx" />
     <Content Include="StyleMaster.css" />
     <Content Include="Usuario.aspx" />
-    <Content Include="VerTodosUsuarios.aspx" />
-    <Content Include="VerUsuario.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Administrador.aspx.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrador.aspx.designer.cs">
+      <DependentUpon>Administrador.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Carrito.aspx.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Carrito.aspx.designer.cs">
       <DependentUpon>Carrito.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmacionPedido.aspx.cs">
+      <DependentUpon>ConfirmacionPedido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmacionPedido.aspx.designer.cs">
+      <DependentUpon>ConfirmacionPedido.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -105,12 +132,61 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CrearReclamacion.aspx.cs">
+      <DependentUpon>CrearReclamacion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CrearReclamacion.aspx.designer.cs">
+      <DependentUpon>CrearReclamacion.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PedidosAdmin.aspx.cs">
+      <DependentUpon>PedidosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PedidosAdmin.aspx.designer.cs">
+      <DependentUpon>PedidosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductosAdmin.aspx.cs">
+      <DependentUpon>ProductosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductosAdmin.aspx.designer.cs">
+      <DependentUpon>ProductosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ReclamacionesAdmin.aspx.cs">
+      <DependentUpon>ReclamacionesAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReclamacionesAdmin.aspx.designer.cs">
+      <DependentUpon>ReclamacionesAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosAdmin.aspx.cs">
+      <DependentUpon>UsuariosAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UsuariosAdmin.aspx.designer.cs">
+      <DependentUpon>UsuariosAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerComponentes.aspx.cs">
+      <DependentUpon>VerComponentes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerComponentes.aspx.designer.cs">
+      <DependentUpon>VerComponentes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerConsolas.aspx.cs">
+      <DependentUpon>VerConsolas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerConsolas.aspx.designer.cs">
+      <DependentUpon>VerConsolas.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerIncidencia.aspx.cs">
       <DependentUpon>VerIncidencia.aspx</DependentUpon>
@@ -119,6 +195,13 @@
     <Compile Include="VerIncidencia.aspx.designer.cs">
       <DependentUpon>VerIncidencia.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VerOrdenadores.aspx.cs">
+      <DependentUpon>VerOrdenadores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerOrdenadores.aspx.designer.cs">
+      <DependentUpon>VerOrdenadores.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VerPedido.aspx.cs">
       <DependentUpon>VerPedido.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,12 +209,26 @@
     <Compile Include="VerPedido.aspx.designer.cs">
       <DependentUpon>VerPedido.aspx</DependentUpon>
     </Compile>
+    <Compile Include="VerPerifericos.aspx.cs">
+      <DependentUpon>VerPerifericos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerPerifericos.aspx.designer.cs">
+      <DependentUpon>VerPerifericos.aspx</DependentUpon>
+    </Compile>
     <Compile Include="VerProducto.aspx.cs">
       <DependentUpon>VerProducto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="VerProducto.aspx.designer.cs">
       <DependentUpon>VerProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="VerSmartphones.aspx.cs">
+      <DependentUpon>VerSmartphones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="VerSmartphones.aspx.designer.cs">
+      <DependentUpon>VerSmartphones.aspx</DependentUpon>
     </Compile>
     <Compile Include="VerTodasIncidencias.aspx.cs">
       <DependentUpon>VerTodasIncidencias.aspx</DependentUpon>
@@ -197,20 +294,6 @@
     <Compile Include="Usuario.aspx.designer.cs">
       <DependentUpon>Usuario.aspx</DependentUpon>
     </Compile>
-    <Compile Include="VerTodosUsuarios.aspx.cs">
-      <DependentUpon>VerTodosUsuarios.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VerTodosUsuarios.aspx.designer.cs">
-      <DependentUpon>VerTodosUsuarios.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="VerUsuario.aspx.cs">
-      <DependentUpon>VerUsuario.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="VerUsuario.aspx.designer.cs">
-      <DependentUpon>VerUsuario.aspx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -221,6 +304,12 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\library\library.csproj">
+      <Project>{552511fb-b9e3-4773-93f6-91aae0b6aba7}</Project>
+      <Name>library</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

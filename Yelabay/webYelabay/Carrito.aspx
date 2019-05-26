@@ -3,99 +3,66 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:ScriptManager ID="ScriptManager1" runat="server"/>
     <div id ="innerContainer">
         <div id ="title">
             <h1>Carrito</h1>
         </div>
         <div id="content">
-            <h1>Artículos actualmente en el carrito:</h1>
+            <div class="carrito">
+            <h1>Artículos actualmente en el carrito:</h1><asp:Label ID="CompruebaBD" runat="server"></asp:Label>
+                
+           
+
+                    <asp:GridView ID="GridCarrito" runat="server" AutoGenerateColumns="False" ShowFooter="True" DataKeyNames="nombreproducto"
+                  
+                OnRowUpdating="GridCarrito_RowUpdating" OnRowDeleting="GridCarrito_RowDeleting"
+                
+                BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3" Width="90%">
+                <FooterStyle BackColor="White" ForeColor="#000066" />
+                <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                <RowStyle ForeColor="#000066" />
+                <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                <SortedAscendingHeaderStyle BackColor="#007DBB" />
+ 
+                 <Columns>
+                        <asp:BoundField DataField="nombreproducto" HeaderText="Nombre" SortExpression="nombreproducto" />
+                        <asp:BoundField DataField="precio" HeaderText="Precio" SortExpression="precio" />
+                        <asp:BoundField DataField="cantidad" HeaderText="Cantidad" SortExpression="cantidad" />
+                        <asp:BoundField DataField="precioxcantidad" HeaderText="Total" SortExpression="precioxcantidad" />
+                        
+                    </Columns>
+                    <FooterStyle BackColor="White" ForeColor="#000066" />
+                    <HeaderStyle BackColor="#006699" Font-Bold="True" ForeColor="White" />
+                    <PagerStyle BackColor="White" ForeColor="#000066" HorizontalAlign="Left" />
+                    <RowStyle ForeColor="#000066" />
+                    <SelectedRowStyle BackColor="#669999" Font-Bold="True" ForeColor="White" />
+                    <SortedAscendingCellStyle BackColor="#F1F1F1" />
+                    <SortedAscendingHeaderStyle BackColor="#007DBB" />
+                    <SortedDescendingCellStyle BackColor="#CAC9C9" />
+                    <SortedDescendingHeaderStyle BackColor="#00547E" />
+
+
+            </asp:GridView>
             
+            <asp:Label ID="NombreProduct" runat="server"></asp:Label>
+            <asp:Label ID="PruebaCompra" runat="server"></asp:Label>
+            <br />
+            <div class ="precio">
+                <asp:Label ID="CosteTotal" runat="server" Text="Total: "></asp:Label>
+            </div>
+            <br />
+            <br />
+            <div class ="compra1">
+                <asp:Button ID="Borrar"  style="background:#249cf4" runat="server" Text="Borrar Carrito" OnClick="Borrar_Click" ForeColor="White" BorderColor="Black"/>
+            </div>
+            <div class ="compra">
+                <asp:Button ID="Comprar"  style="background:#249cf4" runat="server" Text="Confirmar Compra" OnClick="Comprar_Click" ForeColor="White" BorderColor="Black"/>
+            </div>
             
-            <asp:Table ID="tablaCarrito" runat="server" Width="100%"> 
-                <asp:TableRow> 
-                 <asp:TableCell>Nombre del Producto</asp:TableCell> 
-                 <asp:TableCell>Cantidad</asp:TableCell> 
-                 <asp:TableCell>Precio</asp:TableCell>
-                 <asp:TableCell></asp:TableCell>
-                </asp:TableRow>
-
-                <asp:TableRow> 
-                 <asp:TableCell>Componente ordenador nº5</asp:TableCell> 
-                 <asp:TableCell>
-                    <asp:DropDownList ID="DecrementarCantidad" runat="server">
-                        <asp:listitem text="1" value="1"></asp:listitem>
-                        <asp:listitem text="2" value="2"></asp:listitem>
-                        <asp:listitem text="3" value="3"></asp:listitem>
-                        <asp:listitem text="4" value="4"></asp:listitem>
-                        <asp:listitem text="5" value="5"></asp:listitem>
-                        <asp:listitem text="6" value="6"></asp:listitem>
-                        <asp:listitem text="7" value="7"></asp:listitem>
-                        <asp:listitem text="8" value="8"></asp:listitem>
-                        <asp:listitem text="9" value="9"></asp:listitem>
-                        <asp:listitem text="10" value="10"></asp:listitem>
-                    </asp:DropDownList>
-                 </asp:TableCell> 
-                 <asp:TableCell>150€</asp:TableCell>
-                <asp:TableCell>
-                    <asp:Button ID="EliminarProducto1" runat="server" Text="X" ForeColor="Red" Font-Bold="True" OnClick="EliminarProducto1_Click" />
-
-                </asp:TableCell>
-                </asp:TableRow>
-
-                <asp:TableRow> 
-                 <asp:TableCell>Ordenador nº3</asp:TableCell> 
-                 <asp:TableCell>
-                    <asp:DropDownList ID="DropDownList1" runat="server">
-                        <asp:listitem text="1" value="1"></asp:listitem>
-                        <asp:listitem text="2" value="2"></asp:listitem>
-                        <asp:listitem text="3" value="3"></asp:listitem>
-                        <asp:listitem text="4" value="4"></asp:listitem>
-                        <asp:listitem text="5" value="5"></asp:listitem>
-                        <asp:listitem text="6" value="6"></asp:listitem>
-                        <asp:listitem text="7" value="7"></asp:listitem>
-                        <asp:listitem text="8" value="8"></asp:listitem>
-                        <asp:listitem text="9" value="9"></asp:listitem>
-                        <asp:listitem text="10" value="10"></asp:listitem>
-                    </asp:DropDownList>
-                 </asp:TableCell> 
-                 <asp:TableCell>750€</asp:TableCell>
-                <asp:TableCell>
-                    <asp:Button ID="EliminarProducto2" runat="server" Text="X" ForeColor="Red" Font-Bold="True" OnClick="EliminarProducto2_Click" />
-
-                </asp:TableCell>
-                </asp:TableRow>
-
-                <asp:TableRow> 
-                 <asp:TableCell>Periferico nº2</asp:TableCell> 
-                 <asp:TableCell>
-                    <asp:DropDownList ID="DropDownList2" runat="server">
-                        <asp:listitem text="1" value="1"></asp:listitem>
-                        <asp:listitem text="2" value="2"></asp:listitem>
-                        <asp:listitem text="3" value="3"></asp:listitem>
-                        <asp:listitem text="4" value="4"></asp:listitem>
-                        <asp:listitem text="5" value="5"></asp:listitem>
-                        <asp:listitem text="6" value="6"></asp:listitem>
-                        <asp:listitem text="7" value="7"></asp:listitem>
-                        <asp:listitem text="8" value="8"></asp:listitem>
-                        <asp:listitem text="9" value="9"></asp:listitem>
-                        <asp:listitem text="10" value="10"></asp:listitem>
-                    </asp:DropDownList>
-                 </asp:TableCell> 
-                 <asp:TableCell>100€</asp:TableCell>
-                <asp:TableCell>
-                    <asp:Button ID="EliminarProducto3" runat="server" Text="X" ForeColor="Red" Font-Bold="True" OnClick="EliminarProducto2_Click"/>
-
-                </asp:TableCell>
-                </asp:TableRow>
-
-                <asp:TableRow> 
-                 <asp:TableCell></asp:TableCell> 
-                 <asp:TableCell>Total:</asp:TableCell> 
-                 <asp:TableCell>1000€</asp:TableCell> 
-                 <asp:TableCell></asp:TableCell>
-                </asp:TableRow>
-
-            </asp:Table> 
+            </div>
         </div>
     </div>
 </asp:Content>

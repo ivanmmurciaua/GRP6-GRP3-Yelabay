@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,6 +42,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EN\AgenciasTEN.cs" />
+    <Compile Include="CAD\AgenciasTCAD.cs" />
     <Compile Include="EN\AdminEN.cs" />
     <Compile Include="CAD\AdminCAD.cs" />
     <Compile Include="CAD\CarritoCAD.cs" />
@@ -64,6 +67,8 @@
     <Compile Include="CAD\ServicioTecnicoCAD.cs" />
     <Compile Include="CAD\UsuarioCAD.cs" />
     <Compile Include="EN\UsuarioEN.cs" />
+    <Compile Include="Validaciones\Validator.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

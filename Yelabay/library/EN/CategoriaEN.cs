@@ -10,7 +10,7 @@ namespace library
     {
         //Campos privados para mantener el estado de la Entidad Categoria
         private int codCategoria;
-        private String nombre;
+        private string nombre;
 
         //Propiedades públicas para exponer el estado de la categoria.
         public int getCodCategoria()
