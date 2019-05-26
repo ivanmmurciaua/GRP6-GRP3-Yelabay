@@ -37,7 +37,6 @@ Voy a dejar: Nombre, Precio(en$) Stock, Campo Oferta.
 
             if (da != null)
             {
-                ;
                 if (da.Tables[0].Rows.Count != 0)
                 {
                     

@@ -74,7 +74,6 @@
                             <asp:TextBox ID="textFKMarcaFooter"  runat="server" />
                         </FooterTemplate>
                     </asp:TemplateField>
-
                     
 
                     <asp:TemplateField HeaderText="Id Categoria">
