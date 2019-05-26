@@ -191,6 +191,13 @@ body {
     margin-top: -3%;
     margin-right: -18%;
 }
+/*Grids admin*/
+.ped-admin {
+    float: left;
+    width: 23%;
+    margin-top: 3%;
+    margin-left: -25%;
+}
 .center {
     display: flex;
     flex-wrap: wrap; /* Optional. only if you want the items to wrap */

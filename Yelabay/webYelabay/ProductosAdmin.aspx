@@ -5,11 +5,10 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id ="innerContainer">
         <div id ="title">
-            <h1>Pedidos Administrador</h1>
+            <h1>Productos Administrador</h1>
         </div>
         <div id="content">
-            
-
+            <div class ="ped-admin">
             <asp:GridView ID="GridProductosAdmin" runat="server" AutoGenerateColumns="False" ShowFooter="true" DataKeyNames="id"
                 OnRowCommand="GridProductosAdmin_RowCommand" OnRowEditing="GridProductosAdmin_RowEditing" OnRowCancelingEdit="GridProductosAdmin_RowCancelingEdit" 
                 OnRowUpdating="GridProductosAdmin_RowUpdating" OnRowDeleting="GridProductosAdmin_RowDeleting"
@@ -134,8 +133,8 @@
                             <asp:TextBox ID="textFotoFooter"  runat="server" />
                         </FooterTemplate>
                     </asp:TemplateField>
-
                     <asp:TemplateField>
+
                         <ItemTemplate>
                             <asp:ImageButton ImageUrl="images/EditarIcon.png" runat="server" CommandName="Edit" ToolTip="Edit" Height="20px" Width="20px" />
                             <asp:ImageButton ImageUrl="images/BorrarIcon.png" runat="server" CommandName="Delete" ToolTip="Delete" Height="20px" Width="20px" />
@@ -148,21 +147,13 @@
                             <asp:ImageButton ImageUrl="images/AñadirIcon.png" runat="server" CommandName="Añadir" ToolTip="Añadir" Height="20px" Width="20px" />
                         </FooterTemplate>
                     </asp:TemplateField>
-
-
-
-
-
                 </Columns>
-
-
             </asp:GridView>
             <br />
             <asp:Label ID="LabelMensajeExito" Text="" runat="server" ForeColor="Green"></asp:Label>
             <br />
             <asp:Label ID="LabelMensajeError" Text="" runat="server" ForeColor="Red"></asp:Label>
-            
-
+        </div>
         </div>
     </div>
 </asp:Content>
