@@ -241,6 +241,13 @@ body {
     margin-top: 3%;
     margin-left: 27.5%;
 }
+/*Pedido*/
+.pedido {
+    float: left;
+    width: 30%;
+    margin-top: 3%;
+    margin-left: 21%;
+}
 /*Confirmación pedido*/
 .conf-pedido {
     float: left;
